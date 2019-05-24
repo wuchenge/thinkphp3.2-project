@@ -1,0 +1,66 @@
+<include file="Public:header2" />
+<div class="center_weizhi"><!--位置导航-->
+  <a href="/">首页</a>\
+  <a href="{:U('User/index')}" id="over">个人中心</a>
+</div><!--位置导航结束-->
+<div class="concentq"><!--正式内容-->
+  <include file="Public:user_left" />
+  <div class="concentq_con float_r"><!--右边内容-->
+    <div class="gexq"><!--头像\昵称等信息-->
+      <div class="gexq_img float_l"><img src="{$user.pic}" width="108" height="108"></div>
+      <div class="gexq_xinxi float_r">
+        <b><if condition="$Think.session.username neq null">{$Think.session.username}<else/>{$Think.session.tel}</if>,欢迎您！</b>
+        <span>我的经验值：<small>{$user['summoney']?$user['summoney']:'0'}</small></span><i>|</i><span><a href="{:U('User/couponlist')}">优惠券</a>：<small>{$coupon}</small> 张</span><i>|</i><span>会员等级：<small>{$level.title}</small> 折扣率：{$level.discount}%</span><br/>
+        <span>余额：<small>{$user['balance']?$user['balance']:'0'}</small></span><i>|</i><span>积分：<small>{$user['integral']?$user['integral']:'0'}</small></span><br/>
+        <a href="{:U('user/resetinfor')}">修改个人信息>></a>
+<!--         <div class="tequanq">
+          <div class="wodetequan float_l">我的特权：</div>
+          <div class="wodetequan_tu float_r"><a href="#"><img src="__PUBLIC__/home/images/vip.png" width="45" height="45"></a><a href="#"><img src="__PUBLIC__/home/images/hg.png" width="45" height="45"></a></div>
+          <div class="clear"></div>
+        </div> -->
+        <div class="clear"></div>
+      </div>
+    </div><!--头像\昵称等信息结束-->
+    <div class="daijinjuan">
+      <div class="daijinjuan_tit">
+        <h3></h3>
+        
+      </div>
+      
+    </div>
+    <div class="youjuti_bot">
+        <ul>
+          <li>
+            <i><img src="__PUBLIC__/home/images/daiding.png" width="100" height="100"></i>
+            <div class="teotiao">
+              <h3>待支付的订单：<em>{$dfcount}</em></h3>
+              <a href="{:U('Order/index?st=1')}">查看待支付的订单>></a>
+            </div>
+          </li>
+          <li>
+            <i><img src="__PUBLIC__/home/images/daishou.png" width="100" height="100"></i>
+            <div class="teotiao">
+              <h3>待收货的订单：<em>{$dscount}</em></h3>
+              <a href="{:U('Order/index?st=3')}">查看待收货的订单>></a>
+            </div>
+          </li>
+          <li>
+            <i><img src="__PUBLIC__/home/images/daiping.png" width="100" height="100"></i>
+            <div class="teotiao">
+              <h3>待评价的订单：<em>{$dpcount}</em></h3>
+              <a href="{:U('Order/index?st=4')}">查看待评价的订单>></a>
+            </div>
+          </li>
+          <li>
+            <i><img src="__PUBLIC__/home/images/daicang.png" width="100" height="100"></i>
+            <div class="teotiao">
+              <h3>收藏的商品：<em>{$coll}</em></h3>
+              <a href="{:U('User/collect')}">查看收藏的商品>></a>
+            </div>
+          </li>
+        </ul>
+      </div>
+  </div><!--右边内容结束-->
+  <div class="clear"></div>
+</div><!--正式内容结束-->
+<include file="Public:footer" />

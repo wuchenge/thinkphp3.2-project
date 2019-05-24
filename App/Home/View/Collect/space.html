@@ -1,0 +1,142 @@
+<include file="Public:header"/>
+
+    <div class="wrapper wrapper_marg">
+        <div class="user_box" style="background-image: url(/Public/home/images/user_bg.jpg)">
+            <div class="container1">
+                <div class="user_cot">
+
+                <include file="Public:uleft"/>
+                    <div class="user_right">
+                        <div class="user_nav">
+                            <ul>
+                                <li class="active"><a href="{:U('collect/space')}">办公空间收藏</a></li>
+                                <li><a href="{:U('collect/product')}">商品收藏</a></li>
+                            </ul>
+                        </div>
+                        <form method="get">
+                        <div class="user_search">
+                            <div class="user_sear">
+                                <input type="text" name="keyword" placeholder="输入空间名称">
+                                <input type="submit" value="搜索">
+                            </div>
+                        </div>
+                       </form>
+                        <div class="address_tit">
+                            <label>
+                                <input id="cbAll" type="checkbox">
+                                <i></i>
+                                <span>全选</span>
+                            </label>
+                            <a href="javascript:;" onclick="return delmuti3();"><img   src="/Public/home/images/delect.png" alt="">删除</a>
+                        </div>
+                        <div class="collect_cot">
+                            <div class="row">
+                                 <volist name="mycoll" id="vo">
+                                    <input class="duoxuan" hidden type="checkbox" name="ids[]" value="{$vo.id}">
+                                    <div class="col-lg-3 col-md-4 col-xs-6">
+                                        <a href="{:U('space/info',array('id'=>$vo['space']['id']))}">
+                                            <div class="aegis_lis">
+                                                <div class="aegis_pic">
+                                                    <img src="{$vo.space.imgurl}" alt="">
+                                                    <div class="collect_delet">
+                                                        <img src="/Public/home/images/delect.png" alt="" id="collect" data-id="1" onclick="return bucoll(this,{$vo.id});">
+                                                    </div>
+                                                </div>
+                                                <div class="aegis_wz">
+                                                    <h3>{$vo.space.title}</h3>
+                                                    <!-- <p>￥999.99</p> -->
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <input type="hidden" id="xid" value="{$vo.id}">
+                                </volist>
+                            </div>
+                            <div class="aegis_page">
+                                 {$page}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<include file="Public:footer"/>
+</body>
+<script type="text/javascript" src="__ROOT__/Public/lib/layer/2.1/layer.js"></script>
+<script type="text/javascript" src="__ROOT__/Public/lib/laypage/1.2/laypage.js"></script>
+<script type="text/javascript">
+    $(document).on('click','#cbAll',function(){
+    if($(this).is(":checked")){
+        $('.duoxuan').prop('checked',true);
+    }else{
+        $('.duoxuan').prop('checked',false);
+    }
+})
+</script> 
+<script>
+function delmuti3(){
+ var chks=$('.duoxuan');
+ var bl=true;
+ var str = "";
+ $('.duoxuan').each(function(){
+     if($(this).is(':checked')){
+         bl=false;
+         if(str == ""){
+             str = $(this).val();
+         }else{
+             str += ","+$(this).val();
+         }
+     }
+ })
+ if(bl){
+     layer.alert('请选择要删除的数据');
+     return ;
+ }
+ var url = "{:U('collect/delmuti')}";
+    var index = layer.load(2);
+ layer.confirm('确认要批量删除吗？',function(index){
+     $.post(url,{"ids":str},function(data){
+         if(data.status == 1){
+             layer.close(index);
+             location.replace(location.href);
+             layer.msg(data.msg,{icon:1,time:1000});
+         }else{
+             layer.msg(data.msg,{icon:1,time:1000});
+         }
+     })
+ });
+}
+function  bucoll(o,id){
+    var url = "{:U('collect/bucoll')}";
+    if ($("#collect").attr('data-id') != 1) {
+      return false;
+    }
+    $.post(url, {id: id}, function (data) {
+      if (data.status == 1) {
+        alert(data.msg);
+        location.reload();
+      }else{
+        $("#collect").attr('data-id', 1);
+        alert(data.msg);
+      }
+    });
+}
+$(function () {
+
+        $('.address_tit a').click(function () {
+            if ($('.address_tit label input').prop('checked') == true) {
+                $('.aegis_lis').parents('.col-lg-3.col-md-4').remove()
+                $('.address_tit label input').prop('checked', false)
+            }
+        })
+
+        $('.collect_delet').click(function (e) {
+            e.preventDefault()
+            $(this).parents('.col-lg-3.col-md-4').remove()
+        })
+
+    })
+</script>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="shortcut icon" href="/Public/home/images/logo.ico" />
+    <title>杭州青域律禾创业服务有限公司</title>
+    <meta name="keywords" content="杭州青域律禾创业服务有限公司" />
+    <meta name="description" content="杭州青域律禾创业服务有限公司" />
+    <meta name="author" content="杭州帷拓科技有限公司-专业网络服务供应商-高端网站建设：http://www.zjteam.com">
+    <link rel="stylesheet" type="text/css" href="/Public/home/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/Public/home/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="/Public/home/css/common.css">
+    <link rel="stylesheet" href="/Public/home/css/swiper.min.css">
+    <script src="/Public/home/js/jquery.min.js"></script>
+    <script src="/Public/home/js/bootstrap.js"></script>
+    <script src="/Public/home/js/swiper.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/Public/home/css/index.css">
+    <script src="/Public/home/js/index.js"></script>
+    <script>
+        if (navigator.appName == "Microsoft Internet Explorer" && (navigator.appVersion.match(/7./i) == "7." || navigator.appVersion
+                .match(/8./i) == "8." || navigator.appVersion.match(/9./i) == "9.") && (document.documentMode == "9" || document.documentMode ==
+                "8")) {
+            self.location.href = "ie/ie.html"
+        }
+    </script>
+
+</head>
+
+<body>
+    <div class="header scrollT">
+        <div class="head_cot">
+            <div class="logo">
+                <a href="/">
+                    <img src="/Public/home/images/logo.svg" alt="">
+                </a>
+            </div>
+            <div class="head_menu">
+                <ul>
+                    <li><a href="{:U('space/index')}">办公空间推荐</a></li>
+                    <li><a href="{:U('aegis/index')}">办公用品</a></li>
+                    <li><a href="{:U('ambient/index')}">办公环境维护</a></li>
+                    <li><a href="{:U('consultant/index')}">财税法权</a></li>
+                    <li><a href="{:U('plot/index')}">品牌策划</a></li>
+                    <li><a href="{:U('gift/index')}">企业礼品</a></li>
+                    <li><a href="{:U('weal/index')}">员工福利</a></li>
+                    <li><a href="{:U('mall/index')}">精选商城</a></li>
+                </ul>
+            </div>
+            <div class="head_btn">
+                <div class="head_sele">
+                    <a href="/">
+                        <img src="/Public/home/images/ico.svg" alt="">
+                        <img src="/Public/home/images/ico1.svg" alt="">
+                    </a>
+                    <div class="head_nav">
+                        <ul>
+                            <li><a href="{:U('user/cart')}"><img src="/Public/home/images/cart.svg" alt=""><span>购物车</span></a></li>
+                            <li><a href="{:U('order/index')}"><img src="/Public/home/images/order.svg" alt=""><span>我的订单</span></a></li>
+                            <li><a href="{:U('order/index')}"><img src="/Public/home/images/user.svg" alt=""><span>个人中心</span></a></li>
+                            <if condition="empty($_SESSION['uid'])">
+                                <li><a href="{:U('login/register')}"><img src="/Public/home/images/register.svg" alt=""><span>注册</span></a></li>
+                                <li><a href="{:U('login/login')}"><img src="/Public/home/images/login.svg" alt=""><span>登录</span></a></li>
+                            <else/>
+                                <li><a><img src="/Public/home/images/register.svg" alt=""><span>{$_SESSION.tel}</span></a></li>
+                                <li><a href="{:U('login/out')}"><img src="/Public/home/images/login.svg" alt=""><span>注销</span></a></li>
+                        </if>
+                        </ul>
+                    </div>
+                </div>
+                <div class="head_search">
+                    <a href="{:U('search/index')}"><img src="/Public/home/images/search.svg" alt=""><img src="/Public/home/images/search1.svg" alt=""></a>
+                </div>
+                <div class="phone_btn">
+                    <span><i></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu_box">
+        <div class="phone_menu">
+            <ul>
+                <li><a href="{:U('space/index')}">办公空间推荐</a></li>
+                <li><a href="{:U('aegis/index')}">办公用品</a></li>
+                <li><a href="{:U('ambient/index')}">办公环境维护</a></li>
+                <li><a href="{:U('consultant/index')}">财税法权</a></li>
+                <li><a href="{:U('plot/index')}">品牌策划</a></li>
+                <li><a href="{:U('gift/index')}">企业礼品</a></li>
+                <li><a href="{:U('weal/index')}">员工福利</a></li>
+                <li><a href="{:U('mall/index')}">精选商城</a></li>
+                <li><a href="{:U('jifen/index')}">积分商城</a></li>
+                <li><a href="{:U('news/index')}">了解我们</a></li>
+                <li><a href="{:U('order/index')}">个人中心</a></li>
+            </ul>
+        </div>
+        <div class="phone_close">
+            <img src="/Public/home/images/close1.svg" alt="">
+        </div>
+    </div>

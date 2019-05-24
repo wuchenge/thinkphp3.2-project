@@ -1,0 +1,285 @@
+<include file="Public:header"/>
+<style>
+    @media(max-width:768px){
+      .user_tit th:nth-child(2), .user_lis td:nth-child(2){
+        display: none;
+      }
+    }
+  </style>
+  <div class="wrapper wrapper_marg">
+    <div class="user_box" style="background-image: url(/Public/home/images/user_bg.jpg)">
+      <div class="container1">
+        <div class="user_cot">
+
+
+         <include file="Public:uleft"/>
+
+          <div class="user_right">
+            <div class="user_nav">
+              <ul>
+                <li <if condition="empty($st)">class="active"</if>><a href="{:U('/order/index')}">所有订单</a></li>
+                <li <if condition="$st == 1">class="active"</if>><a href="{:U('/order/index?st=1')}">待支付</a></li>
+                <li <if condition="$st == 2">class="active"</if>><a href="{:U('/order/index?st=2')}">待发货</a></li>
+                <li <if condition="$st == 3">class="active"</if>><a href="{:U('/order/index?st=3')}">待收货</a></li>
+                <li <if condition="$st == 4">class="active"</if>><a href="{:U('/order/index?st=4')}">待评价</a></li>
+                <li <if condition="$st == 5">class="active"</if>><a href="{:U('/order/index?st=5')}">已完成</a></li>
+                <!-- <li <if condition="$st == complited">class="active"</if>>
+                  <a href="{:U('/order/index?st=complited')}">已关闭</a>
+                </li> -->
+              </ul>
+            </div>
+            <div class="user_search">
+              <div class="user_sear">
+                <input type="text" name="key" placeholder="输入商品名称或订单号搜索">
+                <input type="button" value="搜索">
+              </div>
+              <div class="user_sele">
+                <span>订单状态：</span>
+                <select name="type" id="pid" onchange="gradeChange()">
+                  <option value="0">全部</option>
+                  <option value="1">待支付</option>
+                  <option value="2">待发货</option>
+                  <option value="3">待收货</option>
+                  <option value="4">待评价</option>
+                  <option value="5">已完成</option>
+                </select>
+              </div>
+            </div>
+            <div class="user_cot">
+              <div class="user_tit">
+                <table>
+                  <tr>
+                    <th>
+                      <label>
+                       <!--  <input type="checkbox"> -->
+                        <!-- <i></i> -->
+                        <span></span>
+                       <!--  <span>全选</span> -->
+                      </label>
+                    </th>
+                    <th>数量</th>
+                    <th>金额</th>
+                    <th>状态</th>
+                    <th>操作</th>
+                  </tr>
+                </table>
+              </div>
+
+              <volist name="result" id="vo">
+              <div class="user_lis">
+                <table>
+                  <thead>
+                    <tr>
+                      <th colspan="5">
+                        <label>
+                          <div class="user_input">
+                            <!-- <input type="checkbox"> -->
+                           <!--  <i></i> -->
+                          </div>
+                          <span><img src="/Public/home/images/sp.png" alt="">{$vo.res.0.gname}</span>
+                          <span>订单号：{$vo.orderid}</span>
+                          <span>{$vo.addtime|date="Y年m月d日",###}</span>
+                        </label>
+                        <!-- <a href="javascript:;" class="order_delet">
+                          <img src="/Public/home/images/delect.png" alt="">
+                        </a> -->
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <volist name="vo.res" id="v2" key="k">
+                    <tr>
+                      <td>
+                        <div class="user_info">
+                          <if condition="$v2['gtype'] eq 2">
+                                <a href="{:U('jifen/info',array('id'=>$v2['gid']))}">
+                          <else />
+                               <a href="{:U('aegis/info',array('id'=>$v2['gid']))}">
+                          </if>
+                            <div class="user_img">
+                              <img src="{$v2.gurl}" alt="">
+                            </div>
+                            <div class="user_wz">
+                              <h3>{$v2.gname}</h3>
+                              <p>{$v2.ggname}</p>
+                              <!-- <p>红色特香</p> -->
+                            </div>
+                          </a>
+                        </div>
+                      </td>
+                      <td>{$v2.amount}</td>
+                      <if condition="$k eq 1">
+                      <td rowspan="{$vo.geshu}">
+                        <div class="user_price">
+                          <h5>￥{$vo.totalprice}</h5>
+                          <p>（含运费：￥{$vo.yunfei}）</p>
+                        </div>
+                      </td>
+                      <td rowspan="{$vo.geshu}">
+                        <p>{$vo.zt}</p>
+                        <a href="{:U('order/info',array('id'=>$vo['id']))}">查看详情</a>
+                      </td>
+                      <td rowspan="{$vo.geshu}">
+                        <if condition="$vo['status'] eq 1">
+                          <if condition="$vo['ordertype'] eq 2">
+                             <a href="{:U('jifen/order',array('id'=>$vo['id']))}" class="order_dzf">待兑换
+                             </a>
+                          <else />
+                               <if condition="$is_pc eq 2">
+  <a href="{:U('order/payment2',array('id'=>$vo['id']))}" class="order_dzf">待支付</a>
+                               <else />
+                                   <a href="{:U('order/mpayment2',array('id'=>$vo['id']))}" class="order_dzf">待支付</a>
+                               </if>
+                          </if>
+                          <a onClick="order_del(this,'{$vo.id}')" href="javascript:; class="order_qx">取消订单</a>
+                        <elseif condition="$vo['status'] eq 2"/>
+                            <a  class="order_dzf">等待发货</a>
+                        <elseif condition="$vo['status'] eq 3"/>
+                            <a onclick="return confirmbill({$vo.id})" class="order_dzf">确认收货</a>
+                        <elseif condition="$vo['status'] eq 4"/>
+                            <a href="{:U('order/judge',array('id'=>$vo['id']))}" class="order_dzf">评价</a>
+                        <elseif condition="$vo['status'] eq 5"/>
+                            <a  class="order_dzf">已评价</a>
+                        <else/>
+                            <a  class="order_dzf">已取消</a>
+                      </if>
+                      </td>
+                    </if>
+                    </tr>
+                   </volist>
+                  </tbody>
+                </table>
+              </div>
+             </volist>
+
+              <div class="user_bott">
+                <label>
+                  <!-- <input type="checkbox">
+                  <i></i> -->
+                  <span></span>
+                  <a></a>
+                  <!-- <span>全选</span>
+                  <a href="javascript:;">删除</a> -->
+                </label>
+              </div>
+              <div class="aegis_page">
+                <ul>
+                  {$page}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<include file="Public:footer"/>
+<include file="Public:qian"/>
+</body>
+<script>
+  function gradeChange(){ 
+        //var objS = document.getElementById("pid"); 
+       var objS = $('select  option:selected').val();
+        if(objS==0){
+              location.href="/index.php/Order/index";
+         }else{
+             location.href="/index.php/Order/index/st/"+objS;
+         }
+       } 
+  /*取消订单*/
+function order_del(obj,id){
+  if(confirm("确定取消该订单？")){
+    var url = "{:U('order/billdel')}";
+    $.post(url,{"id":id},function(data){
+      if(data.status == 1){
+            alert(data.msg);
+            location.reload();
+      }else{
+        location.reload();
+      }
+    })
+  }else{
+    return false;
+  }
+}
+  //确认收货
+  function confirmbill(o){
+    if(confirm("确认收货？")){
+      var id=o;
+      var url ="{:U('order/confirmbill')}";
+      $.post(url,{id:id},function(data){
+        if(data.status == 1){
+          location.reload();
+        }else{
+          alert(data.msg);
+          return false;
+        }
+      })
+    }
+
+  }
+    //评价商品
+function pingjia(o){
+  if(confirm('确定评价商品？')){
+    var bid=$("input[name='bid']").val();
+    var gid=$(o).prev().val();
+    var ggid=$(o).prev().prev().val();
+    var url="{:U('Order/dojudge')}";
+    $.post(url,{bid:bid,gid:gid,ggid:ggid},function(data){
+      if(data.status == 1){
+        location.href="/Order/judge/id/"+data.id;
+      }else{
+        alert(data.msg);
+        return false;
+      }
+    })
+  }else{
+    return false;
+  }
+} 
+  $(function () {
+
+    $('.userL_qd a').click(function () {
+      $('html,body').css('overflow-y', 'hidden')
+      $('.qd_fixed,.body_bg').addClass('into')
+    })
+
+    $('.body_bg').click(function () {
+      $('.body_bg,.qd_fixed').removeClass('into')
+      $('html,body').css('overflow-y', 'auto')
+    })
+
+    $('.user_tit label input').click(function () {
+      if ($(this).prop('checked') == false) {
+        $('.user_input input,.user_bott label input').prop('checked', false)
+      } else {
+        $('.user_input input,.user_bott label input').prop('checked', true)
+      }
+    })
+
+
+    $('.user_bott label input').click(function () {
+      if ($(this).prop('checked') == false) {
+        $('.user_input input,.user_tit label input').prop('checked', false)
+      } else {
+        $('.user_input input,.user_tit label input').prop('checked', true)
+      }
+    })
+
+    $('.order_delet').click(function () {
+      $(this).parents('.user_lis').remove()
+    })
+
+    $('.user_bott a').click(function () {
+      for (var i = $('.user_input input').length - 1; i >= 0; i--) {
+        if ($('.user_input input').eq(i).prop('checked') == true) {
+          $('.user_input input').eq(i).parents('.user_lis').remove()
+        }
+      }
+      $('.user_bott input,.user_tit label input').prop('checked', false)
+    })
+
+  })
+</script>
+
+</html>

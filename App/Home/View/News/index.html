@@ -1,0 +1,51 @@
+<include file="Public:header"/>
+
+  <div class="wrapper wrapper_marg">
+    <div class="main_ban">
+      <img src="/Public/home/images/news.jpg" alt="">
+      <div class="mainB_wz">
+        <h3>新闻中心</h3>
+        <h5>news</h5>
+      </div>
+    </div>
+
+    <div class="news_box" style="background-image: url(/Public/home/images/news_bg.jpg)">
+      <div class="container">
+        <div class="main_tit tit_center">
+          <h3>新闻资讯</h3>
+        </div>
+        <div class="news_cot">
+          <ul>
+        <volist name="list" id="vo">
+            <li>
+              <a href="{:U('news/info',array('id'=>$vo['id']))}" target="_blank">
+                <div class="news_lis">
+                  <div class="news_img">
+                    <img src="{$vo.imgurl}" alt="">
+                  </div>
+                  <div class="news_wz">
+                    <h3>{$vo.name}</h3>
+                    <h5>{$vo.addtime|date="Y年m月d日",###} | <span>资讯</span></h5>
+                    <p>{$vo.description}</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </volist>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<include file="Public:footer"/>
+
+</body>
+<script>
+  $(function () {
+
+  })
+</script>
+
+</html>

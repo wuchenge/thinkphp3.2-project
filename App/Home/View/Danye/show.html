@@ -1,0 +1,32 @@
+<include file="Public:header2"/>
+
+<div class="center_weizhi"><!--位置导航-->
+  <a href="#">首页</a>\
+  <a href="#" id="over">{$danye_cate.title}</a>\
+  <a href="#" id="over">{$danye.title}</a>
+</div><!--位置导航结束-->
+<div class="concentq"><!--正式内容-->
+  <div class="concentq_nav1 float_l"><!--左边分类-->
+      <foreach name="footer_danye" item="vo" key="k"> 
+        
+          <b><a >{$k}</a></b>
+          <ul>
+          <foreach name="vo" item="v">
+          <li><a href="{:U('danye/show?danye_id='.$v['id'].'&danye_cid='.$v['cid'])}" {$danye['id'] == $v['id']?'id="jingguo"':''}>{$v.dt}</a></li>
+          </foreach>
+          </ul>
+      </foreach>
+
+  </div><!--左边分类结束-->
+  <div class="concentq_con float_r"><!--右边内容-->
+	<div class="bangzhu_tit"><!--右边内容头部-->
+        <p>{$danye.title}</p>
+    </div><!--右边内容头部结束-->
+    <div class="bangzhu_con">
+    	{$danye.content}
+        
+    </div> 
+  </div><!--右边内容结束-->
+  <div class="clear"></div>
+</div><!--正式内容结束-->
+<include file="Public:footer" />

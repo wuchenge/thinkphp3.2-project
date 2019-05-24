@@ -1,0 +1,412 @@
+<include file="Public:header"/>
+
+    <div class="wrapper">
+        <div class="banner">
+            <div class="banner_swiper swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="banner_lis">
+                            <div class="banner_bg" style="background-image: url(/Public/home/images/banner.jpg)"></div>
+                            <div class="banner_wz">
+                                <h3>本周青域精选办公楼</h3>
+                                <h5>This week qingyu selected office buildings</h5>
+                                <h2>— 华彩国际·曈昽佳苑 —</h2>
+                                <div class="banner_btn">
+                                    <a href="#">learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="banner_lis">
+                            <div class="banner_bg" style="background-image: url(/Public/home/images/banner.jpg)"></div>
+                            <div class="banner_wz">
+                                <h3>本周青域精选办公楼</h3>
+                                <h5>This week qingyu selected office buildings</h5>
+                                <h2>— 华彩国际·曈昽佳苑 —</h2>
+                                <div class="banner_btn">
+                                    <a href="#">learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="banner_lis">
+                            <div class="banner_bg" style="background-image: url(/Public/home/images/banner.jpg)"></div>
+                            <div class="banner_wz">
+                                <h3>本周青域精选办公楼</h3>
+                                <h5>This week qingyu selected office buildings</h5>
+                                <h2>— 华彩国际·曈昽佳苑 —</h2>
+                                <div class="banner_btn">
+                                    <a href="#">learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination banner_page"></div>
+            </div>
+            <div class="banner_nav">
+                <ul>
+                    <li>
+                        <div class="banner_li">
+                            <h3>大型家具</h3>
+                            <p>
+                                 <volist id="vo" name="jiaju1">
+                                    <a href="{:U('aegis/info',array('id'=>$vo['id']))}">{$vo.gname|substr=0,6}</a>
+                                </volist>
+                            </p>
+                            <div class="banner_jt">
+                                <img src="/Public/home/images/jt.png" alt="">
+                                <img src="/Public/home/images/jt1.png" alt="">
+                            </div>
+                        </div>
+                        <div class="banner_down">
+                            <div class="bannerD_left">
+                                <div class="bannerD_li">
+                                    <ul>
+                                        <volist id="vo" name="jiaju">
+                                            <li><a href="{:U('aegis/info',array('id'=>$vo['id']))}"><h2 style=" background-image: url({$vo.imgurl});"><img src="/Public/home/images/menu_le.png" alt=""></h2><span>{$vo.gname}</span></a></li>
+                                        </volist>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="bannerD_right">
+                                <a href="#">
+                                    <div class="bannerD_lis">
+                                        <div class="bannerD_img">
+                                            <img src="/Public/home/indexbg1.jpg" alt="">
+                                        </div>
+                                        <div class="bannerD_wz">
+                                            <h3>立志营造一个高效舒适的办公环境，为客户奉献优质的产品、新潮的家具、周全的服务和真诚的心。</h3>
+                                            
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="banner_li">
+                            <h3>办公用品</h3>
+                            <p>
+                                 <volist id="vo" name="bangong1">
+                                    <a href="{:U('aegis/info',array('id'=>$vo['id']))}">{$vo.gname|substr=0,6}</a>
+                                </volist>
+                            </p>
+                            <div class="banner_jt">
+                                <img src="/Public/home/images/jt.png" alt="">
+                                <img src="/Public/home/images/jt1.png" alt="">
+                            </div>
+                        </div>
+                        <div class="banner_down">
+                            <div class="bannerD_left">
+                                <div class="bannerD_li">
+                                    <ul>
+                                        <volist id="vo" name="bangong">
+                                            <li><a href="{:U('aegis/info',array('id'=>$vo['id']))}"><h2 style=" background-image: url({$vo.imgurl});"><img src="/Public/home/images/menu_le.png" alt=""></h2><span>{$vo.gname}</span></a></li>
+                                        </volist>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="bannerD_right">
+                                <a href="#">
+                                    <div class="bannerD_lis">
+                                        <div class="bannerD_img">
+                                            <img src="/Public/home/indexbg2.jpg" alt="">
+                                        </div>
+                                        <div class="bannerD_wz">
+                                            <h3>企业单位在日常工作中所使用的辅助用品.</h3>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="banner_li">
+                            <h3>绿植保洁</h3>
+                            <p>
+                                <volist id="vo" name="lvzhi1">
+                                    <a href="{:U('aegis/info',array('id'=>$vo['id']))}">{$vo.gname|substr=0,6}</a>
+                                </volist>
+                            </p>
+                            <div class="banner_jt">
+                                <img src="/Public/home/images/jt.png" alt="">
+                                <img src="/Public/home/images/jt1.png" alt="">
+                            </div>
+                        </div>
+                        <div class="banner_down">
+                            <div class="bannerD_left">
+                                <div class="bannerD_li">
+                                    <ul>
+                                        <volist id="vo" name="lvzhi">
+                                            <li><a href="{:U('aegis/info',array('id'=>$vo['id']))}"><h2 style=" background-image: url({$vo.imgurl});"><img src="/Public/home/images/menu_le.png" alt=""></h2><span>{$vo.gname}</span></a></li>
+                                        </volist>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="bannerD_right">
+                                <a href="#">
+                                    <div class="bannerD_lis">
+                                        <div class="bannerD_img">
+                                            <img src="/Public/home/indexbg3.jpg" alt="">
+                                        </div>
+                                        <div class="bannerD_wz">
+                                            <h3>生活空间总是离不开绿植的点缀；有效的保洁时间放在专业的清洁工作上更有价值。</h3>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="banner_li">
+                            <h3>品牌策划</h3>
+                            <p>
+                                <volist id="vo" name="brand">
+                                    <a href="{:U('aegis/info',array('id'=>$vo['id']))}">{$vo.title|substr=0,6}</a>
+                                </volist>
+                            </p>
+                            <div class="banner_jt">
+                                <img src="/Public/home/images/jt.png" alt="">
+                                <img src="/Public/home/images/jt1.png" alt="">
+                            </div>
+                        </div>
+                        <div class="banner_down">
+                            <div class="bannerD_left">
+                                <div class="bannerD_li">
+                                    <ul>
+                                        <volist id="vo" name="brand">
+                                            <li><a href="{:U('aegis/info',array('id'=>$vo['id']))}"><h2 style=" background-image: url({$vo.imgurl});"><img src="/Public/home/images/menu_le.png" alt=""></h2><span>{$vo.gname}</span></a></li>
+                                        </volist>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="bannerD_right">
+                                <a href="#">
+                                    <div class="bannerD_lis">
+                                        <div class="bannerD_img">
+                                            <img src="/Public/home/indexbg4.jpg" alt="">
+                                        </div>
+                                        <div class="bannerD_wz">
+                                            <h3>使消费者与企业品牌和产品品牌之间形成统一的价值观。</h3>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="banner_li">
+                            <h3>企业礼品</h3>
+                            <p>
+                                <volist id="vo" name="qiye1">
+                                    <a href="{:U('aegis/info',array('id'=>$vo['id']))}">{$vo.gname|substr=0,6}</a>
+                                </volist>
+                            </p>
+                            <div class="banner_jt">
+                                <img src="/Public/home/images/jt.png" alt="">
+                                <img src="/Public/home/images/jt1.png" alt="">
+                            </div>
+                        </div>
+                        <div class="banner_down">
+                            <div class="bannerD_left">
+                                <div class="bannerD_li">
+                                    <ul>
+                                        <volist id="vo" name="qiye">
+                                            <li><a href="{:U('aegis/info',array('id'=>$vo['id']))}"><h2 style=" background-image: url({$vo.imgurl});"><img src="/Public/home/images/menu_le.png" alt=""></h2><span>{$vo.gname}</span></a></li>
+                                        </volist>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="bannerD_right">
+                                <a href="#">
+                                    <div class="bannerD_lis">
+                                        <div class="bannerD_img">
+                                            <img src="/Public/home/indexbg5.jpg" alt="">
+                                        </div>
+                                        <div class="bannerD_wz">
+                                            <h3>为了传承企业文化，定制专属企业的礼品。</h3>
+                   
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="banner_li">
+                            <h3>员工福利</h3>
+                            <p>
+                                <volist id="vo" name="fuli1">
+                                    <a href="{:U('aegis/info',array('id'=>$vo['id']))}">{$vo.gname|substr=0,6}</a>
+                                </volist>
+                            </p>
+                            <div class="banner_jt">
+                                <img src="/Public/home/images/jt.png" alt="">
+                                <img src="/Public/home/images/jt1.png" alt="">
+                            </div>
+                        </div>
+                        <div class="banner_down">
+                            <div class="bannerD_left">
+                                <div class="bannerD_li">
+                                    <ul>
+                                        <volist id="vo" name="fuli">
+                                            <li><a href="{:U('aegis/info',array('id'=>$vo['id']))}"><h2 style=" background-image: url({$vo.imgurl});"><img src="/Public/home/images/menu_le.png" alt=""></h2><span>{$vo.gname}</span></a></li>
+                                        </volist>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="bannerD_right">
+                                <a href="#">
+                                    <div class="bannerD_lis">
+                                        <div class="bannerD_img">
+                                            <img src="/Public/home/indexbg6.jpg" alt="">
+                                        </div>
+                                        <div class="bannerD_wz">
+                                            <h3>让员工感受到公司给予的关爱，以促进企业的发展。</h3>
+                                       
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="banner_li">
+                            <h3>商城入口</h3>
+                            <p>
+                                <volist id="vo" name="shang1">
+                                    <a href="{:U('aegis/info',array('id'=>$vo['id']))}">{$vo.gname|substr=0,6}</a>
+                                </volist>
+                            </p>
+                            <div class="banner_jt">
+                                <img src="/Public/home/images/jt.png" alt="">
+                                <img src="/Public/home/images/jt1.png" alt="">
+                            </div>
+                        </div>
+                        <div class="banner_down">
+                            <div class="bannerD_left">
+                                <div class="bannerD_li">
+                                    <ul>
+                                        <volist id="vo" name="shang">
+                                            <li><a href="{:U('aegis/info',array('id'=>$vo['id']))}"><h2 style=" background-image: url({$vo.imgurl});"><img src="/Public/home/images/menu_le.png" alt=""></h2><span>{$vo.gname}</span></a></li>
+                                        </volist>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="bannerD_right">
+                                <a href="#">
+                                    <div class="bannerD_lis">
+                                        <div class="bannerD_img">
+                                            <img src="/Public/home/indexbg6.jpg" alt="">
+                                        </div>
+                                        <div class="bannerD_wz">
+                                            <h3>企业一体化服务，放心靠谱。</h3>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="ind_box">
+            <ul>
+                <li>
+                    <a href="{:U('news/index')}">
+                        <div class="ind1_lis">
+                            <div class="ind1_img">
+                                <img src="/Public/home/images/ind1.jpg" alt="">
+                            </div>
+                            <div class="ind1_wz">
+                                <h5>青域享惊喜，活动乐不停</h5>
+                                <h3>青域近期活动</h3>
+                                <span>——了解更多</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="{:U('jifen/index')}">
+                        <div class="ind1_lis">
+                            <div class="ind1_img">
+                                <img src="/Public/home/images/ind2.jpg" alt="">
+                            </div>
+                            <div class="ind1_wz">
+                                <h5>青域享惊喜，活动乐不停</h5>
+                                <h3>青域积分商城</h3>
+                                <span>——了解更多</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="{:U('consultant/index')}">
+                        <div class="ind1_lis">
+                            <div class="ind1_img">
+                                <img src="/Public/home/images/ind3.jpg" alt="">
+                            </div>
+                            <div class="ind1_wz">
+                                <h5>青域享惊喜，活动乐不停</h5>
+                                <h3>青域企业管家</h3>
+                                <span>——了解更多</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="{:U('plot/index')}">
+                        <div class="ind1_lis">
+                            <div class="ind1_img">
+                                <img src="/Public/home/images/ind4.jpg" alt="">
+                            </div>
+                            <div class="ind1_wz">
+                                <h5>青域享惊喜，活动乐不停</h5>
+                                <h3>青域精彩案例</h3>
+                                <span>——了解更多</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+<include file="Public:footer"/>
+
+</body>
+<script>
+    $(function () {
+
+        var bannerSwiper = new Swiper('.banner_swiper', {
+            loop: true,
+            autoplay: 5000,
+            pagination: '.banner_page',
+            paginationClickable: true,
+        })
+
+        if($('.banner_nav').outerHeight()<$(window).height()){
+            $('.banner_nav').outerHeight($(window).height())
+        }
+
+        $('.banner_down').hover(function () {
+            $(this).siblings('.banner_li').addClass('ban_hover')
+        }, function () {
+            $(this).siblings('.banner_li').removeClass('ban_hover')
+        })
+
+        $(window).scroll(function () {
+            scrollT = $(window).scrollTop()
+            if (scrollT > 0) {
+                $('.header').addClass('scrollT')
+            } else {
+                $('.header').removeClass('scrollT')
+            }
+        })
+
+    })
+</script>
+
+</html>

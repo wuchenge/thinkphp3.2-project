@@ -1,0 +1,162 @@
+<!--_meta 作为公共模版分离出去-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<LINK rel="Bookmark" href="/favicon.ico" >
+<LINK rel="Shortcut Icon" href="/favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="lib/html5.js"></script>
+<script type="text/javascript" src="lib/respond.min.js"></script>
+<script type="text/javascript" src="lib/PIE_IE678.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="__ROOT__/Public/static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="__ROOT__/Public/static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="__ROOT__/Public/lib/Hui-iconfont/1.0.7/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="__ROOT__/Public/lib/icheck/icheck.css" />
+<link rel="stylesheet" type="text/css" href="__ROOT__/Public/static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="__ROOT__/Public/static/h-ui.admin/css/style.css" />
+<link href="__ROOT__/Public/lib/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css" />
+<!--[if IE 6]>
+<script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<!--/meta 作为公共模版分离出去-->
+
+<title>新增文章 - 资讯管理 - H-ui.admin v2.3</title>
+<meta name="keywords" content="H-ui.admin v2.3,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
+<meta name="description" content="H-ui.admin v2.3，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
+</head>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 图片管理 <span class="c-gray en">&gt;</span> <if condition="empty($newsxiugl['id'])">图片添加<else/>图片修改</if> <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<article class="page-container">
+	<form class="form form-horizontal" name="form1" id="form-news-add" enctype='multipart/form-data' method="post" <if condition="empty($newsxiugl['id'])">action="{:U('Guang/newsadd')}"<else/>action="{:U('Guang/newsEditbo')}"</if> >
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>图片标题：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="{$newsxiugl.title}"  placeholder="" id="title" name="title">
+			</div>
+		</div>
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-2">URL：</label>
+		<div class="formControls col-xs-8 col-sm-9">
+			<input type="text" class="input-text" value="{$newsxiugl.url}" placeholder="" id="url"
+				   name="url">
+		</div>
+	</div>
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>位置：</label>
+		<div class="mt-20 skin-minimal">
+			<div class="radio-box">
+				<input type="radio" id="radio-5"  value="1" <if condition="$newsxiugl['weizhi'] eq 1 ">checked</if> <if condition="empty($newsxiugl['weizhi']) ">checked</if> name="weizhi" onclick="tab1();">
+				<label for="radio-5" >电脑端</label>
+			</div>
+			<div class="radio-box">
+				<input type="radio" id="radio-6" value="2" <if condition="$newsxiugl['weizhi'] eq 2 ">checked</if>  name="weizhi" onclick="tab2();" >
+				<label for="radio-6">手机端</label>
+			</div>
+		</div>
+	</div>
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-2">缩略图：</label>
+		<input name="imgurl" type="file" style="width:295px; height:28px;">
+		<div <if condition="$newsxiugl['weizhi'] eq 2 ">style="color: red;font-size: 12px;margin-left: 210px;display:none;"<else/>style="color: red;font-size: 12px;margin-left: 210px;"</if>id="pc">pc版：小于1M，宽高：1920px*620像素</div>
+		<div <if condition="$newsxiugl['weizhi'] eq 1 ">style="color: red;font-size: 12px;margin-left: 210px;display: none;" <elseif condition="empty($newsxiugl['weizhi']) ">style="color: red;font-size: 12px;margin-left: 210px;" <else/> style="color: red;font-size: 12px;margin-left: 210px;display: none;" </if> id="mo" >手机版:小于1M，宽高：960px*405像素</div>
+		<div style="margin-left: 210px;" ><if condition="!empty($newsxiugl['imgurl'])"><img src="{$newsxiugl.imgurl}" width="728" height="248"></if></div>
+	</div>
+
+		<div class="row cl">
+			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+				<input id="newid" name="newid" hidden value="{$newsxiugl.id}" />
+				<button onClick="article_save_submit();" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> <if condition="empty($newsxiugl['id'])">提交<else/>修改</if></button>
+				<!--<button onClick="article_save();" class="btn btn-secondary radius" type="button"><i class="Hui-iconfont">&#xe632;</i> 保存草稿</button>-->
+				<!--<button onClick="removeIframe();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>-->
+			</div>
+		</div>
+	</form>
+</article>
+
+<!--_footer 作为公共模版分离出去-->
+<include file="Public:footer"/>
+<!--/_footer /作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="__ROOT__/Public/lib/My97DatePicker/WdatePicker.js"></script>  
+<script type="text/javascript" src="__ROOT__/Public/lib/webuploader/0.1.5/webuploader.min.js"></script> 
+<script type="text/javascript" src="__ROOT__/Public/lib/ueditor/1.4.3/ueditor.config.js"></script> 
+<script type="text/javascript" src="__ROOT__/Public/lib/ueditor/1.4.3/ueditor.all.min.js"> </script> 
+<script type="text/javascript" src="__ROOT__/Public/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
+<script type="text/javascript">
+	function tab1(){
+		$('#pc').show();
+		$('#mo').hide();
+	}
+	function tab2(){
+		$('#pc').hide();
+		$('#mo').show();
+	}
+$(function(){
+	var ue = UE.getEditor('editor');
+	$("#form-news-add").validate({
+		rules:{
+			title:{
+				required:true,
+				minlength:4,
+				maxlength:50
+			},
+			type:{
+				required:true,
+			},
+			keywords:{
+				required:true,
+				minlength:4,
+				maxlength:25
+			},
+			description:{
+				required:true,
+				minlength:10,
+				maxlength:200,
+			},
+			text:{
+				required:true,
+				minlength:10,
+				maxlength:200,
+			},
+			url:{
+				required:true,
+				url:true
+			}
+		},
+		onkeyup:false,
+		focusCleanup:true,
+		success:"valid",
+		submitHandler:function(form){
+			var title = $.trim($("input[name='title']").val());
+			var url = $.trim($("input[name='url']").val());
+			if(title == ''){
+				alert('请输入图片标题');
+				return false;
+			}
+			if(url == ''){
+				alert('请输入URL');
+				return false;
+			}
+			$(form).ajaxSubmit();
+			var index = parent.layer.getFrameIndex(window.name);
+			parent.$('.btn-refresh').click();
+			parent.layer.close(index);
+		}
+	});
+
+
+
+	
+});
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</htm

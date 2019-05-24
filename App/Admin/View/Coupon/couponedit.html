@@ -1,0 +1,115 @@
+﻿<include file="Public:header2"/>
+<body>
+<div class="page-container">
+  <form action="__APP__/Coupon/couponEdit" method="post" enctype="multipart/form-data" class="form form-horizontal" id="form-user-add">
+	<div class="row cl">
+      <label class="form-label col-2"  style="text-align:left;"><span class="c-red">*</span>减免金额：</label>
+      <div class="formControls col-5">
+			<input type="text" class="input-text" value="{$fd.money}"   placeholder="输入数字" id="user-name" name="money">
+      </div>
+      <div class="col-5"> </div>
+    </div>
+	<div class="row cl">
+      <label class="form-label col-2"  style="text-align:left;"><span class="c-red">*</span>满足使用条件的金额：</label>
+      <div class="formControls col-5">
+			<input type="text" class="input-text" value="{$fd.condition}"   placeholder="输入数字" id="user-name" name="condition">
+			<input type="hidden"  value="{$fd.id}"   name="id">
+      </div>
+      <div class="col-5"> </div>
+    </div>
+	<div class="row cl">
+      <label class="form-label col-2"  style="text-align:left;"><span class="c-red">*</span>优惠券使用起始时间：</label>
+      <div class="formControls col-5">
+        <input type="text" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})" id="txtBeginDate"  name="start" value="{$fd.start|date='Y-m-d H:i',###}" class="input-text Wdate" style="width:320px;">
+      </div>
+      <div class="col-5"> </div>
+    </div>
+	<div class="row cl">
+      <label class="form-label col-2"  style="text-align:left;"><span class="c-red">*</span>优惠券使用结束时间：</label>
+      <div class="formControls col-5">
+        <input type="text" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})" id="txtBeginDate"  name="end" value="{$fd.end|date='Y-m-d H:i',###}" class="input-text Wdate" style="width:320px;">
+      </div>
+      <div class="col-5"> </div>
+    </div>
+	<div class="row cl">
+      <label class="form-label col-2"  style="text-align:left;"><span class="c-red">*</span>分类是否开启：</label>
+      <div class="formControls col-5">
+			<if condition="$fd['is_open'] eq 1">
+				是<input type="radio"  value="1" placeholder="" checked  name="is_open">
+				否<input type="radio"  value="-1" placeholder=""  name="is_open">
+			<else/>
+				是<input type="radio"  value="1" placeholder=""  name="is_open">
+				否<input type="radio"  value="-1" placeholder="" checked name="is_open">
+			</if>
+      </div>
+      <div class="col-5"> </div>
+    </div>
+    <div class="row cl">
+      <div class="col-9 col-offset-2">
+        <input class="btn btn-primary radius" onclick="return check()" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+      </div>
+    </div>
+  </form>
+</div>
+</div>
+<script type="text/javascript" src="__ROOT__/Public/lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="__ROOT__/Public/lib/icheck/jquery.icheck.min.js"></script>
+<script type="text/javascript" src="__ROOT__/Public/lib/My97DatePicker/WdatePicker.js"></script> 
+<script type="text/javascript" src="__ROOT__/Public/lib/Validform/5.3.2/Validform.min.js"></script>
+<script type="text/javascript" src="__ROOT__/Public/lib/ueditor/1.4.3/ueditor.config.js"></script> 
+<script type="text/javascript" src="__ROOT__/Public/lib/ueditor/1.4.3/ueditor.all.min.js"> </script> 
+<script type="text/javascript" src="__ROOT__/Public/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
+<script type="text/javascript" src="__ROOT__/Public/lib/layer/2.1/layer.js"></script>
+<script type="text/javascript" src="__ROOT__/Public/static/h-ui/js/H-ui.js"></script> 
+<script type="text/javascript" src="__ROOT__/Public/static/h-ui.admin/js/H-ui.admin.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('.skin-minimal input').iCheck({
+		checkboxClass: 'icheckbox-blue',
+		radioClass: 'iradio-blue',
+		increaseArea: '20%'
+	});
+	
+	$("#form-user-add").Validform({
+		tiptype:2,
+		callback:function(form){
+			form[0].submit();
+			var index = parent.layer.getFrameIndex(window.name);
+			parent.$('.btn-refresh').click();
+			parent.layer.close(index);
+		}
+	});
+});
+function check(){
+	var money=$("input[name='money']").val();
+	var condition=$("input[name='condition']").val();
+	var start=$("input[name='start']").val();
+	var end=$("input[name='end']").val();
+	if(money == ""){
+		alert('减免金额不能为空');
+		return false;
+	}
+	if(!(/^[1-9]\d*$/.test(money))){  
+        alert("减免金额请输入整数!"); 
+		return false;	
+    }
+	if(condition == ""){
+		alert('使用条件金额不能为空');
+		return false;
+	}
+	if(!(/^[1-9]\d*$/.test(condition))){  
+        alert("使用条件金额请输入整数!"); 
+		return false;	
+    }
+	if(start == ""){
+		alert('开始时间不能为空');
+		return false;
+	}
+	if(end == ""){
+		alert('结束时间不能为空');
+		return false;
+	}
+}
+</script>
+</body>
+</html>

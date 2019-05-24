@@ -1,0 +1,179 @@
+<include file="Public:header2"/>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 订单管理 <span class="c-gray en">&gt;</span> 订单详情 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<article class="page-container" style="margin-left: 50px;">
+		<div style="color: #ff7800;font-size:18px;margin-left: 40%;">
+		基本信息
+		</div>
+		<div class="row cl" style="margin-top: 20px;">
+			<label class="form-label col-xs-4 col-sm-2" style="width:10%;text-align:center"><span class="c-red">*</span>订单号：</label>
+			<div class="formControls col-xs-8 col-sm-9" style="font-size: 14px;width:35%">
+				{$result.orderid}
+				<input type="hidden" value="{$result.id}" name="orderid">
+			</div>
+			<label class="form-label col-xs-4 col-sm-2" style="width:10%;text-align:center"><span class="c-red">*</span>订单状态：</label>
+			<div class="formControls col-xs-8 col-sm-9" style="font-size: 14px;width:35%">
+				{$result.zt}
+			</div>
+		</div>
+		<div class="row cl" style="margin-top: 10px;">
+			<label class="form-label col-xs-4 col-sm-2" style="width:10%;text-align:center"><span class="c-red">*</span>购物人：</label>
+			<div class="formControls col-xs-8 col-sm-9" style="font-size: 14px;width:35%">
+				{$result.user}
+			</div>
+			<label class="form-label col-xs-4 col-sm-2" style="width:10%;text-align:center"><span class="c-red">*</span>下单时间：</label>
+			<div class="formControls col-xs-8 col-sm-9" style="font-size: 14px;width:35%">
+				{$result.addtime|date="Y-m-d H:i:s",###}
+			</div>
+		</div>
+		<div class="row cl" style="margin-top: 10px;">
+			<label class="form-label col-xs-4 col-sm-2" style="width:10%;text-align:center"><span class="c-red">*</span>支付时间：</label>
+			<div class="formControls col-xs-8 col-sm-9" style="font-size: 14px;width:35%">
+				<if condition="empty($result['paytime'])">暂无<else/>{$result.paytime|date="Y-m-d H:i:s",###}</if>
+			</div>
+			<label class="form-label col-xs-4 col-sm-2" style="width:10%;text-align:center"><span class="c-red">*</span>订单总价：</label>
+			<div class="formControls col-xs-8 col-sm-9" style="font-size: 14px;width:35%">
+				<if condition="empty($result['totalprice'])">暂无<else/>{$result.totalprice}元</if>
+			</div>
+		</div>
+		<div class="row cl" style="margin-top: 10px;">
+			<label class="form-label col-xs-4 col-sm-2" style="width:10%;text-align:center"><span class="c-red">*</span>使用积分：</label>
+			<div class="formControls col-xs-8 col-sm-9" style="font-size: 14px;width:35%">
+				<if condition="empty($result['score'])">暂无<else/>{$result.score}</if>
+			</div>
+		</div>
+		<div class="row cl" style="margin-top: 10px;">
+			<label class="form-label col-xs-4 col-sm-2" style="width:10%;text-align:center"><span class="c-red">*</span>物流单号：</label>
+			<div class="formControls col-xs-8 col-sm-9" style="font-size: 14px;width:35%">
+				<if condition="empty($result['expnum'])">暂无<else/>{$result.expnum}</if>
+			</div>
+		</div>
+		<div class="row cl" style="margin-top: 10px;">
+			<label class="form-label col-xs-4 col-sm-2" style="width:10%;text-align:center"><span class="c-red">*</span>物流公司：</label>
+			<div class="formControls col-xs-8 col-sm-9" style="font-size: 14px;width:35%">
+				<if condition="empty($result['exp'])">暂无<else/>{$result.exp}</if>
+			</div>
+			<label class="form-label col-xs-4 col-sm-2" style="width:10%;text-align:center"><span class="c-red">*</span>发货时间：</label>
+			<div class="formControls col-xs-8 col-sm-9" style="font-size: 14px;width:35%">
+				<if condition="empty($result['fhtime'])">暂无<else/>{$result.fhtime|date="Y-m-d H:i:s",###}</if>
+			</div>
+		</div>
+		<div style="margin-left: 40%;color: #ff7800;font-size:18px;margin-top: 20px;">
+		收货人信息
+		</div>
+		<div class="row cl" style="margin-top: 20px;">
+			<label class="form-label col-xs-4 col-sm-2" style="width:10%;text-align:center"><span class="c-red">*</span>收货人：</label>
+			<div class="formControls col-xs-8 col-sm-9" style="font-size: 14px;width:35%">
+				{$result.addressman}
+			</div>
+			<label class="form-label col-xs-4 col-sm-2" style="width:10%;text-align:center"><span class="c-red">*</span>联系方式：</label>
+			<div class="formControls col-xs-8 col-sm-9" style="font-size: 14px;width:35%">
+				{$result.addressmobile}
+			</div>
+		</div>
+		<div class="row cl" style="margin-top: 10px;">
+			<label class="form-label col-xs-4 col-sm-2" style="width:10%;text-align:center"><span class="c-red">*</span>收货地址：</label>
+			<div class="formControls col-xs-8 col-sm-9" style="font-size: 14px;width:35%">
+				{$result.address}
+			</div>
+		</div>
+		<div style="margin-left: 40%;color: #ff7800;font-size:18px;margin-top: 20px;">
+		商品信息
+		</div>
+		<table style="margin-top:20px;border: 10px solid #e2eaf3;">
+			<thead>
+				<tr style="line-height: 35px;">
+					<th style="text-align:center;" width="30%">商品名称</th>
+					<th style="text-align:center;" width="10%">规格</th>
+					<th style="text-align:center;" width="10%">单价</th>
+					<th style="text-align:center;" width="10%">数量</th>
+					<th style="text-align:center;" width="10%">状态</th>
+				</tr>
+			</thead>
+			<tbody>
+			<volist name="glist" id="vo">
+				<tr style="line-height: 35px;">
+					<td style="text-align:center;" width="30%">{$vo.title}</td>
+					<td style="text-align:center;" width="10%">{$vo.norm}</td>
+					<td style="text-align:center;" width="10%">{$vo.price}元</td>
+					<td style="text-align:center;" width="10%">{$vo.amount}</td>
+					<td style="text-align:center;" width="10%">{$vo.unusual}</td>
+				</tr>
+			</volist>
+			</tbody>
+		</table>
+		<div style="margin-left: 40%;color: #ff7800;font-size:18px;margin-top: 20px;">
+		操作信息
+		</div>
+		
+		<div style="margin-top: 20px;">
+			<div style="float:left;" >当前可执行操作</div>
+			<if condition="$result['status'] == 1"><a style=" float: left;margin-left: 10px;color: green;"  onclick="return qxdd()">取消订单</a></if>
+			<if condition="$result['status'] == 2"><a style=" float: left;margin-left: 10px;color: green;" href="{:U('/Order/orderchange?id='.$result['id'])}">发货</a></if>
+			<if condition="$result['status'] == 3 || $result['status'] == -2 || $result['status'] == -3"><a style=" float: left;margin-left: 10px;color: green;" onclick="return shouhuo()">设为收货</a></if>
+			<if condition="$result['status'] == 3"><a style=" float: left;margin-left: 10px;color: green;" href="{:U('/Order/expedit?id='.$result['id'])}">修改物流</a></if>
+			<div style="clear:both"></div>
+		</div>
+		<div style="margin-left: 40%;color: #ff7800;font-size:18px;margin-top: 20px;">
+		操作记录
+		</div>
+		<table style="margin-top:20px;border: 10px solid #e2eaf3;">
+			<thead>
+				<tr style="line-height: 35px;">
+					<th style="text-align:center;" width="10%">操作人</th>
+					<th style="text-align:center;" width="10%">操作时间</th>
+					<th style="text-align:center;" width="10%">操作类型</th>
+					<!--<th style="text-align:center;" width="10%">操作备注</th>-->
+				</tr>
+			</thead>
+			<tbody>
+			<volist name="orderlogs" id="vo">
+				<tr style="line-height: 35px;">
+					<td style="text-align:center;" width="10%">{$vo.aname}</td>
+					<td style="text-align:center;" width="10%">{$vo.addtime|date="Y-m-d H:i:s",###}</td>
+					<td style="text-align:center;" width="10%">{$vo.type}</td>
+					<!--<td style="text-align:center;" width="10%"><if condition="empty($vo['title'])">暂无<else/>{$vo.title}</if></td>-->
+				</tr>
+			</volist>
+			</tbody>
+		</table>
+		<!--<if condition="empty($list)">
+			<div align="center">
+				<span style="text-align: center; padding-top: 20px;display: block; font-size:16px; color: #ff7800;">暂无记录！</span>
+			</div>
+		</if>-->
+</article>
+
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="__ROOT__/Public/lib/jquery/1.9.1/jquery.min.js"></script>
+<script>
+function qxdd(){
+	if(confirm('确定取消该订单？')){
+		var id=$("input[name='orderid']").val();
+		$.post("__APP__/Order/del",{id:id},function(data){
+			if(data.status==1){
+				alert(data.msg);
+				window.location.reload();
+			}else{
+				alert(data.msg);
+			}
+		})
+	}
+}
+
+function shouhuo(){
+	if(confirm('确定设为收货？')){
+		var id=$("input[name='orderid']").val();
+		$.post("__APP__/Order/takeover",{id:id},function(data){
+			if(data.status==1){
+				alert(data.msg);
+				window.location.reload();
+			}else{
+				alert(data.msg);
+			}
+		})
+	}
+}
+</script>
+</body>
+</html>

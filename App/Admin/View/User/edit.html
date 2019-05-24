@@ -1,0 +1,123 @@
+<include file="Public:header2"/>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 会员管理 <span class="c-gray en">&gt;</span> 积分修改 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<article class="page-container">
+	<form class="form form-horizontal" style="overflow: hidden;" id="form-news-add" enctype='multipart/form-data' method="post" action="{:U('user/edit')}" >
+		<div class="row cl" style="width: 100%;float: left;">
+			<div class="mt-20 skin-minimal">
+<!-- 				<div class="radio-box">
+					<input type="radio" id="radio-5"  value="1" checked  name="gl" >
+					<label for="radio-5" >增加减少余额</label>
+				</div> -->
+				<div class="radio-box">
+					<input type="radio" id="radio-6" value="2" checked  name="gl"  >
+					<label for="radio-6">增加减少积分</label>
+				</div>
+			</div>
+		</div>
+		<div class="row cl"  style="width: 100%;float: left;" id="pc">
+			<label style="width: 100px;" class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>数值：</label>
+			<div class="formControls col-xs-8 col-sm-9" w>
+				<input type="number" class="input-text"  placeholder="" value="0"   name="point"><span style="color: red;font-size: 12px;">*必须为整数，可以填负数</span>
+			</div>
+		</div>
+		<div class="row cl"  style="width: 45%;float: left;" id="pc">
+			<label style="width: 100px;" class="form-label col-xs-4 col-sm-2"></label>
+			<div class="formControls col-xs-8 col-sm-9" >
+				当前积分<input type="text" class="input-text"  placeholder="" value="{$newsxiugl.integral}"   name="integral" disabled>
+			</div>
+		</div>
+		<div class="row cl" style="width: 100%;float: left;">
+			<label style="width: 100px;" class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>备注：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="管理员增减"  placeholder="" name="xiangmu">
+			</div>
+		</div>
+		<div class="row cl" style="width: 100%;float: left;">
+			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+				<input  id="newid" name="newid" hidden value="{$newsxiugl.id}" />
+				<button  onClick="article_save_submit();" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 修改</button>
+
+			</div>
+		</div>
+	</form>
+</article>
+
+<div style="margin-left: 40%;color: #ff7800;font-size:18px;margin-top: 20px;">
+修改积分操作记录
+</div>
+<table style="margin-top:20px;border: 10px solid #e2eaf3;">
+	<thead>
+		<tr style="line-height: 35px;">
+			<th style="text-align:center;" width="10%">操作人账号</th>
+			<th style="text-align:center;" width="10%">操作人昵称</th>
+			<th style="text-align:center;" width="10%">变更</th>
+
+			<th style="text-align:center;" width="10%">操作时间</th>
+			<th style="text-align:center;" width="10%">操作备注</th>
+		</tr>
+	</thead>
+	<tbody>
+	<volist name="pointlogs" id="vo">
+		<tr style="line-height: 35px;">
+			<td style="text-align:center;" width="10%">{$vo.username}</td>
+			<td style="text-align:center;" width="10%">{$vo.name}</td>
+			<td style="text-align:center;" width="10%">{$vo.money}</td>
+
+			<td style="text-align:center;" width="10%">{$vo.addtime|date="Y-m-d H:i:s",###}</td>
+			<td style="text-align:center;" width="10%">{$vo.xiangmu}</td>
+		</tr>
+	</volist>
+	</tbody>
+
+</table>
+
+<!--_footer 作为公共模版分离出去-->
+<include file="Public:footer"/>
+<!--/_footer /作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="__ROOT__/Public/lib/My97DatePicker/WdatePicker.js"></script>  
+<script type="text/javascript" src="__ROOT__/Public/lib/webuploader/0.1.5/webuploader.min.js"></script> 
+<script type="text/javascript" src="__ROOT__/Public/lib/ueditor/1.4.3/ueditor.config.js"></script> 
+<script type="text/javascript" src="__ROOT__/Public/lib/ueditor/1.4.3/ueditor.all.min.js"> </script> 
+<script type="text/javascript" src="__ROOT__/Public/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#form-news-add").validate({
+		rules:{
+			yue:{
+				required:true,
+				number:true
+			},
+			point:{
+				required:true,
+				number:true
+			},
+			xiangmu:{
+				required:true,
+				minlength:4,
+				maxlength:25
+			},
+		},
+		onkeyup:false,
+		focusCleanup:true,
+		success:"valid",
+		submitHandler:function(form){
+			if (confirm('确认修改客户积分余额信息？') == false) {
+				return false;
+			}
+			$(form).ajaxSubmit();
+			var index = parent.layer.getFrameIndex(window.name);
+			parent.$('.btn-refresh').click();
+			parent.layer.close(index);
+		}
+	});
+
+
+	
+});
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>

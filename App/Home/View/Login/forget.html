@@ -1,0 +1,122 @@
+<include file="Public:header"/>
+
+    <div class="wrapper wrapper_marg">
+        <div class="login_box" style="background-image: url(/Public/home/images/login_bg.jpg)">
+            <div class="login_cot">
+                <div class="login_back">
+                    <a href="javascript:history.go(-1)"><i class="fa fa-angle-left"></i></a>
+                </div>
+                <div class="login_tit">
+                    <h3>忘记密码</h3>
+                </div>
+                <div class="login_wz" style="padding-bottom: 20px;">
+                    <form method="post" onsubmit="return false;">
+                        <div class="login_li">
+                            <div class="login_lis">
+                                <input type="text" name="tel" placeholder="请输入手机号">
+                            </div>
+                            <div class="login_lis login_lis1">
+                                <input type="text" name="phone_code"  value="" placeholder="请输入验证码">
+                                <a id="yzm" data-id="1">获取验证码</a>
+                                <!-- <a>获取验证码</a> -->
+                            </div>
+                            <div class="login_lis">
+                                <input type="password" name="password" placeholder="请输入密码（6-12位数字和字母组合）">
+                            </div>
+                            <div class="login_lis">
+                                <input type="password" name="cfmpwd" placeholder="确认密码">
+                            </div>
+                            <div class="login_lis">
+                                <input type="button" id="cxgl" data-id="1" onclick="return zhaohui();" value="确定">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    $(function () {
+
+        $('.login_box').height($(window).height() - $('.header').height())
+
+        $(window).resize(function () {
+            $('.login_box').height($(window).height() - $('.header').height())
+        })
+
+    })
+</script>
+<script type="text/javascript">
+    var InterValObj; //timer变量，控制时间
+    var count = 60; //间隔函数，1秒执行
+    var curCount;//当前剩余秒数
+
+
+    //timer处理函数
+    function SetRemainTime() {
+        if (curCount == 0) {
+            window.clearInterval(InterValObj);//停止计时器
+            $("#yzm").attr("data-id",'1');//启用按钮
+            $("#yzm").val("重新获取");
+        }else{
+            curCount--;
+            $("#yzm").val(curCount + "秒");
+        }
+    }
+
+    $(function(){
+        $("#yzm").click(function(){
+            if($(this).attr('data-id') == 0){
+                return false;
+            }
+            $("#yzm").val('发送中...');
+            var url = "{:U('Login/pwdcodesend')}";
+            var tel = $("input[name='tel']").val();
+            var reg = /^1[3|4|5|7|8][0-9]\d{7,}$/;
+            if(!reg.test(tel)){
+                $("#yzm").val('获取验证码');
+                alert("请输入正确的手机号码");
+                return false;
+            }
+            $.post(url,{"tel":tel},function(data){
+                if(data.status == 1){
+                    curCount = count;
+                    //设置button效果，开始计时
+                    $("#yzm").attr("data-id",'0');
+                    $("#yzm").val(curCount+"秒");
+                    InterValObj = window.setInterval(SetRemainTime, 1000); //启动计时器，1秒执行一次
+                    alert(data.msg);
+                }else{
+                    $("#yzm").val('获取验证码');
+                    alert(data.msg);
+                    return false;
+                }
+            })
+        });
+
+    })
+    function zhaohui(){
+        if($("#cxgl").attr('data-id') != 1){
+            return false;
+        }
+        var url = "{:U('login/password')}";
+        $("#cxgl").val('找回中...');
+        $("#cxgl").attr('data-id',0);
+        $(".tishi").text('');
+        $.post(url,$("form").serialize(),function(data){
+            if(data.status == 1){
+                alert(data.msg);
+                $("#cxgl").val('跳转中...');
+                window.location="{:U('login/login')}";
+            }else{
+                $("#cxgl").attr('data-id',1);
+                $("#cxgl").val('找回密码');
+                $(".tishi").text(data.msg);
+                return false;
+            }
+        })
+    }
+</script>
+</html>

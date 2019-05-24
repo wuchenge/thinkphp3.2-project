@@ -1,0 +1,225 @@
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=XrYFzXOOW5Gpulp5m8P4xBI6fbWdOrnO"></script>
+<include file="Public:header" />
+    <div class="wrapper wrapper_marg">
+        <div class="main_ban">
+            <img src="/Public/home/images/contact.jpg" alt="">
+            <div class="mainB_wz">
+                <h3>联系我们</h3>
+                <h5>contact us</h5>
+            </div>
+        </div>
+
+        <div class="contact_box1" style="background-image: url(/Public/home/images/contact1_bg.jpg)">
+            <div class="container">
+                <div class="main_tit tit_center">
+                    <h3>公司地址</h3>
+                </div>
+                <div class="contact1_cot">
+                    <div class="contact1_left">
+                        <div class="contact1_wz">
+                            <h3>我们期待与您相遇</h3>
+                            <h5>we look forward to meeting you</h5>
+                            <p><img src="/Public/home/images/phone.png" alt=""> <span>电话：0571-87980690</span></p>
+                            <p><img src="/Public/home/images/email.png" alt=""> <span>邮箱：123456789@qq.com</span></p>
+                            <p><img src="/Public/home/images/address.png" alt=""> <span>地址：浙江省杭州市余杭区仓前街道龙潭路7号杭州未来研创园A座6楼601-1</span></p>
+                            <p><img src="/Public/home/images/weixin.png" alt=""> <span>微信：Snails_qylh <img src="/Public/home/images/ewm.png" alt=""></span></p>
+                        </div>
+                    </div>
+                    <div class="contact1_right">
+                        <div class="contact1_map">
+                            <div style="width:100%;height:450px;" id="map"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact_box2" style="background-image: url(/Public/home/images/contact2_bg.jpg)">
+            <div class="container">
+                <div class="contact2_cot">
+                    <div class="contact2_tit">
+                        <h3>留言板</h3>
+                        <img src="/Public/home/images/tit.png" alt="">
+                    </div>
+
+                    <form method="post" id="form_user1" onsubmit="return false;" id="feedback">
+                    <div class="contact2_wz">
+                        <ul>
+                            <li>
+                                <div class="contact2_lis">
+                                    <span>姓名：</span>
+                                    <input type="text" name="name">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="contact2_lis">
+                                    <span>公司：</span>
+                                    <input type="text" name="company">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="contact2_lis">
+                                    <span>电话：</span>
+                                    <input type="text" name="tel">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="contact2_lis">
+                                    <span>地址：</span>
+                                    <input type="text" name="address">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="contact2_lis">
+                                    <span>邮箱：</span>
+                                    <input type="text" name="email">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="contact2_lis">
+                                    <span>合作意向：</span>
+                                    <input type="text" name="yixiang">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="contact2_lis">
+                                    <span>留言：</span>
+                                    <textarea name="text"></textarea>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="contact2_bott">
+                            <p>*所有信息均会为您严格保密。不会向第三方进行提供</p>
+                            <div class="contact2_btn">
+                                <input type="button" value="提交信息" onclick="xiu();return false;" id="tijiao" style="cursor: pointer;"  data-id="1">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<include file="Public:footer" />
+<script src="/Public/home/js/jquery-1.8.3.min.js"></script>
+<script src="/Public/home/js/jquery.SuperSlide.2.1.1.js"></script>
+<script src="/Public/lib/layer/2.1/layer.js" type="text/javascript"></script>
+</body>
+<script type="text/javascript">
+        function xiu(){
+            if($('#tijiao').attr('data-id')!=1){
+                return false;
+            }
+            $('#tijiao').val('提交中..');
+            $('#tijiao').attr('data-id',0);
+            var url = "{:U('contact/ti')}";
+            var index = layer.load(2);
+            $.post(url,$('#form_user1').serialize(),function(data){
+                layer.close(index);
+                $('#tijiao').val('提交');
+                $('#tijiao').attr('data-id',1);
+                if(data.stu == 1){
+                    layer.msg(data.msg,{icon:6,time:2000},function(){
+                    location.href="{:U('contact/index')}";
+                    })
+                }else{
+                    layer.alert(data.msg,{icon:5,time:2000});
+                }
+            });
+            return false;
+        }
+</script>
+<script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap() {
+        createMap(); //创建地图
+        setMapEvent(); //设置地图事件
+        addMapControl(); //向地图添加控件
+        addMapOverlay(); //向地图添加覆盖物
+    }
+
+    function createMap() {
+        map = new BMap.Map("map");
+        map.centerAndZoom(new BMap.Point(119.994097, 30.282338), 17);
+    }
+
+    function setMapEvent() {
+        map.enableScrollWheelZoom();
+        map.enableKeyboard();
+        map.enableDragging();
+        map.enableDoubleClickZoom()
+    }
+
+    function addClickHandler(target, window) {
+        target.addEventListener("click", function () {
+            target.openInfoWindow(window);
+        });
+    }
+
+    function addMapOverlay() {
+        var markers = [{
+            content: "浙江省杭州市余杭区仓前街道龙潭路7号杭州未来研创园A座6楼601-1",
+            title: "杭州青域律禾创业服务有限公司",
+            imageOffset: {
+                width: -69,
+                height: -21
+            },
+            position: {
+                lat: 30.282276,
+                lng: 119.993415
+            }
+        }];
+        for (var index = 0; index < markers.length; index++) {
+            var point = new BMap.Point(markers[index].position.lng, markers[index].position.lat);
+            var marker = new BMap.Marker(point, {
+                icon: new BMap.Icon("http://api.map.baidu.com/lbsapi/createmap//Public/home/images/icon.png", new BMap.Size(20, 25), {
+                    imageOffset: new BMap.Size(markers[index].imageOffset.width, markers[index].imageOffset.height)
+                })
+            });
+            var label = new BMap.Label(markers[index].title, {
+                offset: new BMap.Size(25, 5)
+            });
+            var opts = {
+                width: 200,
+                title: markers[index].title,
+                enableMessage: false
+            };
+            var infoWindow = new BMap.InfoWindow(markers[index].content, opts);
+            marker.setLabel(label);
+            addClickHandler(marker, infoWindow);
+            map.addOverlay(marker);
+        };
+    }
+    //向地图添加控件
+    function addMapControl() {
+        var scaleControl = new BMap.ScaleControl({
+            anchor: BMAP_ANCHOR_BOTTOM_LEFT
+        });
+        scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+        map.addControl(scaleControl);
+        var navControl = new BMap.NavigationControl({
+            anchor: BMAP_ANCHOR_TOP_LEFT,
+            type: BMAP_NAVIGATION_CONTROL_LARGE
+        });
+        map.addControl(navControl);
+        var overviewControl = new BMap.OverviewMapControl({
+            anchor: BMAP_ANCHOR_BOTTOM_RIGHT,
+            isOpen: true
+        });
+        map.addControl(overviewControl);
+    }
+    var map;
+    initMap();
+</script>
+<script>
+    $(function () {
+
+
+
+    })
+</script>
+
+</html>

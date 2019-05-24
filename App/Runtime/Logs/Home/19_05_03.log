@@ -1,0 +1,1009 @@
+[ 2019-05-03T00:56:49+08:00 ] 169.197.108.30 /nx8j78af1b.jsp
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000249s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000383s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000418s ]
+ERR: 无法加载控制器:Nx8j78af1b
+
+[ 2019-05-03T01:37:19+08:00 ] 107.170.201.223 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000270s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000364s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000396s ]
+SQL: SHOW COLUMNS FROM `xmb_config` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xmb_config` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_productcate` [ RunTime:0.0004s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 0 ) ORDER BY ordernum desc LIMIT 7   [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 58 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 62 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 63 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 59 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 66 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 132 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 60 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 133 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 84 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 134 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 70 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_cart` [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: cid /home/wwwroot/default/App/Home/Controller/BaseController.class.php 第 33 行.
+SQL: SELECT COUNT(*) AS tp_count FROM xmb_cart c LEFT JOIN xmb_goods g on c.gid=g.id  WHERE ( cid="" AND is_del =-1 AND is_up =1  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xmb_space` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xmb_space` ORDER BY sort desc,addtime desc LIMIT 5   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid = 59 ) LIMIT 4   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid = 68 ) LIMIT 4   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_goods` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=63 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=63 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=62 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=62 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=66 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=66 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xmb_brand` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_brand` ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_brand` ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined variable: brand1 /home/wwwroot/default/App/Home/Controller/IndexController.class.php 第 26 行.
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=60 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=60 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=61 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=61 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=68 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=68 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_ad` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_ad` ORDER BY savetime desc  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000100s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000142s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020482s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020531s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000186s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000208s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000432s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000461s ]
+
+[ 2019-05-03T02:47:17+08:00 ] 5.196.162.103 /muieblackcat
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000244s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000365s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000396s ]
+ERR: 无法加载控制器:Muieblackcat
+
+[ 2019-05-03T04:35:28+08:00 ] 106.14.204.78 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000365s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000505s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000550s ]
+SQL: SHOW COLUMNS FROM `xmb_config` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xmb_config` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_productcate` [ RunTime:0.0004s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 0 ) ORDER BY ordernum desc LIMIT 7   [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 58 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 62 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 63 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 59 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 66 ) ORDER BY ordernum desc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 132 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 60 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 133 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 84 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 134 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 70 ) ORDER BY ordernum desc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xmb_cart` [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: cid /home/wwwroot/default/App/Home/Controller/BaseController.class.php 第 33 行.
+SQL: SELECT COUNT(*) AS tp_count FROM xmb_cart c LEFT JOIN xmb_goods g on c.gid=g.id  WHERE ( cid="" AND is_del =-1 AND is_up =1  ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_space` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_space` ORDER BY sort desc,addtime desc LIMIT 5   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid = 59 ) LIMIT 4   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid = 68 ) LIMIT 4   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_goods` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=63 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=63 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=62 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=62 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=66 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=66 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_brand` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xmb_brand` ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_brand` ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined variable: brand1 /home/wwwroot/default/App/Home/Controller/IndexController.class.php 第 26 行.
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=60 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=60 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=61 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=61 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=68 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=68 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_ad` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_ad` ORDER BY savetime desc  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000114s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000166s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019851s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019907s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000230s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000253s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000392s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000417s ]
+
+[ 2019-05-03T04:49:07+08:00 ] 185.154.207.46 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000355s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000362s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000395s ]
+SQL: SHOW COLUMNS FROM `xmb_config` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xmb_config` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_productcate` [ RunTime:0.0003s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 0 ) ORDER BY ordernum desc LIMIT 7   [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 58 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 62 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 63 ) ORDER BY ordernum desc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 59 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 66 ) ORDER BY ordernum desc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 132 ) ORDER BY ordernum desc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 60 ) ORDER BY ordernum desc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 133 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 84 ) ORDER BY ordernum desc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 134 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 70 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_cart` [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: cid /home/wwwroot/default/App/Home/Controller/BaseController.class.php 第 33 行.
+SQL: SELECT COUNT(*) AS tp_count FROM xmb_cart c LEFT JOIN xmb_goods g on c.gid=g.id  WHERE ( cid="" AND is_del =-1 AND is_up =1  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xmb_space` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xmb_space` ORDER BY sort desc,addtime desc LIMIT 5   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid = 59 ) LIMIT 4   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid = 68 ) LIMIT 4   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_goods` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=63 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=63 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=62 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=62 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=66 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=66 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_brand` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_brand` ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_brand` ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined variable: brand1 /home/wwwroot/default/App/Home/Controller/IndexController.class.php 第 26 行.
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=60 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=60 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=61 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=61 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=68 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=68 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_ad` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_ad` ORDER BY savetime desc  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000108s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000151s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019464s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019521s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000201s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000228s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000401s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000427s ]
+
+[ 2019-05-03T05:11:43+08:00 ] 185.234.219.238 /db/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000250s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000350s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000382s ]
+ERR: 无法加载控制器:Db
+
+[ 2019-05-03T05:11:43+08:00 ] 185.234.219.238 /admin/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000316s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000376s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000407s ]
+ERR: 无法加载控制器:Admin
+
+[ 2019-05-03T05:11:44+08:00 ] 185.234.219.238 /pma/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000247s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000409s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000449s ]
+ERR: 无法加载控制器:Pma
+
+[ 2019-05-03T05:11:44+08:00 ] 185.234.219.238 /myadmin/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000289s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000387s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000421s ]
+ERR: 无法加载控制器:Myadmin
+
+[ 2019-05-03T05:11:45+08:00 ] 185.234.219.238 /phpmyadmin/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000312s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000419s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000470s ]
+ERR: 无法加载控制器:Phpmyadmin
+
+[ 2019-05-03T05:11:45+08:00 ] 185.234.219.238 /dbadmin/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000270s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000402s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000444s ]
+ERR: 无法加载控制器:Dbadmin
+
+[ 2019-05-03T05:11:46+08:00 ] 185.234.219.238 /backup/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000293s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000413s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000457s ]
+ERR: 无法加载控制器:Backup
+
+[ 2019-05-03T05:11:46+08:00 ] 185.234.219.238 /phpMyAdmin/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000321s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000424s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000456s ]
+ERR: 无法加载控制器:PhpMyAdmin
+
+[ 2019-05-03T07:03:24+08:00 ] 71.6.202.253 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000404s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000544s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000594s ]
+SQL: SHOW COLUMNS FROM `xmb_config` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xmb_config` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_productcate` [ RunTime:0.0004s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 0 ) ORDER BY ordernum desc LIMIT 7   [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 58 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 62 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 63 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 59 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 66 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 132 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 60 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 133 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 84 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 134 ) ORDER BY ordernum desc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 70 ) ORDER BY ordernum desc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xmb_cart` [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: cid /home/wwwroot/default/App/Home/Controller/BaseController.class.php 第 33 行.
+SQL: SELECT COUNT(*) AS tp_count FROM xmb_cart c LEFT JOIN xmb_goods g on c.gid=g.id  WHERE ( cid="" AND is_del =-1 AND is_up =1  ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_space` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_space` ORDER BY sort desc,addtime desc LIMIT 5   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid = 59 ) LIMIT 4   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid = 68 ) LIMIT 4   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_goods` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=63 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=63 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=62 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=62 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=66 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=66 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xmb_brand` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_brand` ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_brand` ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined variable: brand1 /home/wwwroot/default/App/Home/Controller/IndexController.class.php 第 26 行.
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=60 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=60 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=61 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=61 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=68 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=68 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_ad` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_ad` ORDER BY savetime desc  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000138s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000201s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030375s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030447s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000276s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000312s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000586s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000628s ]
+
+[ 2019-05-03T07:35:30+08:00 ] 139.162.119.197 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000321s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000373s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000406s ]
+SQL: SHOW COLUMNS FROM `xmb_config` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xmb_config` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_productcate` [ RunTime:0.0003s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 0 ) ORDER BY ordernum desc LIMIT 7   [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 58 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 62 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 63 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 59 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 66 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 132 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 60 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 133 ) ORDER BY ordernum desc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 84 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 134 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 70 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_cart` [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: cid /home/wwwroot/default/App/Home/Controller/BaseController.class.php 第 33 行.
+SQL: SELECT COUNT(*) AS tp_count FROM xmb_cart c LEFT JOIN xmb_goods g on c.gid=g.id  WHERE ( cid="" AND is_del =-1 AND is_up =1  ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_space` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xmb_space` ORDER BY sort desc,addtime desc LIMIT 5   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid = 59 ) LIMIT 4   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid = 68 ) LIMIT 4   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_goods` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=63 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=63 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=62 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=62 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=66 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=66 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_brand` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_brand` ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_brand` ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined variable: brand1 /home/wwwroot/default/App/Home/Controller/IndexController.class.php 第 26 行.
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=60 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=60 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=61 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=61 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=68 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=68 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xmb_ad` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_ad` ORDER BY savetime desc  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000120s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000178s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020672s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020727s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000202s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000223s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000373s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000397s ]
+
+[ 2019-05-03T07:42:15+08:00 ] 196.52.43.118 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000295s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000353s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000386s ]
+SQL: SHOW COLUMNS FROM `xmb_config` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `xmb_config` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xmb_productcate` [ RunTime:0.0005s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 0 ) ORDER BY ordernum desc LIMIT 7   [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 58 ) ORDER BY ordernum desc  [ RunTime:0.0005s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 62 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 63 ) ORDER BY ordernum desc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 59 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 66 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 132 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 60 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 133 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 84 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 134 ) ORDER BY ordernum desc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 70 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_cart` [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: cid /home/wwwroot/default/App/Home/Controller/BaseController.class.php 第 33 行.
+SQL: SELECT COUNT(*) AS tp_count FROM xmb_cart c LEFT JOIN xmb_goods g on c.gid=g.id  WHERE ( cid="" AND is_del =-1 AND is_up =1  ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_space` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_space` ORDER BY sort desc,addtime desc LIMIT 5   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid = 59 ) LIMIT 4   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid = 68 ) LIMIT 4   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xmb_goods` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=63 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=63 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=62 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=62 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=66 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=66 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_brand` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_brand` ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_brand` ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined variable: brand1 /home/wwwroot/default/App/Home/Controller/IndexController.class.php 第 26 行.
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=60 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=60 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=61 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=61 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=68 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=68 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_ad` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xmb_ad` ORDER BY savetime desc  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000138s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000202s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025962s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026033s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000234s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000263s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000523s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000574s ]
+
+[ 2019-05-03T12:03:01+08:00 ] 185.57.237.113 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000241s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000344s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000376s ]
+SQL: SHOW COLUMNS FROM `xmb_config` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xmb_config` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_productcate` [ RunTime:0.0004s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 0 ) ORDER BY ordernum desc LIMIT 7   [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 58 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 62 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 63 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 59 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 66 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 132 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 60 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 133 ) ORDER BY ordernum desc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 84 ) ORDER BY ordernum desc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 134 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 70 ) ORDER BY ordernum desc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xmb_cart` [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: cid /home/wwwroot/default/App/Home/Controller/BaseController.class.php 第 33 行.
+SQL: SELECT COUNT(*) AS tp_count FROM xmb_cart c LEFT JOIN xmb_goods g on c.gid=g.id  WHERE ( cid="" AND is_del =-1 AND is_up =1  ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_space` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xmb_space` ORDER BY sort desc,addtime desc LIMIT 5   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid = 59 ) LIMIT 4   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid = 68 ) LIMIT 4   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_goods` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=63 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=63 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=62 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=62 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=66 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=66 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_brand` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xmb_brand` ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_brand` ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined variable: brand1 /home/wwwroot/default/App/Home/Controller/IndexController.class.php 第 26 行.
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=60 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=60 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=61 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=61 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=68 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=68 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_ad` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xmb_ad` ORDER BY savetime desc  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000102s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000145s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019399s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019448s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000211s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000233s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000375s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000404s ]
+
+[ 2019-05-03T17:15:43+08:00 ] 168.228.167.71 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000247s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000388s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000427s ]
+SQL: SHOW COLUMNS FROM `xmb_config` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xmb_config` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xmb_productcate` [ RunTime:0.0004s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 0 ) ORDER BY ordernum desc LIMIT 7   [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 58 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 62 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 63 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 59 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 66 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 132 ) ORDER BY ordernum desc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 60 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 133 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 84 ) ORDER BY ordernum desc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 134 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 70 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_cart` [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: cid /home/wwwroot/default/App/Home/Controller/BaseController.class.php 第 33 行.
+SQL: SELECT COUNT(*) AS tp_count FROM xmb_cart c LEFT JOIN xmb_goods g on c.gid=g.id  WHERE ( cid="" AND is_del =-1 AND is_up =1  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xmb_space` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xmb_space` ORDER BY sort desc,addtime desc LIMIT 5   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid = 59 ) LIMIT 4   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid = 68 ) LIMIT 4   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_goods` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=63 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=63 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=62 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=62 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=66 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=66 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xmb_brand` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xmb_brand` ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_brand` ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined variable: brand1 /home/wwwroot/default/App/Home/Controller/IndexController.class.php 第 26 行.
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=60 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=60 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=61 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=61 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=68 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=68 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_ad` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xmb_ad` ORDER BY savetime desc  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000101s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000148s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019997s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020049s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000209s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000231s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000374s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000400s ]
+
+[ 2019-05-03T18:39:14+08:00 ] 106.15.76.92 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000395s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000546s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000601s ]
+SQL: SHOW COLUMNS FROM `xmb_config` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xmb_config` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_productcate` [ RunTime:0.0004s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 0 ) ORDER BY ordernum desc LIMIT 7   [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 58 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 62 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 63 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 59 ) ORDER BY ordernum desc  [ RunTime:0.0004s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 66 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 132 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 60 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 133 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 84 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 134 ) ORDER BY ordernum desc  [ RunTime:0.0005s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 70 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_cart` [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: cid /home/wwwroot/default/App/Home/Controller/BaseController.class.php 第 33 行.
+SQL: SELECT COUNT(*) AS tp_count FROM xmb_cart c LEFT JOIN xmb_goods g on c.gid=g.id  WHERE ( cid="" AND is_del =-1 AND is_up =1  ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_space` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xmb_space` ORDER BY sort desc,addtime desc LIMIT 5   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid = 59 ) LIMIT 4   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid = 68 ) LIMIT 4   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `xmb_goods` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=63 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=63 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=62 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=62 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=66 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=66 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xmb_brand` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xmb_brand` ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xmb_brand` ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined variable: brand1 /home/wwwroot/default/App/Home/Controller/IndexController.class.php 第 26 行.
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=60 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=60 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=61 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=61 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=68 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=68 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_ad` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_ad` ORDER BY savetime desc  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000104s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000155s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020121s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020167s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000199s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000219s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000413s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000440s ]
+
+[ 2019-05-03T20:12:04+08:00 ] 128.199.33.176 /w00tw00t.at.blackhats.romanian.anti-sec:)
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000258s ]
+NOTIC: [2] preg_replace(): Compilation failed: unmatched parentheses at offset 11 /home/wwwroot/default/ThinkPHP/Library/Think/Route.class.php 第 20 行.
+NOTIC: [2] preg_replace(): Compilation failed: unmatched parentheses at offset 11 /home/wwwroot/default/ThinkPHP/Library/Think/Dispatcher.class.php 第 209 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000376s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000410s ]
+SQL: SHOW COLUMNS FROM `xmb_config` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xmb_config` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_productcate` [ RunTime:0.0003s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 0 ) ORDER BY ordernum desc LIMIT 7   [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 58 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 62 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 63 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 59 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 66 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 132 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 60 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 133 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 84 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 134 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 70 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_cart` [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: cid /home/wwwroot/default/App/Home/Controller/BaseController.class.php 第 33 行.
+SQL: SELECT COUNT(*) AS tp_count FROM xmb_cart c LEFT JOIN xmb_goods g on c.gid=g.id  WHERE ( cid="" AND is_del =-1 AND is_up =1  ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_space` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xmb_space` ORDER BY sort desc,addtime desc LIMIT 5   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid = 59 ) LIMIT 4   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid = 68 ) LIMIT 4   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_goods` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=63 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=63 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=62 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=62 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=66 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=66 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xmb_brand` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xmb_brand` ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_brand` ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined variable: brand1 /home/wwwroot/default/App/Home/Controller/IndexController.class.php 第 26 行.
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=60 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=60 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=61 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=61 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=68 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=68 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_ad` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_ad` ORDER BY savetime desc  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000115s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000163s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020525s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020578s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000220s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000247s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000409s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000437s ]
+
+[ 2019-05-03T20:18:17+08:00 ] 47.97.16.76 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000271s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000354s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000384s ]
+SQL: SHOW COLUMNS FROM `xmb_config` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xmb_config` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xmb_productcate` [ RunTime:0.0003s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 0 ) ORDER BY ordernum desc LIMIT 7   [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 58 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 62 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 63 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 59 ) ORDER BY ordernum desc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 66 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 132 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 60 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 133 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 84 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 134 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 70 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_cart` [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: cid /home/wwwroot/default/App/Home/Controller/BaseController.class.php 第 33 行.
+SQL: SELECT COUNT(*) AS tp_count FROM xmb_cart c LEFT JOIN xmb_goods g on c.gid=g.id  WHERE ( cid="" AND is_del =-1 AND is_up =1  ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_space` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xmb_space` ORDER BY sort desc,addtime desc LIMIT 5   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid = 59 ) LIMIT 4   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid = 68 ) LIMIT 4   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_goods` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=63 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=63 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=62 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=62 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=66 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=66 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_brand` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_brand` ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_brand` ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined variable: brand1 /home/wwwroot/default/App/Home/Controller/IndexController.class.php 第 26 行.
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=60 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=60 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=61 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=61 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=68 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=68 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_ad` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_ad` ORDER BY savetime desc  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000104s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000149s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020549s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020598s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000200s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000221s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000427s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000454s ]
+
+[ 2019-05-03T21:59:54+08:00 ] 216.84.133.82 /w00tw00t.at.blackhats.romanian.anti-sec:)
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000276s ]
+NOTIC: [2] preg_replace(): Compilation failed: unmatched parentheses at offset 11 /home/wwwroot/default/ThinkPHP/Library/Think/Route.class.php 第 20 行.
+NOTIC: [2] preg_replace(): Compilation failed: unmatched parentheses at offset 11 /home/wwwroot/default/ThinkPHP/Library/Think/Dispatcher.class.php 第 209 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000350s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000381s ]
+SQL: SHOW COLUMNS FROM `xmb_config` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xmb_config` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_productcate` [ RunTime:0.0003s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 0 ) ORDER BY ordernum desc LIMIT 7   [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 58 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 62 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 63 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 59 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 66 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 132 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 60 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 133 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 84 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 134 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 70 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_cart` [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: cid /home/wwwroot/default/App/Home/Controller/BaseController.class.php 第 33 行.
+SQL: SELECT COUNT(*) AS tp_count FROM xmb_cart c LEFT JOIN xmb_goods g on c.gid=g.id  WHERE ( cid="" AND is_del =-1 AND is_up =1  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xmb_space` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_space` ORDER BY sort desc,addtime desc LIMIT 5   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid = 59 ) LIMIT 4   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid = 68 ) LIMIT 4   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_goods` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=63 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=63 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=62 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=62 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=66 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=66 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xmb_brand` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_brand` ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_brand` ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined variable: brand1 /home/wwwroot/default/App/Home/Controller/IndexController.class.php 第 26 行.
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=60 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=60 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=61 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=61 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=68 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=68 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_ad` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xmb_ad` ORDER BY savetime desc  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000131s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000192s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028817s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028888s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000241s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000269s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000533s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000567s ]
+
+[ 2019-05-03T22:04:12+08:00 ] 177.130.141.126 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000290s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000360s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000399s ]
+SQL: SHOW COLUMNS FROM `xmb_config` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xmb_config` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_productcate` [ RunTime:0.0003s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 0 ) ORDER BY ordernum desc LIMIT 7   [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 58 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 62 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 63 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 59 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 66 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 132 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 60 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 133 ) ORDER BY ordernum desc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 84 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 134 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 70 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_cart` [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: cid /home/wwwroot/default/App/Home/Controller/BaseController.class.php 第 33 行.
+SQL: SELECT COUNT(*) AS tp_count FROM xmb_cart c LEFT JOIN xmb_goods g on c.gid=g.id  WHERE ( cid="" AND is_del =-1 AND is_up =1  ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xmb_space` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xmb_space` ORDER BY sort desc,addtime desc LIMIT 5   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid = 59 ) LIMIT 4   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid = 68 ) LIMIT 4   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_goods` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=63 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=63 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=62 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=62 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=66 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=66 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xmb_brand` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_brand` ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_brand` ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined variable: brand1 /home/wwwroot/default/App/Home/Controller/IndexController.class.php 第 26 行.
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=60 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=60 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=61 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=61 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=68 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=68 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_ad` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xmb_ad` ORDER BY savetime desc  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000132s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000194s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028189s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028245s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000245s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000277s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000521s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000562s ]
+
+[ 2019-05-03T22:53:35+08:00 ] 45.118.246.225 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000323s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000371s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000401s ]
+SQL: SHOW COLUMNS FROM `xmb_config` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xmb_config` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_productcate` [ RunTime:0.0003s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 0 ) ORDER BY ordernum desc LIMIT 7   [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 58 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 62 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 63 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 59 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 66 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 132 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 60 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 133 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 84 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 134 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 70 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_cart` [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: cid /home/wwwroot/default/App/Home/Controller/BaseController.class.php 第 33 行.
+SQL: SELECT COUNT(*) AS tp_count FROM xmb_cart c LEFT JOIN xmb_goods g on c.gid=g.id  WHERE ( cid="" AND is_del =-1 AND is_up =1  ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_space` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_space` ORDER BY sort desc,addtime desc LIMIT 5   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid = 59 ) LIMIT 4   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid = 68 ) LIMIT 4   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_goods` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=63 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=63 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=62 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=62 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=66 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=66 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xmb_brand` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xmb_brand` ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_brand` ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined variable: brand1 /home/wwwroot/default/App/Home/Controller/IndexController.class.php 第 26 行.
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=60 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=60 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=61 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=61 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=68 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=68 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_ad` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xmb_ad` ORDER BY savetime desc  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000131s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000197s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022698s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022750s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000234s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000258s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000469s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000511s ]
+
+[ 2019-05-03T23:52:43+08:00 ] 191.205.25.237 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000249s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000339s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000368s ]
+SQL: SHOW COLUMNS FROM `xmb_config` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xmb_config` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_productcate` [ RunTime:0.0003s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 0 ) ORDER BY ordernum desc LIMIT 7   [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 58 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 62 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 63 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 59 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 66 ) ORDER BY ordernum desc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 132 ) ORDER BY ordernum desc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 60 ) ORDER BY ordernum desc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 133 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 84 ) ORDER BY ordernum desc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 134 ) ORDER BY ordernum desc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`title` FROM `xmb_productcate` WHERE ( pid = 70 ) ORDER BY ordernum desc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xmb_cart` [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: cid /home/wwwroot/default/App/Home/Controller/BaseController.class.php 第 33 行.
+SQL: SELECT COUNT(*) AS tp_count FROM xmb_cart c LEFT JOIN xmb_goods g on c.gid=g.id  WHERE ( cid="" AND is_del =-1 AND is_up =1  ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_space` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_space` ORDER BY sort desc,addtime desc LIMIT 5   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid = 59 ) LIMIT 4   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid = 68 ) LIMIT 4   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_goods` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=63 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=63 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=62 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=62 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=66 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=66 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_brand` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xmb_brand` ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xmb_brand` ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined variable: brand1 /home/wwwroot/default/App/Home/Controller/IndexController.class.php 第 26 行.
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=60 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=60 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=61 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=61 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=68 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=68 and is_del=-1 and is_up=1 ) ORDER BY sort desc,addtime desc LIMIT 2,21   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xmb_ad` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xmb_ad` ORDER BY savetime desc  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000103s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000147s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020546s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000200s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000220s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000385s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000410s ]
+

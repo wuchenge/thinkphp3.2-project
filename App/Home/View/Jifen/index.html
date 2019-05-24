@@ -1,0 +1,141 @@
+<include file="Public:header"/>
+
+    <div class="wrapper wrapper_marg">
+        <div class="main_ban">
+            <div class="swiper-contianer mainB_swiper">
+                    <volist name="banner" id="vo" key="k">
+                         <div class="swiper-slide">
+                            <div class="mainB_img">
+                                <img src="{$vo.img}" alt="">
+                            </div>
+                        </div>
+                    </volist>
+                <div class="swiper-pagination banner_page"></div>
+            </div>
+        </div>
+
+        <div class="aegis_box">
+            <div class="integral_cot">
+                <div class="integral_left">
+                    <a href="aegisdot.html">
+                        <div class="integral_hd" style="background-image: url(/Public/home/images/integral_hd.jpg)"></div>
+                    </a>
+                </div>
+                <div class="integral_center">
+                    <ul>
+                        <volist name="sylist" id="vo">
+                        <li>
+                            <a href="{:U('jifen/info',array('id'=>$vo['id']))}">
+                                <div class="integral_lis">
+                                    <div class="integral_img">
+                                        <img src="{$vo.imgurl}" alt="">
+                                    </div>
+                                    <div class="integral_wz">
+                                        <h3>{$vo.gname}</h3>
+                                        <!-- <h5>abs爱彼此 herman无限蓝牙防汗型</h5> -->
+                                        <h4><span>{$vo.xyjifen}</span>分</h4>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </volist>
+
+                    </ul>
+                </div>
+                <div class="integral_right">
+                    <ul>
+                        <h3>积分热销榜</h3>
+                        <volist name="hotlist" id="vo">
+                        <li>
+                            <a href="{:U('jifen/info',array('id'=>$vo['id']))}">
+                                <div class="integralR_lis">
+                                    <img src="{$vo.imgurl}" alt="">
+                                    <div class="integralR_wz">
+                                        <h5>{$vo.gname}</h5>
+                                        <h6><span>{$vo.xyjifen}</span>分</h6>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </volist>
+                    </ul>
+                </div>
+            </div>
+            <div class="aegis_cot">
+                <div class="row">
+
+                <volist name="list" id="vo">
+                    <div class="col-sm-3 col-xs-6">
+                        <a href="{:U('jifen/info',array('id'=>$vo['id']))}">
+                            <div class="aegis_lis">
+                                <div class="aegis_img">
+                                    <img src="{$vo.imgurl}" alt="">
+                                    <div class="swiper-container aegis_swiper">
+                                        <span class="aegis_arrl"><i class="fa fa-angle-left"></i></span>
+                                        <span class="aegis_arrr"><i class="fa fa-angle-right"></i></span>
+                                        <div class="swiper-wrapper">
+                                             <volist name="vo.imgs" id="v2">
+                                            <div class="swiper-slide">
+                                                <img src="{$v2}" alt="">
+                                            </div>
+                                        </volist>
+            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="aegis_wz">
+                                    <div class="aegis_visib">
+                                        <h3>{$vo.gname}</h3>
+                                        <p>{$vo.xyjifen}分</p>
+                                    </div>
+                                    <div class="aegis_hide">
+                                        <h3>产品规格</h3>
+                                        <p>{$vo.guige}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+              </volist>
+
+                    
+                </div>
+                <div class="aegis_page">
+                    <ul>
+                        {$page}
+                        <!-- <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li> —— </li>
+                        <li><a href="#">7</a></li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<include file="Public:footer"/>
+
+<div class="body_bg"></div>
+</body>
+<script>
+    $(function () {
+
+        var bannerSwiper = new Swiper('.mainB_swiper', {
+            loop: true,
+            autoplay: 5000,
+            pagination: '.banner_page',
+            paginationClickable: true,
+        })
+
+        var aegis_swiper = new Swiper('.aegis_swiper', {
+            loop: true,
+            prevButton: '.aegis_arrl',
+            nextButton: '.aegis_arrr',
+        })
+
+    })
+</script>
+
+</html>

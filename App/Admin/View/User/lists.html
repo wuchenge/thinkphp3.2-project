@@ -1,0 +1,124 @@
+﻿<include file="Public:header2"/>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 会员管理 <span class="c-gray en">&gt;</span> 会员列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="page-container">
+	<div class="text-c">
+		<form method="get">
+
+			日期范围：
+			<input type="text" onfocus="WdatePicker()" id="txtBeginDate" name="start" value="{$search.start}" class="input-text Wdate" style="width:120px;">
+			-
+			<input type="text" onfocus="WdatePicker()" id="txtEndDate" name="end" value="{$search.end}" class="input-text Wdate" style="width:120px;">
+			<input type="text" name="key" id="uname" value="{$search.key}" placeholder=" 请输入会员姓名或者电话号码搜索" style="width:250px" class="input-text">
+			<button name="subgl" id="subgl" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜会员
+			</button>
+		</form>
+	</div>
+	<div class="cl pd-5 bg-1 bk-gray mt-20">
+
+		<span class="r">共有数据：<strong>{$count}</strong> 条</span> </div>
+	<div class="mt-20">
+		<table class="table table-border table-bordered table-bg table-hover table-sort">
+			<thead>
+				<tr class="text-c">
+
+					<th width="40">ID</th>
+					<th width="80">会员姓名</th>
+					<th width="80">会员头像</th>
+					<th width="40">性别</th>
+					<th width="120">会员电话</th>
+					<th width="60">账号状态</th>
+					<!-- <th width="100">余额</th> -->
+					<th width="100">积分</th>
+					<!-- <th width="100">会员等级</th> -->
+					<th width="130">注册时间</th>
+					<th width="130">上次登陆时间</th>
+					<th width="110">操作</th>
+				</tr>
+			</thead>
+			<tbody>
+			<volist name="list" id="vo">
+				<tr class="text-c">
+					
+					<td>{$vo.id}</td>
+					<td >{$vo.uname}</td>
+					<td ><img src="{$vo.pic}" width="35px" height="35px"></td>
+					<td ><if condition="$vo['sex'] eq 1">男<elseif condition="$vo['sex'] eq 0"/>女</if></td>
+					<td >{$vo.tel}</td>
+					<td class="td-status"><if condition="$vo.status eq 1"><span class="label label-success radius"> 已启用 <else/><span class="label label-danger radius"> 已禁用 </if></span></td>
+					<!-- <td >{$vo.balance}</td> -->
+					<td >{$vo.integral}</td>
+					<!-- <td >{$vo.title}</td> -->
+					<td>{$vo.addtime|date='Y-m-d H:i',###}</td>
+
+					<td><if condition="!empty($vo['lastlogin'])">{$vo.lastlogin|date='Y-m-d H:i',###}<else/>{$vo.addtime|date='Y-m-d H:i',###}</if></td>
+					<td class="f-16 td-manage">
+						<if condition="$vo.status eq 1">
+							<a style="text-decoration:none" onClick="admin_stop(this,{$vo.id})" href="javascript:;" title="停用"><i class="Hui-iconfont">&#xe631;</i></a>
+							<else/>
+							<a style="text-decoration:none" onClick="admin_start(this,{$vo.id})" href="javascript:;" title="启用"><i class="Hui-iconfont">&#xe615;</i></a>
+						</if>
+						<a style="text-decoration:none" class="ml-5"  href="{:U('user/edit?id='.$vo['id'])}" title="积分修改"><i class="Hui-iconfont">&#xe6df;</i></a>
+						<a style="text-decoration:none" class="ml-5"  href="{:U('user/integral?id='.$vo['id'])}" title="积分详情"><i class="Hui-iconfont">&#xe61a;</i></a>
+						<!-- <a style="text-decoration:none" class="ml-5"  href="{:U('user/balance?id='.$vo['id'])}" title="余额详情"><i class="Hui-iconfont">&#xe6b7;</i></a> -->
+					</td>
+				</tr>
+			</volist>
+			</tbody>
+		</table>
+		<if condition="empty($list)">
+			<div align="center">
+				<span style="text-align: center; padding-top: 20px;display: block; font-size:16px; color: #ff7800;">没有你要查询的数据！</span>
+			</div>
+		</if>
+		<div  class="pages" style="text-align: center;">{$page}
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
+
+<include file="Public:footer"/>
+<script type="text/javascript">
+
+
+	/*管理员-停用*/
+	function admin_stop(obj,id){
+		layer.confirm('确认要停用吗？',function(index){
+			
+			//此处请求后台程序，下方是成功后的前台处理……
+			$.get("__APP__/user/adminStop",{id:id},function(r){
+				if(r.status==1){
+					$(obj).parents("tr").find(".td-manage").prepend('<a onClick="admin_start(this,'+id+')" href="javascript:;" title="启用" style="text-decoration:none"><i class="Hui-iconfont">&#xe615;</i></a>');
+					$(obj).parents("tr").find(".td-status").html('<span class="label label-danger radius">已禁用</span>');
+					$(obj).remove();
+					layer.msg('已停用!',{icon: 5,time:1000});
+				}else{
+					alert(r.msg);
+				}
+			});
+		});
+	}
+
+	/*管理员-启用*/
+	function admin_start(obj,id){
+			
+		layer.confirm('确认要启用吗？',function(index){
+			//此处请求后台程序，下方是成功后的前台处理……
+			$.get("__APP__/user/adminStart",{id:id},function(r){
+				if(r.status==1){
+					$(obj).parents("tr").find(".td-manage").prepend('<a onClick="admin_stop(this,'+id+')" href="javascript:;" title="停用" style="text-decoration:none"><i class="Hui-iconfont">&#xe631;</i></a>');
+					$(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已启用</span>');
+					$(obj).remove();
+					layer.msg('已启用!', {icon: 6,time:1000});
+				}else{
+					alert(r.msg);
+				}
+			});
+		});
+	}
+
+
+
+</script>
+</body>
+</html>

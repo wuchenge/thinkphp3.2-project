@@ -1,0 +1,588 @@
+<include file="Public:header"/>
+
+	<div class="wrapper wrapper_marg">
+
+		<div class="order_box">
+			<div class="order_left">
+				<div class="order_tit">
+					<h3>确认订单信息</h3>
+				</div>
+				<div class="orderL_cot">
+					<div class="orderL_lis">
+						<h3>{$goods.title}</h3>
+						<div class="orderL_inner">
+							<div class="orderL_img">
+								<img src="{$goods.imgurl}" alt="">
+							</div>
+							<div class="orderL_wz">
+								<div class="orderL_txt">
+									<p>规格：{$goods.title}</p>
+									<!-- <p>编盆本色</p>
+									<p>是否含花盆：带盆栽好</p> -->
+								</div>
+								<div class="orderL_count">
+									<p>数量：{$goods.amount}</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<input type="hidden" name="mid-yh" value='0'>
+					<div class="orderL_li">
+						<h3><b>总价</b></h3>
+						<p><span id="zongjia">{$order.total}积分</span></p>
+					</div>
+					  <input type="hidden" value="{$order['total']}"  name="totalprice">
+					  <input type="hidden" value="{$order['total']}" name="total">
+					  <input type="hidden" value="{$addr.id}" name="doushilei">
+					  <input type="hidden" value="" name="cpid">
+					  <input type="hidden" value="{$cart}" name="cart_id">
+					  <input type="hidden" value="{$amount}" name="amount_list">
+					  <input type="hidden" value="{$_GET['quick']}" name="is_quick">
+					<if condition="$_GET['quick'] eq 1">
+					  <input type="hidden" value="{$quick.amount}" name="quick_amount">
+					  <input type="hidden" value="{$quick.id}" name="quick_id">
+					  <input type="hidden" value="{$quick.norm}" name="quick_norm">
+					  <input type="hidden" value="{$quick.val}" name="quick_val">
+				  </if>
+	            <form id="dingque" method="post" action="{:U('jifen/payment')}">
+
+		                <input name="payment" type="hidden" value="1">
+		                <input name="id" type="hidden" value="{$quick.id}">
+                        <input name="adid" id="nowadd3" type="hidden" value="{$address.0.id}">
+                        <input name="is_fa" id="is_fa" type="hidden" value="0">
+					<div class="orderL_bott">
+						<h3>给卖家留言</h3>
+						<textarea placeholder="选填：填写内容已和卖家协商确认"></textarea>
+					</div>
+	</form>
+				</div>
+			</div>
+			<div class="order_right">
+				<div class="orderR_lis">
+					<div class="order_tit">
+						<h3>1.选择地址</h3>
+					</div>
+					<div class="orderR_wz">
+						<h3>请选择正确的收货地址</h3>
+					</div>
+					<div class="orderR_addr">
+						<ul>
+							<volist name="address" id="vo" key="k">
+								<li class="buhuixiejs">
+									<!-- 选中的地址id -->
+									<input hidden value="{$vo.id}" name="addr">
+									<div <if condition="$k eq 1">class="address_lis active"<else/>class="address_lis"</if>>
+										<h3><span>{$vo.name}</span><i>{$vo.biaoqian}</i></h3>
+										<p>{$vo.tel}</p>
+										<p>{$vo.sheng} {$vo.shi} {$vo.xian} <br>{$vo.address}</p>
+										<div class="addr_btn">
+											<a href="javascript:;" onclick="return xiu(this,{$vo.id});"  class="addr_edit">编辑</a>
+											<a href="javascript:;" onclick="return del(this,{$vo.id});" class="addr_delet">删除</a>
+										</div>
+									</div>
+								</li>
+							</volist>
+							<li>
+								<a href="javascript:;">
+									<div class="address_add">
+										<img src="/Public/home/images/add.svg" alt="">
+										<p>添加新地址</p>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<div class="orderR_btn">
+							<a href="{:U('address/index')}">管理收货地址</a>
+						</div>
+					</div>
+				</div>
+				<div class="orderR_lis">
+					<div class="order_tit">
+						<h3>2.电子发票</h3>
+					</div>
+					<div class="orderR2_lis">
+						<label>
+							<span>不需要发票</span>
+							<div class="orderR2_input">
+								<input type="radio" id='bu_fa' name="fapiao" <if condition="empty($bill)">checked</if>>
+								<i></i>
+							</div>
+						</label>
+					</div>
+					<div class="orderR2_lis">
+						<label>
+							<span>需要电子发票 
+								<if condition="empty($bill)">
+								      <a href="javascript:;">修改内容</a>
+								<else/>
+								    <a href="javascript:;" onclick="return xiubill(this,{$bill.id});">修改内容</a>
+							    </if>
+							</span>
+							<div class="orderR2_input">
+								<input type="radio" id='qr_fa' name="fapiao" <if condition="!empty($bill)">checked</if>>
+								<i></i>
+							</div>
+						</label>
+					</div>
+				</div>
+				<div class="orderR_bott">
+					<div class="orderR_lis">
+						<p><img src="/Public/home/images/zs.png">商家详情页（含主图）以图片或文字形式标注的一口价、促销价、优惠价等价格。</p>
+						<p><img src="/Public/home/images/zs.png">商家详情页（含主图）以图片或文字形式标注的一口价、促销价、优惠价等价格。</p>
+						<p><img src="/Public/home/images/zs.png">商家详情页（含主图）以图片或文字形式标注的一口价、促销价、优惠价等价格。</p>
+					</div>
+					<div class="orderR_lis">
+						<h3><span>确认支付积分</span><i id="zongjia2">{$order.total}积分</i></h3>
+						<p id="nowadd1"><b>寄送至：</b>{$addr.sheng} {$addr.shi} {$addr.xian}< {$addr.address}</p>
+						<p id="nowadd2"><b>收货人：</b>{$addr.name} {$addr.tel}</p>
+					</div>
+				</div>
+				<div class="orderRR_btn">
+					<a onclick="return check();">确认支付</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<script type="text/javascript">
+	var p = $("#ho").attr('data-p');
+	$("input[name=payment]").val(p);
+		
+	 function pay(p,o){
+		$("input[name=payment]").val(p);
+		$(o).attr('id','ho');
+		$(o).siblings().attr('id','');
+	 }
+	 function check(){
+		$('#dingque').submit();
+	 }
+</script>
+
+<include file="Public:footer"/>
+
+	<div class="body_bg"></div>
+	<div class="addr_fixed">
+		<div class="addrF_tit">
+			<h3><span>添加收货地址</span> <a href="javascript:;"><img src="/Public/home/images/close.svg" alt=""></a></h3>
+		</div>
+		<form class="form-inline">
+		<div class="addrF_cot">
+			<ul>
+				<li><input type="text" id="name" name="name" placeholder="姓名"></li>
+				<li><input type="text" id="tel"  name="tel" placeholder="手机号"></li>
+				<li>
+						<div data-toggle="distpicker">
+							<div class="form-group">
+								<label class="sr-only" for="province3">Province</label>
+								<select class="form-control" name="sheng" id="province3" data-province="浙江省"></select>
+							</div>
+							<div class="form-group">
+								<label class="sr-only" for="city3">City</label>
+								<select class="form-control" name="shi" id="city3" data-city="杭州市"></select>
+							</div>
+							<div class="form-group">
+								<label class="sr-only" for="district3">District</label>
+								<select class="form-control" name="xian"  id="district3" data-district="西湖区"></select>
+							</div>
+						</div>
+					<input hidden id="did" name="id" value="{$addr.id}">
+				</li>
+				<li><textarea id="dizhi" name="address" placeholder="详细地址"></textarea></li>
+				<li><input type="text" name="youbian" id="youbian"  placeholder="邮政编码"></li>
+				<li><input type="text" name="biaoqian" id="biaoqian" placeholder="地址标签"></li>
+			</ul>
+		</div>
+		</form>
+		<div class="addrF_bott">
+			<a href="javascript:;" onclick="baocun();" id="addr" data-id="1" type="button" class="save">保存</a>
+			<a href="javascript:;">取消</a>
+		</div>
+	</div>
+	<div class="fapiao_fixed">
+		<div class="addrF_tit">
+			<h3><span>发票信息</span> <a href="javascript:;"><img src="/Public/home/images/close.svg" alt=""></a></h3>
+		</div>
+		<div class="addrF_cot">
+			<div class="fapiao_lis">
+				<h3>发票类型：</h3>
+				<div class="fapiao_right">
+					<div class="fapiao_btn">
+						<a href="javascript:;" class="active">电子发票</a>
+					</div>
+					<p>电子发票与纸质发票具有相同法律效力，可作为报销、销售、维权凭证。</p>
+					<p>推荐使用电子发票，不怕丢失、更发辫、更环保。</p>
+				</div>
+			</div>
+			<div class="fapiao_lis">
+				<h3>发票抬头：</h3>
+				<div class="fapiao_right">
+					<div class="fapiao_btn fapiao_xz">
+						<if condition="$bill['type'] eq 2">
+							<a href="javascript:;" >个人</a>
+							<a href="javascript:;" class="active">单位</a>
+						<else/>
+						    <a href="javascript:;" class="active">个人</a>
+							<a href="javascript:;">单位</a>
+					    </if>
+					</div>
+				</div>
+			</div>
+			<form class="form-inline">
+			<div class="fapiao_lis">
+				<h3></h3>
+				<div class="fapiao_right">
+					<div class="fapiao_input">
+						<input name="btitle" id="btitle" type="text" placeholder="请输入发票抬头">
+					</div>
+				</div>
+			</div>
+			<div class="fapiao_li">
+				<div class="fapiao_lis">
+					<h3>单位税号：</h3>
+					<div class="fapiao_right">
+						<div class="fapiao_input">
+							<input name="bsuihao" id="bsuihao" type="text" placeholder="请填写购买方纳税人识别号或统一社会信用代码">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="fapiao_lis">
+				<h3>收票手机：</h3>
+				<div class="fapiao_right">
+					<div class="fapiao_input">
+						<input name="btel" id="btel" type="text" placeholder="收票人手机">
+					</div>
+				</div>
+			</div>
+			<input hidden name="oid" value="{$_GET['id']}">
+			<input hidden name="billid" value="{$bill['id']}">
+			<div class="fapiao_lis">
+				<h3>售票邮箱：</h3>
+				<div class="fapiao_right">
+					<div class="fapiao_input">
+						<input name="bemail" id="bemail"  type="text" placeholder="收票人邮箱">
+					</div>
+				</div>
+			</div>
+			<div class="fapiao_lis">
+				<h3>售票邮箱：</h3>
+				<div class="fapiao_right">
+					<p><span>购买商品明细</span></p>
+				</div>
+			</div>
+		
+			<div class="fapiao_lis">
+				<h3>发票须知：</h3>
+				<div class="fapiao_right">
+					<p>1.发票金额为实际支付金额，不包含优惠券、礼品卡等；</p>
+					<p>2.发票金额为实际支付金额，不包含优惠券、礼品卡等；</p>
+					<p>3.发票金额为实际支付金额，不包含优惠券、礼品卡等；</p>
+					<p>4.发票金额为实际支付金额，不包含优惠券、礼品卡等。</p>
+				</div>
+			</div>
+		</div>
+		<div class="addrF_bott">
+			<a onclick="bcbill();" id="bcbill" data-id="1" type="button" class="save">保存</a>
+			<a href="javascript:;">取消</a>
+		</div>
+	</form>
+	</div>
+
+</body>
+<script src="/Public/home/js/distpicker.data.js"></script>
+<script src="/Public/home/js/distpicker.js"></script>
+<script src="/Public/home/js/main.js"></script>
+<script type="text/javascript">
+//修改地址
+function xiu(o,id){
+    var url ="{:U('address/xiu')}";
+    $.post(url,{"id":id},function(data){
+        $("#did").attr("value",data['addr']['id']);
+       $("#name").attr("value",data['addr']['name']);
+       $("#tel").attr("value",data['addr']['tel']);
+       $('#province3 option:selected') .text(data['addr']['sheng']);//选中的值
+       $('#city3 option:selected') .text(data['addr']['shi']);//选中的值
+       $('#district3 option:selected') .text(data['addr']['xian']);//选中的值
+       document.getElementById("dizhi").innerHTML =data['addr']['address'];
+       $("#youbian").attr("value",data['addr']['youbian']);
+       $("#biaoqian").attr("value",data['addr']['biaoqian']);
+    });
+}
+
+//保存地址
+function baocun(){
+  if($('#addr').attr('data-id') != 1){
+    return false;
+  }
+  var url = "{:U('address/doaddr')}";
+  $("#addr").val('保存中...');
+  $('#addr').attr('data-id',0);
+  $.post(url,$("form").serialize(),function(data){
+    $('#addr').attr('data-id',1);
+    if(data.status == 1){
+      $("#addr").val('确认保存');
+      alert(data.msg);
+      var s = "{$_GET['s']}";
+      if(s == 1){
+        window.location="{$_SESSION['s']}";
+      }else{
+        //刷新当前文档
+        location.href=document.referrer;
+      }
+    }else{
+      $("#addr").val('确认保存');
+      alert(data.msg);
+    }
+  })
+}
+
+function del(o,id){
+  if(confirm("确定删除该数据？")){
+    var url = "{:U('address/addrdel')}";
+    $.post(url,{"id":id},function(data){
+      if(data.status == 1){
+            alert(data.msg);
+            window.location="{:U('address/index')}";
+      }else{
+           alert(data.msg);
+      }
+    })
+  }else{
+    return false;
+  }
+}
+//修改发票
+function xiubill(o,id){
+    var url ="{:U('order/xiubill')}";
+    $.post(url,{"id":id},function(data){
+       $("#btitle").attr("value",data['bill']['title']);
+       $("#bsuinum").attr("value",data['bill']['suinum']);
+       $("#btel").attr("value",data['bill']['tel']);
+       $("#bemail").attr("value",data['bill']['email']);
+    });
+}
+//保存发票
+function bcbill(){
+  if($('#bcbill').attr('data-id') != 1){
+    return false;
+  }
+  var url = "{:U('order/dobill')}";
+  $("#bcbill").val('保存中...');
+  $('#bcbill').attr('data-id',0);
+  $.post(url,$("form").serialize(),function(data){
+    $('#bcbill').attr('data-id',1);
+    if(data.status == 1){
+        location.reload();
+    }else{
+       alert(data.msg);
+      location.reload();
+    }
+  })
+}
+</script>
+<script>
+	function score(o) {
+		$(o).keydown(function (event) {
+			var num = event.which;
+			if ((num < 48 || (num > 57 && num < 96) || num > 105) && num != 173 && num != 8 && num != 9 ) {
+				return false;
+			}
+		});
+	}
+	function money(o) {
+		$(o).keydown(function (event) {
+			var num = event.which;
+			if ((num < 48 || (num > 57 && num < 96) || num > 105) && num != 173 && num != 8 && num != 9 && num != 190 && num != 110) {
+				return false;
+			}
+		});
+	}
+
+//计算总价
+function check_all(){
+	var score=$('.use_score').val();
+	var money=$('.use_money').val();
+	var rate="{$_SESSION['config']['rate']}";
+	var youhui=$('#yhje').text();
+	var total="{$order['total']+$config['yunfei']}";
+	if(score == ''){
+		score=0;
+	}
+	if(money == ''){
+		money=0;
+	}
+	if(youhui == ''){
+		youhui=0;
+	}
+	score=score*rate;
+	var result = parseFloat(total) - parseFloat(money) - parseFloat(score) +parseFloat(youhui);
+	if(result < 0){
+		alert('累计优惠已大于总金额！');
+		$("input[name='change-price']").val(parseFloat(total)+parseFloat(youhui));
+		return 0;
+	}else{
+		$('#zongjia').text(result.toFixed(2));
+		$("input[name='change-price']").val(result);
+	}
+}
+
+	//是否选择发票
+	$('#qr_fa').click(function(){
+		$("#is_fa").attr("value",1);
+	});
+	$('#bu_fa').click(function(){
+		$("#is_fa").attr("value",0);
+	});
+	//地址选中传递
+	$('.buhuixiejs').click(function(){
+		var s = $(this).find('input').val();
+		$("input[name=doushilei]").val(s);
+		var url ="{:U('address/xiu')}";
+		$.post(url,{"id":s},function(data){
+		    // $("#nowadd1").attr("value",data['addr']['sheng']+data['addr']['shi']+data['addr']['xian']);
+		    // $("#nowadd2").attr("value",data['addr']['name']+data['addr']['tel']);
+		    document.getElementById("nowadd1").innerHTML =data['addr']['sheng']+data['addr']['shi']+data['addr']['xian'];
+		    document.getElementById("nowadd2").innerHTML =data['addr']['name']+data['addr']['tel'];
+		    $("#nowadd3").attr("value",data['addr']['id']);
+		});
+
+	});
+
+function order(){
+	var addr = $("input[name=doushilei]").val();
+	var amount = $("input[name=amount_list]").val();
+	var id	= $("input[name=cart_id]").val();
+	var score	= $(".use_score").val();
+	var remain	= $(".use_money").val();
+	var cpid	= $("input[name=cpid]").val();
+    var token_push=$('input[name=token_push]').val();
+	if(addr == ""){
+		alert('请选择收货地址');
+		return false;
+	}
+	var quick=$('input[name=is_quick]').val();
+	var url = "{:U('order/suborder')}";
+	$(".hddd_t1").find('a').text('提交中..');
+	if(quick == 1){
+		var quick_amount=$('input[name=quick_amount]').val();
+		var quick_id=$('input[name=quick_id]').val();
+		var quick_isnorm=$('input[name=quick_isnorm]').val();
+		var quick_norm=$('input[name=quick_norm]').val();
+        var quick_val=$('input[name=quick_val]').val();
+		$.post(url,{'quick':quick,"quick_id":quick_id,"addr":addr,"score":score,'remain':remain,'cpid':cpid,'quick_amount':quick_amount,'quick_isnorm':quick_isnorm,'quick_norm':quick_norm,'quick_val':quick_val,'token_push':token_push},function(data){
+			switch(data.status){
+				case 0:
+					alert(data.msg);
+					return false;
+				case 1:
+					$(".hddd_t1").find('a').text('跳转中..');
+					alert(data.msg);
+					window.location="{:U('order/pay')}"+"?id="+data.id;
+					break;
+				case 2:
+					alert(data.msg);
+					location.href="/Order/index";
+					break;
+				default:
+					alert('数据异常');
+					return false;
+			}
+		})
+	}else{
+		$.post(url,{"id":id,"addr":addr,"amount":amount,"score":score,'remain':remain,'cpid':cpid,'token_push':token_push},function(data){
+			switch(data.status){
+				case 0:
+					alert(data.msg);
+					return false;
+				case 1:
+					$(".hddd_t1").find('a').text('跳转中..');
+					alert(data.msg);
+					window.location="{:U('order/pay')}"+"?id="+data.id;
+					break;
+				case 2:
+					alert(data.msg);
+					location.href="/Order/index";
+					break;
+				default:
+					alert('数据异常');
+					return false;
+			}
+		})
+	}	
+}
+</script>
+<script>
+	$(function () {
+
+		$('.address_lis').click(function () {
+			$(this).addClass('active').parents('li').siblings().find('.address_lis').removeClass('active')
+		})
+
+		$('.addr_btn a:nth-child(1)').click(function () {
+			$('html,body').css('overflow-y', 'hidden')
+			$('.body_bg,.addr_fixed').addClass('into')
+			$('.addr_fixed .addrF_tit h3 span').html('修改收货地址')
+		})
+
+		$('.address_add').click(function () {
+			$('html,body').css('overflow-y', 'hidden')
+			$('.body_bg,.addr_fixed').addClass('into')
+			$('.addr_fixed .addrF_tit h3 span').html('添加收货地址')
+		})
+
+		$('.orderR2_lis label a').click(function () {
+			$('html,body').css('overflow-y', 'hidden')
+			$('.body_bg,.fapiao_fixed').addClass('into')
+		})
+
+		$('.addrF_tit img,.addrF_bott a').click(function () {
+			$('.body_bg,.addr_fixed,.fapiao_fixed').removeClass('into')
+			$('html,body').css('overflow-y', 'auto')
+		})
+
+		$('.order_left').outerHeight($(window).height() - $('.header.scrollT').height())
+		$('.order_box').css('min-height', $(window).height() - $('.header.scrollT').height())
+
+		$('.fapiao_xz a').click(function () {
+			$(this).addClass('active').siblings().removeClass('active')
+			if ($(this).index() == 1) {
+				$('.fapiao_li').fadeIn()
+			} else {
+				$('.fapiao_li').hide()
+			}
+		})
+
+		$('.orderL_li p').click(function(){
+			$(this).next('.orderL_coupon').fadeIn()
+		})
+		$('.orderL_coupon li a').click(function(){
+			$('.orderL_coupon').fadeOut()
+		})
+
+		$(window).scroll(function () {
+			scrollT = $(window).scrollTop()
+			if ($(window).width() > 768) {
+				if (scrollT > $('.footer').offset().top - $(window).height()) {
+					$('.order_left').css({
+						'position': 'absolute',
+						'top': $('.footer').offset().top - $(window).height() - 5
+					})
+				} else {
+					$('.order_left').css({
+						'position': 'fixed',
+						'top': '80px'
+					})
+				}
+			}
+		})
+
+		$(window).resize(function () {
+			$('.order_left').height($(window).height() - $('.header.scrollT').height())
+			$('.order_box').css('min-height', $(window).height() - $('.header.scrollT').height())
+		})
+
+	})
+</script>
+
+</html>

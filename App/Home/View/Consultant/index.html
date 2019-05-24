@@ -1,0 +1,51 @@
+<include file="Public:header"/>
+
+  <div class="wrapper wrapper_marg">
+    <div class="main_ban">
+      <img src="/Public/home/images/consultant.jpg" alt="">
+    </div>
+
+    <div class="plot_box" style="background-image: url(/Public/home/images/plot_bg.jpg)">
+      <div class="container">
+        <div class="plot_tit">
+          <h3>服务分类</h3>
+        </div>
+        <div class="plot_cot">
+          <ul>
+             <volist name="list" id="vo">
+            <li>
+              <a href="{:U('consultant/info',array('id'=>$vo['id']))}" target="_blank">
+                <div class="plot_lis">
+                  <div class="plot_img" style="background-image: url({$vo.imgurl})"></div>
+                  <div class="plot_right">
+                    <div class="plot_wz">
+                      <h3>{$vo.title}</h3>
+                      <h5>{$vo.keywords}</h5>
+                      <p>{$vo.description}</p>
+                      <h4><span>{$vo.price}</span>元起</h4>
+                      <h6><span>了解更多<i class="fa fa-angle-right"></i></span></h6>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </volist>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<include file="Public:footer"/>
+
+</body>
+<script>
+  $(function () {
+
+
+
+  })
+</script>
+
+</html>

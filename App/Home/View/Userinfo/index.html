@@ -1,0 +1,97 @@
+<include file="Public:header"/>
+
+
+    <div class="wrapper wrapper_marg">
+        <div class="user_box" style="background-image: url(/Public/home/images/user_bg.jpg)">
+            <div class="container1">
+                <div class="user_cot">
+
+              <include file="Public:uleft"/>
+                    <div class="user_right">
+                        <div class="user_nav">
+                            <ul>
+                                <li class="active"><a href="javascript:;">个人信息</a></li>
+                                <li><a href="{:U('user/score')}">积分明细</a></li>
+                            </ul>
+                        </div>
+                        <form class="form form-horizontal" name="form1" id="form-news-add" enctype='multipart/form-data' method="post" action="{:U('userinfo/doinfo')}" >
+                        <div class="userInfo_cot">
+                            <div class="userInfo_img">
+                                <label>
+                                    <input name="image" type="file">
+                                    <div class="userInfo_pic">
+                                        <if condition="empty($ziliao['pic'])">
+                                            <img src="/Public/home/images/user.jpg" alt="">
+                                        <else/>
+                                            <img src="{$ziliao.pic}" alt="">
+                                        </if>
+                                    </div>
+                                    <h3>编辑头像</h3>
+                                </label>
+                            </div>
+                            <div class="userInfo_lis">
+                                <span>昵称：</span>
+                                <input name="uname" type="text" value="{$ziliao.uname}">
+                            </div>
+                            <div class="userInfo_lis">
+                                <span>性别：</span>
+                                <input name="sex" type="text" <if condition="$ziliao['sex'] eq 1">value="男"<else/>value="女"</if>>
+                            </div>
+                            <div class="userInfo_lis">
+                                <span>生日：</span>
+                                <input type="text" value="{$ziliao.srtime|date='Y-m-d',###}" name="srtime" id="datetimepicker3" class="form-control" />
+                            </div>
+                            <div class="userInfo_lis">
+                                <span>身份证：</span>
+                                <input name="card" type="text" value="{$ziliao.card}">
+                            </div>
+                            <p>性别和生日设置后不可修改，请确认无误</p>
+                            <div class="userInfo_btn">
+                                <a onclick="$('#sou').click();" href="javascript:;">确认</a>
+                            </div>
+                            <button hidden type="submit" hidden id="sou"></button>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+ <include file="Public:footer"/>
+
+ <include file="Public:qian"/>
+
+</body>
+<link rel="stylesheet" type="text/css" href="/Public/home/css/lq.datetimepick.css" />
+<script src='/Public/home/js/selectUi.js' type='text/javascript'></script>
+<script src='/Public/home/js/lq.datetimepick.js' type='text/javascript'></script>
+<script>
+    $(function () {
+
+        $("#datetimepicker3").on("click", function (e) {
+            e.stopPropagation();
+            $(this).lqdatetimepicker({
+                css: 'datetime-day',
+                dateType: 'D',
+                selectback: function () {
+
+                }
+            });
+        });
+
+        $('.userL_qd a').click(function () {
+            $('html,body').css('overflow-y', 'hidden')
+            $('.qd_fixed,.body_bg').addClass('into')
+        })
+
+        $('.body_bg').click(function () {
+            $('.body_bg,.qd_fixed').removeClass('into')
+            $('html,body').css('overflow-y', 'auto')
+        })
+
+    })
+</script>
+
+</html>

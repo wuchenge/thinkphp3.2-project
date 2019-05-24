@@ -1,0 +1,68 @@
+<include file="Public:header2" />
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 图片管理 <span class="c-gray en">&gt;</span> 修改轮播图 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<article class="page-container">
+    <form class="form form-horizontal" name="form1" method="post" enctype="multipart/form-data" id="form-article-add" action="{:U('lunbo/sav')}">
+
+        <input type="hidden" name="id" value="{$data['id']}">
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>图片标题：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="{$data['title']}" placeholder="请输入标题" name="title" required>
+            </div>
+        </div>
+
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">跳转地址：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="{$data['url']}" placeholder="请输入路径,如 http://www.baidu.com,选填" name="url">
+            </div>
+        </div>
+
+<!--         <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>图片类型：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <select name="type" style="width: 300px;" onchange="tx(this)">
+                    <option value="3" <?php echo $data['type']==3?'selected':'';?>>电脑图片</option>
+                    <option value="4" <?php echo $data['type']==4?'selected':'';?>>手机图片</option>
+                </select>
+            </div>
+        </div> -->
+
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">轮播图片：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <img  id="yjx" style="height:200px;display: block;padding-bottom:5px;" src="{$data['img']}">
+                <input type="file" id="image1" name="image"  style="display:none" onchange="previewImage(this,300,300)">
+                <label for="image1" style="width:150px;height:30px;text-align:center;line-height:30px;color:#fff;background-color:#E22319;border-radius:3px;display: block;">点击选择图片</label><if condition="$data['type'] eq 4"><span style="color:red;" >提示：图片尺寸为：<c class="tx">375 X 240</c>,背景透明,最大不超过2M</span><else/><span style="color:red;" >提示：图片尺寸为：<c class="tx">1916 X 350</c>,背景透明,最大不超过2M</span></if>
+            </div>
+        </div>
+
+        <div class="row cl">
+            <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+                <button  class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 提交</button>
+            </div>
+        </div>
+
+    </form>
+</article>
+<!--_footer 作为公共模版分离出去-->
+<include file="Public:footer"/>
+<!--/_footer /作为公共模版分离出去-->
+<script type="text/javascript" src="__ROOT__/Public/lib/ueditor/1.4.3/ueditor.config.js"></script>
+<script type="text/javascript" src="__ROOT__/Public/lib/ueditor/1.4.3/ueditor.all.min.js"> </script>
+<script type="text/javascript" src="/Public/js/previews.js"></script>
+
+<script type="text/javascript">
+    var ue = UE.getEditor('editor');
+    function tx(o){
+        var type=$(o).val();
+        if(type==4){
+            $(".tx").html("1920 X 600");
+        }else{
+            $(".tx").html("375 X 240");
+        }
+    }
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>

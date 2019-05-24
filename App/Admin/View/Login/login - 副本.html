@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>后台登录</title>
+<link href="/Public/admin/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="login_box">
+  <div class="login_boxT"><!--头部开始-->
+  </div><!--头部结束-->
+  <form name="form1" method="post">
+  <div class="login_boxM"><!--中间开始-->
+    <div class="erweima floatl"><img src="/Public/admin/images/1_02.gif" width="198" height="197"></div>
+    <div class="login_right floatl">
+      <div class="loginright_txt">管理员：</div>
+      <div class="loginright_input"><input name="username" type="text"></div>
+      <div class="loginright_txt">密码：</div>
+      <div class="loginright_input"><input name="password" type="password"></div>
+      <div class="loginright_txt">验证码：</div>
+      <div class="yanzheng_input">
+        <div class="yanzheng_shuru floatl"><input name="verify" type="text"></div>
+        <div class="yanzheng_yz floatl"><img style="width:125px;height:36px;" src="__APP__/login/verify" onclick="this.src='__APP__/login/verify/m='+Math.random();"></div>
+        <div class="clear"></div>
+      </div>
+      <div class="denglu_btntxt">
+        <div class="denglu_btn floatl"><input name="submit" type="submit" onclick="return check();" value=""></div>
+        <!--<div class="denglu_txt"><a href="password.html" target="_blank">忘记密码</a></div>-->
+      <div class="clear"></div>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div><!--中间结束-->
+  </form>
+  <div class="login_boxB"><!--底部开始-->
+    <div class="loginB_txt floatl">设计单位：郑州七七网络科技 服务热线：(+86)0371-56677007</div>
+    <div class="liantian floatl"><img src="/Public/admin/images/liaotian.jpg" width="81" height="23"></div>
+  </div><!--底部结束-->
+</div>
+<script>
+function check(){
+	var username=document.form1.username.value;
+	var password=document.form1.password.value;
+	var verify=document.form1.verify.value;
+	
+	if(username == ''){
+		alert('请输入用户名');
+		return false;
+	}
+	
+	if(password == ''){
+		alert('请输入密码');
+		return false;
+	}
+	
+	if(verify == ''){
+		alert('请输入验证码');
+		return false;
+	}
+}
+</script>
+</body>
+</html>

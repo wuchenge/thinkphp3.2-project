@@ -1,0 +1,133 @@
+<include file="Public:header"/>
+
+    <div class="wrapper wrapper_marg">
+        <div class="user_box" style="background-image: url(/Public/home/images/user_bg.jpg)">
+            <div class="container1">
+                <div class="user_cot">
+
+                  <include file="Public:uleft"/>
+
+                    <div class="user_right">
+                        <div class="user_nav">
+                            <ul>
+                                 <li class="active"><a href="{:U('coupon/index')}">所有优惠</a></li>
+                                <li ><a href="{:U('coupon/noused')}">待使用<span></span></a></li>
+                                <li><a href="{:U('coupon/used')}">已使用<span></span></a></li>
+                                <li><a href="{:U('coupon/over')}">已过期<span></span></a></li>
+                            </ul>
+                        </div>
+                        <div class="coupon_cot">
+                            <ul>
+                                 <volist name="result" id="vo">
+                                <li>
+                                    <if condition="$vo['is_use'] eq -1 and $vo['end'] gt time()">
+                                         <div class="coupon_lis">
+                                        <div class="coupon_img">
+                                            <img src="/Public/home/images/coupon1.png" alt="">
+                                        </div>
+                                        <div class="coupon_wz">
+                                            <div class="coupon_price">
+                                                <h3>￥<span>{$vo.money}</span></h3>
+                                            </div>
+                                            <div class="coupon_txt">
+                                                <h3>青域律禾优惠券</h3>
+                                                <p>仅限本商城使用</p>
+                                                <p>满{$vo.limit}可用</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <elseif condition="$vo['is_use'] eq 1"/>
+                                      <div class="coupon_lis coupon_ysy">
+                                        <div class="coupon_img">
+                                            <img src="/Public/home/images/coupon1.png" alt="">
+                                            <img src="/Public/home/images/coupon2.png" alt="">
+                                        </div>
+                                        <div class="coupon_wz">
+                                            <div class="coupon_price">
+                                                <h3>￥<span>{$vo.money}</span></h3>
+                                            </div>
+                                            <div class="coupon_txt">
+                                                <h3>青域律禾优惠券</h3>
+                                                <p>仅限本商城使用</p>
+                                                <p>满{$vo.limit}可用</p>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <elseif condition="$vo['is_use'] eq -1 and $vo['end'] lt time()"/>
+                                       <div class="coupon_lis coupon_gq">
+                                        <div class="coupon_img">
+                                            <img src="/Public/home/images/coupon3.png" alt="">
+                                        </div>
+                                        <div class="coupon_wz">
+                                            <div class="coupon_price">
+                                                <h3>￥<span>{$vo.money}</span></h3>
+                                            </div>
+                                            <div class="coupon_txt">
+                                                <h3>青域律禾优惠券</h3>
+                                                <p>仅限本商城使用</p>
+                                                <p>满{$vo.limit}可用</p>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                    </if>
+                                </li>
+                            </volist>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<include file="Public:footer"/>
+<include file="Public:qian"/>
+</body>
+<script>
+    $(function () {
+
+        $('.userL_qd a').click(function () {
+            $('html,body').css('overflow-y', 'hidden')
+            $('.qd_fixed,.body_bg').addClass('into')
+        })
+
+        $('.body_bg').click(function () {
+            $('.body_bg,.qd_fixed').removeClass('into')
+            $('html,body').css('overflow-y', 'auto')
+        })
+
+        $('.user_tit label input').click(function () {
+            if ($(this).prop('checked') == false) {
+                $('.user_input input,.user_bott label input').prop('checked', false)
+            } else {
+                $('.user_input input,.user_bott label input').prop('checked', true)
+            }
+        })
+
+
+        $('.user_bott label input').click(function () {
+            if ($(this).prop('checked') == false) {
+                $('.user_input input,.user_tit label input').prop('checked', false)
+            } else {
+                $('.user_input input,.user_tit label input').prop('checked', true)
+            }
+        })
+
+        $('.order_delet').click(function () {
+            $(this).parents('.user_lis').remove()
+        })
+
+        $('.user_bott a').click(function () {
+            for (var i = $('.user_input input').length - 1; i >= 0; i--) {
+                if ($('.user_input input').eq(i).prop('checked') == true) {
+                    $('.user_input input').eq(i).parents('.user_lis').remove()
+                }
+            }
+            $('.user_bott input,.user_tit label input').prop('checked', false)
+        })
+
+    })
+</script>
+
+</html>

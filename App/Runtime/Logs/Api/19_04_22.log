@@ -1,0 +1,26 @@
+[ 2019-04-22T09:39:55+08:00 ] 106.13.58.36 /api.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000271s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000318s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000348s ]
+SQL: SHOW COLUMNS FROM `xmb_goods` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=62 and is_del=-1 and is_up=1 ) LIMIT 2   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=62 and is_del=-1 and is_up=1 ) LIMIT 2,15   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=63 and is_del=-1 and is_up=1 ) LIMIT 2   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=63 and is_del=-1 and is_up=1 )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=66 and is_del=-1 and is_up=1 ) LIMIT 2   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=66 and is_del=-1 and is_up=1 )  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `xmb_brand` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_brand` LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_brand`  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=60 and is_del=-1 and is_up=1 ) LIMIT 2   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=60 and is_del=-1 and is_up=1 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=61 and is_del=-1 and is_up=1 ) LIMIT 2   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=61 and is_del=-1 and is_up=1 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=68 and is_del=-1 and is_up=1 ) LIMIT 2   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_goods` WHERE ( scate=68 and is_del=-1 and is_up=1 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `xmb_ad` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_ad` ORDER BY savetime desc  [ RunTime:0.0001s ]
+

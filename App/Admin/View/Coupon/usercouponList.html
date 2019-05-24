@@ -1,0 +1,91 @@
+﻿<include file="Public:header2"/>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 优惠券管理 <span class="c-gray en">&gt;</span> 优惠券记录 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="page-container">
+	<div class="text-c">
+		<form method="get">
+		<!--<span class="select-box inline">-->
+		<!--<select name="" class="select">-->
+			<!--<option value="0">全部分类</option>-->
+			<!--<option value="1">分类一</option>-->
+			<!--<option value="2">分类二</option>-->
+		<!--</select>-->
+		<!--</span> -->
+			领取日期范围：
+			<input type="text" onfocus="WdatePicker()" id="txtBeginDate" name="start" value="{$search.start}" class="input-text Wdate" style="width:120px;">
+			-
+			<input type="text" onfocus="WdatePicker()" id="txtEndDate" name="end" value="{$search.end}" class="input-text Wdate" style="width:120px;">
+			<input type="text" name="title" id="title" value="{$search.title}" placeholder="领取人" style="width:250px" class="input-text">
+			<button name="subgl" id="subgl" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜记录
+			</button>
+		</form>
+	</div>
+
+	<div class="mt-20">
+		<table class="table table-border table-bordered table-bg table-sort">
+			<thead>
+				<tr class="text-c">
+					<th width="55">减免金额</th>
+					<th width="55">使用条件</th>
+					<th width="100">优惠券分类</th>
+					<th width="120">起始时间</th>
+					<th width="120">结束时间</th>
+					<th width="120">领取时间</th>
+					<th width="115">使用时间</th>
+					<th width="142">优惠订单</th>
+					<th width="88">领取人</th>
+					<th width="50">状态</th>
+					<!--<th width="100">操作</th>-->
+				</tr>
+			</thead>
+			<tbody>
+				<volist name="list" id="vo">
+				<tr class="text-c">
+					<td>{$vo.money}</td>
+					<td>{$vo.condition}</td>
+					<td>{$vo.cate}</td>
+					<td>{$vo.start|date="Y-m-d H:i",###}</td>
+					<td>{$vo.end|date="Y-m-d H:i",###}</td>
+					<td>{$vo.addtime|date="Y-m-d H:i",###}</td>
+					<td><if condition="empty($vo['usetime'])">暂未使用<else/>{$vo.usetime|date="Y-m-d H:i",###}</if></td>
+					<td><if condition="empty($vo['boid'])">暂未使用<else/>{$vo.boid}</if></td>
+					<td>{$vo.uname}</td>
+					<td><if condition="$vo['is_use'] eq 1">使用<else/>未使用</if></td>
+				</tr>
+				</volist>
+			</tbody>
+		</table>
+		<if condition="empty($list)">
+			<div style="text-align:center;color:red">暂无记录</div>
+		</if>
+		<div  class="pages" style="text-align: center;">{$page}
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="__ROOT__/Public/lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="__ROOT__/Public/lib/layer/2.1/layer.js"></script><script type="text/javascript" src="__ROOT__/Public/lib/laypage/1.2/laypage.js"></script> 
+<script type="text/javascript" src="__ROOT__/Public/lib/My97DatePicker/WdatePicker.js"></script> 
+<script type="text/javascript" src="__ROOT__/Public/lib/datatables/1.10.0/jquery.dataTables.min.js"></script> 
+<script type="text/javascript" src="__ROOT__/Public/static/h-ui/js/H-ui.js"></script> 
+<script type="text/javascript" src="__PUBLIC__/js/bootstrapSwitch.js"></script>
+<script type="text/javascript" src="__ROOT__/Public/static/h-ui.admin/js/H-ui.admin.js"></script> 
+<script type="text/javascript">
+function product_brand_edit(title,url,id,w,h){
+	layer_show(title,url,w,h);
+}
+function active_del(obj,id){
+	if(confirm('确认要删除吗？')){
+		$.get("__APP__/Coupon/couponDel",{id:id},function(r){
+			if(r.status==1){
+				$(obj).parents("tr").remove();
+				alert(r.msg);
+			}else{
+				alert(r.msg);
+			}
+		})
+	};
+}
+</script>
+</body>
+</html>

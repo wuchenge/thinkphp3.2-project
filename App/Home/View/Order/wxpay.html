@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="keywords" content="{$config.keyword}">
+<meta http-equiv="description" content="{$config.description}">
+<meta name="author"  content="郑州手机网站建设-高端网站建设专家-郑州七七网络科技有限公司,www.cn77.cn">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<title>微信支付-{$config.title}</title>
+<link href="/Public/home/css/style.css" rel="stylesheet" type="text/css">
+<script src="/Public/home/js/jquery.min.js" type="text/jscript"></script>
+</head>
+
+<body>
+<div class="top"><!--顶部开始-->
+  <div class="top_yssl">
+    <div class="huanying float_l">七七商城 欢迎您！</div>
+    <div class="dengzhuqi float_r">
+      <if condition="empty($_SESSION['uid'])">
+      <a href="{:U('login/login')}" style="width:40px;"><i>登录</i></a>
+      <a href="{:U('login/register')}" style="width:40px;"><i>注册</i></a>
+	  <else/>
+      <a href="{:U('user/index')}" style="width:90px;"><i>{$_SESSION['username']}</i></a>
+	  </if>
+      <a href="{:U('order/index')}">|&nbsp;我的账户&nbsp;</a>
+      <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div><!--顶部结束-->
+<div class="header"><!--头部开始-->
+  <div class="header_logo float_l"><a href="/"><img src="/Public/home/images/logo.png" width="370" height="33"></a></div>
+  <div class="header_nav float_r">
+     <!--<ul>
+     	<li class="na1"><a><span>1</span>我的购物车</a></li>
+        <li class="na2"><a><span>2</span>填写核对订单</a></li>
+        <li class="na3"><a><span>3</span>成功提交订单</a></li>
+     </ul>-->
+  </div>
+</div><!--头部结束-->
+<div class="zhifu">
+  <div class="zhifu_top">
+    <div class="zhifu_topr float_r" style="width:100%;">
+      <div class="tis" style="height:auto;text-align:center;"><img src="{$url}" width="200" height="auto"></div>
+      <div class="tis" style="text-align:center;">请在微信客户端扫码进行支付！</div>
+      
+    </div>
+  </div>
+</div>
+<include file="./App/Home/View/public/footer.html"/>
+<script>
+function zfcg(){
+	var url ="{:U('order/zfcg')}";
+	var id = "{$order.id}";
+	$.post(url,{"id":id},function(data){
+		if(data == 1){
+			alert('支付成功！');
+			window.location="{:U('order/index')}";
+		}else{
+			setTimeout(zfcg(),2000);
+		}
+	})
+	
+}
+setTimeout(zfcg(),3000);
+</script>

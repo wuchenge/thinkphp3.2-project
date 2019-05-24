@@ -1,0 +1,147 @@
+<include file="Public:header2"/>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 新闻中心 <span class="c-gray en">&gt;</span> 新闻修改 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<article class="page-container">
+	<form class="form form-horizontal" name="form1" id="form-news-add" enctype='multipart/form-data' method="post" action="{:U('news/edit')}" >
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>新闻标题：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="{$newsxiugl.name}" placeholder="" id="name" name="name">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">排序值：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="number" class="input-text" min="0" max="999" value="{$newsxiugl.ordernum}" id="ordernum" name="ordernum" width="200px"><span class="c-red">值越大越靠前</span>
+			</div>
+		</div>
+		<div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">添加时间：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" autoComplete="off" onfocus="WdatePicker()" id="txtBeginDate" name="addtime"  class="input-text Wdate" style="width:120px;" value="{$newsxiugl.addtime|date='Y-m-d',###}">
+            </div>
+        </div>
+<!-- 		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>新闻类型：</label>
+			<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
+				<select name="cate_id" class="select">
+					{$cate}
+				</select>
+				</span> </div>
+		</div> -->
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>title：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="{$newsxiugl.title}" placeholder="" id="title" name="title">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">关键词：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="{$newsxiugl.keywords}" placeholder="" id="keywords" name="keywords">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">新闻摘要：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<textarea name="description"  cols="" rows="" class="textarea"  placeholder="说点什么...最少输入10个字符" datatype="*10-100" dragonfly="true" nullmsg="备注不能为空！" onKeyUp="textarealength(this,200)">{$newsxiugl.description}</textarea>
+				<p class="textarea-numberbar"><em class="textarea-length">0</em>/200</p>
+			</div>
+		</div>
+		<div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>图片：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <img  id="yjx" style="height:200px;display: block;padding-bottom:5px;" src="{$newsxiugl['imgurl']}">
+                <input type="file" id="image1" name="image"  style="display:none" onchange="previewImage(this,300,300)">
+                <label for="image1" style="width:150px;height:30px;text-align:center;line-height:30px;color:#fff;background-color:#E22319;border-radius:3px;display: block;">点击选择图片</label><span style="color:red;" >提示：图片尺寸为：<c class="tx">518 X 262</c>,背景透明,最大不超过2M</span>
+            </div>
+        </div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>新闻内容：</label>
+			<div class="formControls col-xs-8 col-sm-9"> 
+				<textarea id="editor" name="text"   style="width:100%;height:400px;">{$newsxiugl.text}</textarea>
+			</div>
+		</div>
+		<div class="row cl">
+			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+				<input  name="id" hidden value="{$newsxiugl.id}" />
+				<button onClick="article_save_submit();" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> <if condition="empty($newsxiugl['id'])">提交<else/>修改</if></button>
+				<!--<button onClick="article_save();" class="btn btn-secondary radius" type="button"><i class="Hui-iconfont">&#xe632;</i> 保存草稿</button>-->
+				<!--<button onClick="removeIframe();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>-->
+			</div>
+		</div>
+	</form>
+</article>
+
+<!--_footer 作为公共模版分离出去-->
+<include file="Public:footer"/>
+<!--/_footer /作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="__ROOT__/Public/lib/My97DatePicker/WdatePicker.js"></script>  
+<script type="text/javascript" src="__ROOT__/Public/lib/webuploader/0.1.5/webuploader.min.js"></script> 
+<script type="text/javascript" src="__ROOT__/Public/lib/ueditor/1.4.3/ueditor.config.js"></script> 
+<script type="text/javascript" src="__ROOT__/Public/lib/ueditor/1.4.3/ueditor.all.min.js"> </script> 
+<script type="text/javascript" src="__ROOT__/Public/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
+<script type="text/javascript" src="/Public/js/previews.js"></script>
+<script type="text/javascript">
+$(function(){
+	var ue = UE.getEditor('editor');
+	$("#form-news-add").validate({
+		rules:{
+			title:{
+				required:true,
+				minlength:4
+			},
+			cate_id:{
+				required:true
+			},
+			keywords:{
+				required:true,
+				minlength:4
+			},
+			description:{
+				required:true,
+				minlength:4
+			}
+		},
+		onkeyup:false,
+		focusCleanup:true,
+		success:"valid",
+		submitHandler:function(form){
+			var title = $.trim($("input[name='title']").val());
+			var cate_id = $("select[name='cate_id']").val();
+			var keywords = $.trim($("input[name='keywords']").val());
+			var description = $.trim(document.form1.description.value);
+			if(title == ''){
+				alert('请输入新闻标题');
+				return false;
+			}
+			if(cate_id == ''){
+				alert('请选择新闻分类');
+				return false;
+			}
+			if(keywords == ''){
+				alert('请输入新闻关键词');
+				return false;
+			}
+			if(description==''){
+				alert('请输入新闻摘要');
+				return false;
+			}
+			if(!UE.getEditor('editor').hasContents()){
+				alert("请输入新闻内容");
+				return false;
+			}
+			$(form).ajaxSubmit();
+			var index = parent.layer.getFrameIndex(window.name);
+			parent.$('.btn-refresh').click();
+			parent.layer.close(index);
+		}
+	});
+	
+});
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>

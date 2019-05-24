@@ -1,0 +1,138 @@
+<include file="Public:header"/>
+
+    <div class="wrapper wrapper_marg">
+        <div class="login_box" style="background-image: url(/Public/home/images/login_bg.jpg)">
+            <div class="login_cot">
+                <div class="login_tit">
+                    <ul>
+                        <li class="active"><a href="javascript:;">密码登录</a></li>
+                        <li><a href="javascript:;">快捷登录</a></li>
+                    </ul>
+                </div>
+                <div class="login_wz">
+                        <div class="login_li">
+                            <form name="form2" id="form2" method="post" onsubmit="return false;">
+                            <div class="login_lis">
+                                <input type="text" name="tel" placeholder="手机号">
+                            </div>
+                            <div class="login_lis">
+                                <input type="password" name="password" placeholder="密码">
+                            </div>
+                            <div class="login_lis">
+                                <input type="button" value="登录" id="cxgl2" data-id="1" onclick="return login2();">
+                            </div>
+                            <a href="{:U('login/forget')}">忘记密码</a>
+                            </form>
+                        </div>
+                        <div class="login_li">
+                            <form name="form" id="form" method="post" onsubmit="return false;">
+                            <div class="login_lis">
+                                <input type="text" name="tel2" placeholder="请输入手机号">
+                            </div>
+                            <div class="login_lis login_lis1">
+                                <input type="text" name="phone_code" id="yzm1" placeholder="请输入验证码">
+                                <a id="yzm2" data-id="1" style="cursor: pointer;">获取验证码</a>
+                                 <!-- <a style="cursor: pointer;">获取验证码</a> -->
+                            </div>
+                            <div class="login_lis">
+                                <input type="button" value="登录" id="cxgl" data-id="1" onclick="return login();">
+                            </div>
+                          </form>
+                        </div>
+                    
+                </div>
+                <div class="login_btn">
+                    <span>还没有账号？</span><a href="{:U('login/register')}">立即注册</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    $(function () {
+        $('.login_box').height($(window).height() - $('.header').height())
+
+        $(window).resize(function () {
+            $('.login_box').height($(window).height() - $('.header').height())
+        })
+        $('.login_tit li').click(function () {
+            $(this).addClass('active').siblings().removeClass('active')
+            $('.login_li').hide()
+            $('.login_li').eq($(this).index()).fadeIn()
+        })
+
+    })
+    $(function(){
+        $("#yzm2").click(function(){
+            if($(this).attr('data-id') == 0){
+                return false;
+            }
+            $("#yzm2").val('发送中...');
+            var url = "{:U('Login/kjcodesend')}";
+            var tel = $("input[name='tel2']").val();
+            var reg = /^1[3|4|5|7|8|9][0-9]\d{7,}$/;
+            if(!reg.test(tel)){
+                $("#yzm2").val('获取验证码');
+                alert("请输入正确的手机号码");
+                return false;
+            }
+            $.post(url,{"tel":tel},function(data){
+                if(data.status == 1){
+                    // curCount = count;
+                    // //设置button效果，开始计时
+                    // $("#yzm2").attr("data-id",'0');
+                    // $("#yzm2").val(curCount+"秒");
+                    // InterValObj = window.setInterval(SetRemainTime, 1000); //启动计时器，1秒执行一次
+                    alert(data.msg);
+                }else{
+                    $("#yzm2").val('获取验证码');
+                    alert(data.msg);
+                    return false;
+                }
+            })
+        });
+
+    })
+    function login(){
+        if($("#cxgl").attr('data-id') != 1){
+            return false;
+        }
+        var url = "{:U('login/dologin')}";
+        $("#cxgl").val('登录中...');
+        $("#cxgl").attr('data-id',0);
+        $.post(url,$("#form").serialize(),function(data){
+            if(data.status == 1){
+             // alert('登录成功,正在跳转...');
+                $("#cxgl").val('跳转中...');
+                window.location="{:U('order/index')}";
+            }else{
+                $("#cxgl").attr('data-id',1);
+                $("#cxgl").val('登录');
+                return false;
+            }
+        })
+    }
+    function login2(){
+        if($("#cxgl2").attr('data-id') != 1){
+            return false;
+        }
+        var url = "{:U('login/dologin2')}";
+        $("#cxgl2").val('登录中...');
+        $("#cxgl2").attr('data-id',0);
+        $.post(url,$("#form2").serialize(),function(data){
+            if(data.status == 1){
+                $("#cxgl2").val('跳转中...');
+                window.location="{:U('order/index')}";
+            }else{
+                alert(data.msg);
+                $("#cxgl2").attr('data-id',1);
+                $("#cxgl2").val('登录');
+                return false;
+            }
+        })
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,48 @@
+<include file="Public:header2"/>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 订单管理 <span class="c-gray en">&gt;</span> 订单操作 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<article class="page-container" style="margin-left: 50px;">
+		<form method="post">	
+			<div class="row cl" style="margin-top: 20px;">
+				<label class="form-label col-xs-4 col-sm-2" style="width:10%;text-align:center"><span class="c-red">*</span>物流公司：</label>
+				<div class="formControls col-xs-8 col-sm-9" style="width:35%">
+					<input type="text" class="input-text" value="{$fina.exp}" placeholder="请输入物流公司" id="" name="exp">
+				</div>
+				<label class="form-label col-xs-4 col-sm-2" style="width:10%;text-align:center"><span class="c-red">*</span>物流单号：</label>
+				<div class="formControls col-xs-8 col-sm-9" style="width:35%">
+					<input type="text" class="input-text" value="{$fina.expnum}" placeholder="请输入物流单号" id="" name="expnum">
+					<input type="hidden" name="id" value="{$id}">
+				</div>
+			</div>
+			<div class="row cl" style="margin-top: 20px;margin-left: 9px;">
+				<label class="form-label col-xs-4 col-sm-2" style="width: 8.5%;"><span class="c-red">*</span>备注：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+					<textarea name="fhbeizhu"  cols="" rows="" class="textarea"  placeholder="说点什么">{$fina.fhbeizhu}</textarea>
+				</div>
+			</div>
+			<div class="row cl" style="margin-top: 20px;">
+				<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+				<button onClick="return check();" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 提交</button>
+				</div>
+			</div>
+		</form>
+</article>
+
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="__ROOT__/Public/lib/jquery/1.9.1/jquery.min.js"></script>
+<script>
+	function check(){
+		var exp = $("input[name='exp']").val();
+		var expnum = $("input[name='expnum']").val();
+		if(exp ==""){
+			alert('请输入物流公司');
+			return false;
+		}
+		if(expnum ==""){
+			alert('请输入物流单号');
+			return false;
+		}
+	}
+</script>
+</body>
+</html>

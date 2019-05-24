@@ -1,0 +1,112 @@
+<include file="Public:header2"/>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 图片管理 <span class="c-gray en">&gt;</span> 轮播图列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="page-container">
+    <div class="text-c">
+        <form method="get" action="{:U('lunbo/index')}">
+            <input name="c" type="hidden" value="{$kongzhi.c}">
+            <input name="a" type="hidden" value="{$kongzhi.a}">
+<!--             选择类型：
+            <select name="type" style="width:100px;">
+                <option value="0" <?php echo $type==0?'selected':''; ?>>全部</option>
+                <option value="3" <?php echo $type==3?'selected':''; ?>>电脑</option>
+                <option value="4" <?php echo $type==4?'selected':''; ?>>手机</option>
+            </select> -->
+            添加时间：
+            <input type="text" onfocus="WdatePicker()" id="txtBeginDate" name="start_time" value="{$_GET.start_time}" class="input-text Wdate" style="width:120px;" placeholder="开始时间">
+            -
+            <input type="text" onfocus="WdatePicker()" id="txtEndDate" name="end_time" value="{$_GET.end_time}" class="input-text Wdate" style="width:120px;" placeholder="结束时间">
+            <input type="text" name="description" id="title" value="{$_GET.description}" placeholder="描述信息" style="width:250px" class="input-text">
+            <button name="subgl" id="subgl" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+        </form>
+    </div>
+    <div class="cl pd-5 bg-1 bk-gray mt-20">
+        <span class="l"><a class="btn btn-primary radius"  href="{:U('lunbo/add')}">
+            <i class="Hui-iconfont">&#xe600;</i> 添加轮播图</a>
+        </span>
+        <span class="r">共有数据：<strong>{$count}</strong> 条</span>
+    </div>
+    <div class="mt-20">
+        <table class="table table-border table-bordered table-bg table-hover table-sort">
+            <thead>
+            <tr class="text-c">
+                <th width="20%">描述</th>
+                <th width="20%">路径</th>
+                <th width="10%">图片</th>
+                <th width="15%">添加时间</th>
+                <!-- <th width="15%">图片类型</th> -->
+                <th width="10%">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <volist name="data" id="val">
+                <tr class="text-c">
+                    <td class="a">{$val.title}</td>
+                    <td >
+                        <if condition="!empty($val['url'])">
+                        {$val['url']}
+                            <else />
+                        ----
+                        </if>
+                    </td>
+                    <td><a <if condition="!empty($val['url'])">href="{$val['url']}"</if>><img src="{$val.img}" width="100px"></a></td>
+                    <td>{:date('Y-m-d H:i:s',$val['savetime'])}</td>
+                    <!-- <td>{$val['type-c']}</td> -->
+                    <td class="f-14 td-manage">
+                        <a style="text-decoration:none" class="ml-5"  href="{:U('Lunbo/sav',array('id'=>$val['id']))}" title="编辑"><i class="Hui-iconfont">&#xe6df;</i></a>
+                        <a style="text-decoration:none" class="ml-5" href="javascript:void(0);" onclick="return del({$val.id})"><i class="Hui-iconfont">&#xe6e2;</i></a>
+                    </td>
+                </tr>
+            </volist>
+            </tbody>
+        </table>
+        <if condition="empty($data)">
+            <div align="center">
+                <span style="text-align: center; padding-top: 20px;display: block; font-size:16px; color: #ff7800;">没有你要查询的数据！</span>
+            </div>
+        </if>
+        <div>{$show}
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+
+<include file="Public:footer"/>
+<script type="text/javascript">
+
+    function init(){
+        var v = $("input[name='description']").val();
+        $(".a").textSearch(v);
+    }
+    window.onload=init;
+
+
+    /*删除*/
+    function del(id){
+        layer.confirm('确认要删除吗？',function(index){
+            var url = "{:U('lunbo/del')}";
+            layer.load(1,{shade: [0.1,'#fff']});
+            $.post(url, {id:id}, function (data) {
+                layer.closeAll('loading');
+                if (data.status == 1) {
+                    layer.msg(data.info,{icon:1,time:1000},function(){
+                        location.reload();
+                    });
+                } else {
+                    layer.msg(data.info,{icon:2,time:2000});
+                }
+            })
+        });
+    }
+
+    /*资讯-添加*/
+    function article_add(title,url,w,h){
+        var index = layer.open({
+            type: 2,
+            title: title,
+            content: url
+        });
+        layer.full(index);
+    }
+</script>
+</body>
+</html>

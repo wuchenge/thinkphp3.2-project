@@ -1,0 +1,69 @@
+<include file="Public:hcart"/></div><!--顶部结束-->
+<div class="header"><!--头部开始-->
+  <div class="header_logo float_l"><img src="/Public/home/images/logo.png" width="370" height="33"></div>
+  <div class="header_nav float_r">
+     <ul>
+     	<li class="na1"><a><span>1</span>我的购物车</a></li>
+        <li class="na2"><a><span>2</span>填写核对订单</a></li>
+        <li class="na3"><a><span>3</span>成功提交订单</a></li>
+     </ul>
+  </div>
+</div><!--头部结束-->
+<div class="zhifu">
+  <div class="zhifu_top" style="height:200px;">
+    <div class="zhifu_topl float_l"><img src="/Public/home/images/zhifu.png"> </div>
+    <div class="zhifu_topr float_r">
+      <div class="tis">订单提交成功，请您请尽快付款！</div>
+      <div class="ding">
+        <p><a href="{:U('Order/billdetail?id='.$order['id'])}" target="_blank">订单号：{$order.orderid}</a><span>|</span>支付金额：<big>{$order.online}元</big></p>
+        <div class="zf">请您在<b>{$order.sxtime|date="Y-m-d H:i:s",###}</b>完成支付，否则订单将自动取消。</div>
+        <!--<div class="dixi">
+           <p>订单编号：<small>{$order.orderid}</small></p>
+           <p>订单金额：{$order.total}元</p>
+           <p>收货信息：{$address.sheng}{$address.shi}{$address.xian}{$address.address} <span>{$address.name}</span>{$address.tel}</p>
+           <p>购买日期：{$order.addtime|date="Y-m-d H:i:s",###}</p>
+           <p>配送方式：默认由快递公司配送 <span>运费：￥{$config.yunfei}</span></p>
+           
+        </div>-->
+      </div>
+    </div>
+  </div>
+  <div class="xzzffs">
+    <span>选择支付方式</span>
+  </div>
+  <table width="1200" border="0" bgcolor="#dedede" cellpadding="0" cellspacing="1">
+  <tr height="30px">
+    <td align="center" valign="middle" bgcolor="#fcfcfc">第三方支付平台</td>
+  </tr>
+  <tr height="90px">
+    <td bgcolor="#FFFFFF">
+	<div style="margin-left:37%">
+		<a id="ho" data-p='1' onclick="pay(1,this);" href="javascript:;" >支付宝</a>
+		<a href="javascript:;" data-p='2'  onclick="pay(2,this);">银联支付</a>
+		<a onclick="pay(3,this);"  data-p='3' href="javascript:;" >微信支付</a>
+	</div>
+	<div class="clear"></div></td>
+  </tr>
+</table>
+	<form method="post" action="{:U('Order/payment')}">
+		<input name="payment" type="hidden" value="1">
+		<input name="id" type="hidden" value="{$order.id}">
+	</form>
+<div class="zhifufas"><a onclick="return check();" style="cursor:pointer"/>确认支付</a></div>
+</div>
+<include file="./App/Home/View/public/footer.html"/>
+<script type="text/javascript">
+var p = $("#ho").attr('data-p');
+$("input[name=payment]").val(p);
+	
+ function pay(p,o){
+	$("input[name=payment]").val(p);
+	$(o).attr('id','ho');
+	$(o).siblings().attr('id','');
+ }
+ function check(){
+	//alert('回调域名不一致，暂时无法支付');
+	//return false;
+	$('form').submit();
+ }
+</script>

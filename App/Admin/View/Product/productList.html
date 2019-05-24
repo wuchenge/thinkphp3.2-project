@@ -1,0 +1,244 @@
+﻿<include file="Public:header2"/>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 商品管理 <span class="c-gray en">&gt;</span> 商品列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="page-container">
+	<div class="text-c">
+		<form method="get">
+		<span class="select-box inline">
+			<select name="fcate" id="first" onchange="seconds(this)">
+				<option value=''>一级分类</option>
+				<volist name="res" id="vo">
+					<if condition="$search['fcate'] eq $vo['id']">
+					<option  selected value="{$vo.id}">
+						{$vo.title}
+					</option>
+					<else/>
+					<option value="{$vo.id}">
+						{$vo.title}
+					</option>
+					</if>
+				</volist>	
+			</select>
+		</span>
+		<span class="select-box inline">
+			<select name="scate" id='second' onchange="thirds(this)">
+				<option value=''>二级分类</option>
+				<volist name="res2" id="vo">
+					<if condition="$search['scate'] eq $vo['id']">
+					<option  selected value="{$vo.id}">
+						{$vo.title}
+					</option>
+					<else/>
+					<option value="{$vo.id}">
+						{$vo.title}
+					</option>
+					</if>
+				</volist>	
+			</select>
+		</span>	
+		<span class="select-box inline">
+			<select name="tcate" id="third">
+				<option value=''>三级分类</option>
+				<volist name="res3" id="vo">
+					<if condition="$search['tcate'] eq $vo['id']">
+					<option  selected value="{$vo.id}">
+						{$vo.title}
+					</option>
+					<else/>
+					<option value="{$vo.id}">
+						{$vo.title}
+					</option>
+					</if>
+				</volist>	
+			</select>
+		</span>	
+			日期范围：
+			<input type="text" onfocus="WdatePicker()" id="txtBeginDate" name="start" value="{$search.start}" class="input-text Wdate" style="width:120px;">
+			-
+			<input type="text" onfocus="WdatePicker()" id="txtEndDate" name="end" value="{$search.end}" class="input-text Wdate" style="width:120px;">
+			<input type="text" name="title" id="title" value="{$search.title}" placeholder=" 商品标题" style="width:250px" class="input-text">
+			<button name="subgl" id="subgl" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜商品
+			</button>
+		</form>
+	</div>
+	<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l">
+		<a class="btn btn-primary radius" data-title="添加商品"  onclick="add()" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加商品</a></span> <span class="r">共有数据：<strong>{$count}</strong> 条</span> </div>
+	<div class="mt-20">
+		<table class="table table-border table-bordered table-bg table-hover table-sort">
+			<thead>
+				<tr class="text-c">
+					<th width="80">ID</th>
+					<th width="120">标题</th>
+					<th width="75">一级分类</th>
+					<th width="75">二级分类</th>
+					<th width="75">三级分类</th>
+					<th width="116">图片</th>
+					<th width="120">上传时间</th>
+					<th width="60">商品排序</th>
+					<th width="60">上架状态</th>
+					<th width="120">操作</th>
+				</tr>
+			</thead>
+			<tbody>
+			<volist name="list" id="vo">
+				<tr class="text-c">
+					<td>{$vo.id}</td>
+					<td >{$vo.gname}</td>
+					<td >{$vo.ftitle}</td>
+					<td >{$vo.stitle}</td>
+					<td >{$vo.ttitle}</td>
+					<td><img src="{$vo.imgurl}" width="57px" height="auto"></td>
+					<td>{$vo.addtime|date='Y-m-d H:i',###}</td>
+					<td>{$vo.sort}</td>
+					<td class="td-status"><if condition="$vo['is_up'] eq 1"><span class="label label-success radius">已上架</span><else/><span class="label label-error radius">已下架</span></if></td>
+					<td class="f-14 td-manage">
+						<if condition="$vo['is_up'] eq 1">
+							<a style="text-decoration:none" onClick="article_stop(this,'{$vo.id}')" href="javascript:;"
+							   title="下架"><i class="Hui-iconfont">&#xe6de;</i></a>
+							<else/>
+							<a style="text-decoration:none" onClick="article_start(this,'{$vo.id}')" href="javascript:;"
+							   title="上架"><i class="Hui-iconfont">&#xe603;</i></a>
+						</if>
+						<a style="text-decoration:none" class="ml-5" href="{:U('Product/productEdit?id='.$vo['id'])}" title="编辑"><i class="Hui-iconfont">&#xe6df;</i>
+						</a>
+						<a style="text-decoration:none" onClick="article_del(this,'{$vo.id}')" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe60b;</i></a>	
+					</td>
+				</tr>
+			</volist>
+			</tbody>
+		</table>
+		<if condition="empty($list)">
+			<div align="center">
+				<span style="text-align: center; padding-top: 20px;display: block; font-size:16px; color: #ff7800;">没有你要查询的数据！</span>
+			</div>
+		</if>
+		<div class="pages" style="text-align: center;">{$page}
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
+
+<include file="Public:footer"/>
+<script type="text/javascript">
+//打开页面没有层级头
+	function add(){
+		location.href="{:U('Product/productAdd')}";
+	}
+/*资讯-添加*/
+function article_add(title,url,w,h){
+	var index = layer.open({
+		type: 2,
+		title: title,
+		content: url
+	});
+	layer.full(index);
+}
+/*资讯-编辑*/
+function article_edit(title,url,id,w,h){
+	var index = layer.open({
+		type: 2,
+		title: title,
+		content: url
+	});
+	layer.full(index);
+}
+/*资讯-删除*/
+function article_del(obj,id){
+	layer.confirm('确认要删除吗？',function(index){
+		var url = "{:U('Product/delproduct')}";
+		$.post(url, {id: id}, function (data) {
+			if (data.code == 1) {
+				$(obj).parents("tr").remove();
+				layer.msg('已删除!',{icon:1,time:1000});
+			} else {
+				layer.msg('删除失败!',{icon:5,time:1000});
+			}
+		},'json')
+//		$(obj).parents("tr").remove();
+		layer.msg('已删除!',1);
+	});
+}
+/*资讯-审核*/
+function article_shenhe(obj,id){
+	layer.confirm('审核文章？', {
+		btn: ['通过','不通过','取消'], 
+		shade: false,
+		closeBtn: 0
+	},
+	function(){
+		$(obj).parents("tr").find(".td-manage").prepend('<a class="c-primary" onClick="article_start(this,id)" href="javascript:;" title="申请上线">申请上线</a>');
+		$(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已上架</span>');
+		$(obj).remove();
+		layer.msg('已上架', {icon:6,time:1000});
+	},
+	function(){
+		$(obj).parents("tr").find(".td-manage").prepend('<a class="c-primary" onClick="article_shenqing(this,id)" href="javascript:;" title="申请上线">申请上线</a>');
+		$(obj).parents("tr").find(".td-status").html('<span class="label label-danger radius">未通过</span>');
+		$(obj).remove();
+    	layer.msg('未通过', {icon:5,time:1000});
+	});	
+}
+/*资讯-下架*/
+function article_stop(obj,id){
+	layer.confirm('确认要下架吗？',function(index){
+		var url = "{:U('product/xiaglgood')}";
+		$.post(url, {id: id}, function (data) {
+			if (data.code == 1) {
+				$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="article_start(this,{$vo.id})" href="javascript:;" title="上架"><i class="Hui-iconfont">&#xe603;</i></a>');
+				$(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt radius">已下架</span>');
+				$(obj).remove();
+				layer.msg('已下架!',{icon: 6,time:1000});
+				//location.reload();
+			} else {
+				alert(data.msg);
+			}
+		},'json')
+
+	});
+}
+
+/*资讯-上架*/
+function article_start(obj,id){
+	layer.confirm('确认要上架吗？',function(index){
+			var url = "{:U('product/upglgood')}";
+			$.post(url, {id: id}, function (data) {
+				if (data.code == 1) {
+					$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="article_stop(this,{$vo.id})" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a>');
+					$(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已上架</span>');
+					$(obj).remove();
+					layer.msg('已上架!',{icon: 6,time:1000});
+					//location.reload();
+				} else {
+					alert(data.msg);
+				}
+			},'json')
+
+	});
+}
+/*资讯-申请上线*/
+function article_shenqing(obj,id){
+	$(obj).parents("tr").find(".td-status").html('<span class="label label-default radius">待审核</span>');
+	$(obj).parents("tr").find(".td-manage").html("");
+	layer.msg('已提交申请，耐心等待审核!', {icon: 1,time:2000});
+}
+//获取二级分类
+function seconds(o){
+	var id=$(o).val();
+	var url ="{:U('Product/second')}";
+	$.post(url,{"id":id},function(data){
+		$("#second").html(data['str']);
+		$("#third").html(data['ttr']);
+	});
+}
+
+//获取三级分类
+function thirds(o){
+	var id=$(o).val();
+	var url ="{:U('Product/third')}";
+	$.post(url,{"id":id},function(data){
+		$("#third").html(data);
+	});
+}
+</script>
+</body>
+</html>

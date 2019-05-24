@@ -1,0 +1,129 @@
+<include file="Public:header"/>
+
+  <div class="wrapper wrapper_marg">
+    <div class="user_box" style="background-image: url(/Public/home/images/user_bg.jpg)">
+      <div class="container1">
+        <div class="user_cot">
+
+       <include file="Public:uleft"/>
+
+          <div class="user_right">
+            <div class="userD_tit">
+              <h3>订单详情</h3>
+              <h4>订单号：{$result.orderid}</h4>
+            </div>
+            <div class="userD_jd">
+              <h3>{$result.zt}</h3>
+              <ul>
+                <li <if condition="$result['status'] eq 1">class="active"</if>>
+                  <div class="userdJ_lis">
+                    <span>下单</span>
+                  </div>
+                  <if condition="$result['status'] egt 1">
+                  <p>{$result.addtime|date="Y年m月d日 H:i",###}</p>
+                </if>
+                </li>
+                <li <if condition="$result['status'] eq 2">class="active"</if>>
+                  <div class="userdJ_lis">
+                    <span>待发货</span>
+                  </div>
+                  <if condition="$result['status'] egt 2">
+                  <p>{$result.paytime|date="Y年m月d日 H:i",###}</p>
+                </if>
+                </li>
+                <li <if condition="$result['status'] eq 3">class="active"</if>>
+                  <div class="userdJ_lis">
+                    <span>待收货</span>
+                  </div>
+                </li>
+                <li <if condition="$result['status'] eq 4">class="active"</if>>
+                  <div class="userdJ_lis">
+                    <span>交易成功</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="userD_cot">
+              <volist name="res" id="vo">
+                <div class="userD_lis">
+                  <img src="{$vo.gurl}" alt="">
+                  <h3>{$vo.gname}</h3>
+                  <p>{$vo.price}元*{$vo.amount}</p>
+                </div>
+              </volist>
+            </div>
+            <if condition="$result['status'] gt 1">
+            <div class="userD_sh">
+              <h3>收货信息</h3>
+              <p>姓名：{$result.addressman}</p>
+              <p>联系电话：{$result.addressmobile}</p>
+              <p>收货地址：{$result.address}</p>
+            </div>
+            <div class="userD_sh">
+              <h3>支付方式</h3>
+              <p>支付方式：<if condition="$result['paytype'] eq 1">支付宝支付<else/>积分支付</if></p>
+            </div>
+            <div class="userD_sh">
+              <h3>发票信息</h3>
+              <if condition="$result['is_fa'] eq 1">
+              <p>发票类型：电子发票</p>
+              <p>发票内容：收票手机：{$bill.tel}，收票邮箱：{$bill.email}</p>
+              <p>发票抬头：{$bill.title}</p>
+              <else/>
+                 <p>不需要发票</p>
+            </if>
+            </div>
+          </if>
+          <if condition="$result['status'] egt 3">
+            <div class="userD_sh">
+              <h3>物流信息</h3>
+              <p>快递单号 {$result.expnum}</p>
+              <p>快递名称 {$result.exp} </p>
+<!--               <br>
+              <p>2018年11月1号 三墩揽收</p>
+              <p>2018年11月2号 发往杭州中转站</p> -->
+            </div>
+          </if>
+            <div class="userD_bott">
+              <p>商品总价：<span>{$result.totalprice}元</span></p>
+              <p>运费：<span>{$result.yunfei}元</span></p>
+              <p>支付金额<span><i>{$result.totalprice}</i>元</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<include file="Public:footer"/>
+
+<include file="Public:qian"/>
+
+</body>
+<script>
+  $(function () {
+
+    $('.userL_qd a').click(function () {
+      $('html,body').css('overflow-y', 'hidden')
+      $('.qd_fixed,.body_bg').addClass('into')
+    })
+
+    $('.body_bg').click(function () {
+      $('.body_bg,.qd_fixed').removeClass('into')
+      $('html,body').css('overflow-y', 'auto')
+    })
+
+    $('.userD_jd li').each(function (i) {
+      if (i < $('.userD_jd li.active').index()) {
+        $('.userD_jd li').eq(i).find('.userdJ_lis').css({
+          'background': '#c5a77c',
+          'color': '#fff'
+        });
+      }
+    })
+
+  })
+</script>
+
+</html>

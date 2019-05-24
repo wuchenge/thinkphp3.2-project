@@ -1,0 +1,97 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="lib/html5.js"></script>
+<script type="text/javascript" src="lib/respond.min.js"></script>
+<script type="text/javascript" src="lib/PIE_IE678.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="__ROOT__/Public/static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="__ROOT__/Public/static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="__ROOT__/Public/lib/Hui-iconfont/1.0.7/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="__ROOT__/Public/lib/icheck/icheck.css" />
+<link rel="stylesheet" type="text/css" href="__ROOT__/Public/static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="__ROOT__/Public/static/h-ui.admin/css/style.css" />
+<link href="__ROOT__/Public/css/lyz.calendar.css" rel="stylesheet" type="text/css" />
+<!--[if IE 6]>
+<script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<title>提现申请列表</title>
+</head>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 提现管理 <span class="c-gray en">&gt;</span> 提现列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="page-container">
+	<div class="text-c">
+		<form method="get" action="{:U('Withdraw/lists')}">
+
+			日期范围：
+			<input type="text" onfocus="WdatePicker()" id="txtBeginDate" name="start" value="{$_GET['start']}" class="input-text Wdate" style="width:120px;">
+			-
+			<input type="text" onfocus="WdatePicker()" id="txtEndDate" name="end" value="{$_GET['end']}" class="input-text Wdate" style="width:120px;">
+			<input type="text" name="key" id="uname" value="{$_GET['key']}" placeholder=" 会员提现申请名" style="width:250px" class="input-text">
+			<button name="subgl" id="subgl" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜索
+			</button>
+		</form>
+	</div>
+	<div class="cl pd-5 bg-1 bk-gray mt-20">
+
+		<span class="r">共有数据：<strong>{$count}</strong> 条</span> </div>
+	<div class="mt-20">
+		<table class="table table-border table-bordered table-bg table-hover table-sort">
+			<thead>
+				<tr class="text-c">
+
+					<th width="80">会员姓名</th>
+					<th width="80">手机号</th>
+					<th width="130">提现账户</th>
+					<th width="130">提现账号</th>
+					<th width="60">提现金额</th>
+					<th width="130">申请时间</th>
+					<th width="130">申请状态</th>
+					<th width="100">备注</th>
+					<th width="100">操作</th>
+				</tr>
+			</thead>
+			<tbody>
+			<volist name="list" id="vo">
+				<tr class="text-c">
+					
+					<td >{$vo.uname}</td>
+					<td >{$vo.tel}</td>
+					<td >{$vo.name}</td>
+					<td >{$vo.bank}<br/>{$vo.bno}</td>
+					<td >{$vo.money}</td>
+					<td>{$vo.addtime|date='Y-m-d H:i',###}</td>
+					<td class="td-status"><if condition="$vo.status eq -1"><span class="label label-danger radius"> 审核中 <elseif condition="$vo.status eq 1"/><span class="label label-success radius"> 通过审核<elseif condition="$vo.status eq 2"/><span class="label label-default radius"> 未通过审核</if></span></td>
+					<td >{$vo.beizhu}</td>
+
+					<td class="f-16 td-manage">
+						<if condition="$vo.status eq -1">
+						<a style="text-decoration:none" class="ml-5"  href="{:U('Withdraw/edit?id='.$vo['id'])}" title="处理申请"><i class="Hui-iconfont">&#xe6df;</i></a>
+						</if>
+					</td>
+				</tr>
+			</volist>
+			</tbody>
+		</table>
+		<if condition="empty($list)">
+			<div align="center">
+				<span style="text-align: center; padding-top: 20px;display: block; font-size:16px; color: #ff7800;">没有你要查询的数据！</span>
+			</div>
+		</if>
+		<div>{$page}
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
+
+<include file="Public:footer"/>
+
+</body>
+</html>

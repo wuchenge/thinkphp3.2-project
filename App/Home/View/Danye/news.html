@@ -1,0 +1,30 @@
+<include file="Public:header2"/>
+<div class="center_weizhi"><!--位置导航-->
+  <a href="#">首页</a>\
+  <a href="#" id="over">{$cate}</a>\
+  <a href="#" id="over">{$danye.title}</a>
+</div><!--位置导航结束-->
+<div class="concentq"><!--正式内容-->
+  <div class="concentq_nav1 float_l"><!--左边分类-->
+      <!--添加-->
+      <b><a href="{:U('danye/lists')}">新闻中心</a></b>
+      <ul>
+          <li><a  href="{:U('danye/lists')}">全部新闻</a></li>
+          <foreach name="newscate" item="vo" key="k">
+              <li><a  href="{:U('danye/lists?id='.$vo['id'])}">{$vo.cate_name}</a></li>
+          </foreach>
+      </ul>
+      <!--添加结束-->
+  </div><!--左边分类结束-->
+  <div class="concentq_con float_r"><!--右边内容-->
+	<div class="bangzhu_tit"><!--右边内容头部-->
+        <p>{$danye.title}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;发布时间：{$danye.addtime|date='Y-m-d H:i',###}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;点击：{$danye.num}次</p>
+    </div><!--右边内容头部结束-->
+    <div class="bangzhu_con">
+    	{$danye.text}
+        
+    </div> 
+  </div><!--右边内容结束-->
+  <div class="clear"></div>
+</div><!--正式内容结束-->
+<include file="Public:footer" />

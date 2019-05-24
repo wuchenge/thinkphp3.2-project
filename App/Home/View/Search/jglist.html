@@ -1,0 +1,165 @@
+<include file="Public:header"/>
+
+    <div class="wrapper wrapper_marg">
+        <div class="main_ban">
+            <div class="swiper-contianer mainB_swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="mainB_img">
+                            <img src="/Public/home/images/aegis.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="mainB_img">
+                            <img src="/Public/home/images/aegis.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="mainB_img">
+                            <img src="/Public/home/images/aegis.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination banner_page"></div>
+            </div>
+        </div>
+
+        <div class="aegis_box">
+            <div class="aegis_show">
+                <div class="container">
+                    <div class="aegisS_cot">
+                        <div class="aegisS_left">
+                            <p>当前产品数 <span>1-12</span> 总计{$count}件</p>
+                        </div>
+                        <div class="aegisS_right">
+                            <ul>
+                                <h5>展示方式</h5>
+                                <li><a href="javascript:;"><img src="/Public/home/images/show3_1.png" alt=""><img src="/Public/home/images/show3_2.png" alt=""></a></li>
+                                <li class="active"><a href="javascript:;"><img src="/Public/home/images/show4_1.png" alt=""><img src="/Public/home/images/show4_2.png"
+                                         alt=""></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="aegis_cot">
+                <div class="row">
+                    <volist name="list" id="vo">
+                    <div class="col-sm-3 col-xs-6">
+                        <if condition="$vo['fcate'] eq 58">
+                             <a href="{:U('aegis/info',array('id'=>$vo['id']))}">
+                        <elseif condition="$vo['fcate'] eq 59"/>
+                            <a href="{:U('ambient/info',array('id'=>$vo['id']))}">
+                        <elseif condition="$vo['fcate'] eq 60"/>
+                            <a href="{:U('gift/info',array('id'=>$vo['id']))}">
+                        <elseif condition="$vo['fcate'] eq 61"/>
+                            <a href="{:U('weal/info',array('id'=>$vo['id']))}">
+                        <elseif condition="$vo['fcate'] eq 68"/>
+                            <a href="{:U('mall/info',array('id'=>$vo['id']))}">
+                        </if>
+                            <div class="aegis_lis">
+                                <div class="aegis_img">
+                                    <img src="{$vo.imgurl}" alt="">
+                                    <div class="swiper-container aegis_swiper">
+                                        <span class="aegis_arrl"><i class="fa fa-angle-left"></i></span>
+                                        <span class="aegis_arrr"><i class="fa fa-angle-right"></i></span>
+                                        <div class="swiper-wrapper">
+                                            <volist name="vo.imgs" id="v2">
+                                                <div class="swiper-slide">
+                                                    <img src="{$v2}" alt="">
+                                                </div>
+                                            </volist>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="aegis_wz">
+                                    <div class="aegis_visib">
+                                        <h3>{$vo.gname}</h3>
+                                        <p>￥{$vo.price}</p>
+                                    </div>
+<!--                                     <div class="aegis_hide">
+                                        <h3>产品规格</h3>
+                                        <p>25cm 35cm 45cm 55cm 65cm 1m</p>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </volist>
+
+  
+                </div>
+                <div class="aegis_page">
+                    <ul>
+                         {$page}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<include file="Public:footer"/>
+
+    <div class="body_bg"></div>
+</body>
+<script>
+    $(function () {
+
+        var bannerSwiper = new Swiper('.mainB_swiper', {
+            loop: true,
+            autoplay: 5000,
+            pagination: '.banner_page',
+            paginationClickable: true,
+        })
+
+        var aegis_swiper = new Swiper('.aegis_swiper', {
+            loop: true,
+            prevButton: '.aegis_arrl',
+            nextButton: '.aegis_arrr',
+        })
+
+        $('.aegisND_nav li').click(function () {
+            $(this).addClass('active').siblings().removeClass('active')
+            $('.aegisND_lis').hide()
+            $('.aegisND_lis').eq($(this).index()).fadeIn()
+        })
+
+        $('.aegisN_select').click(function () {
+            $('.body_bg').toggleClass('into')
+            $('.aegisN_down').stop().fadeToggle()
+        })
+
+        $('.aegisND_close').click(function () {
+            $('.body_bg').removeClass('into')
+            $('.aegisN_down').stop().fadeOut()
+        })
+
+        $('.aegisS_right li').eq(0).click(function () {
+            $(this).addClass('active').siblings().removeClass('active')
+            $('.aegis_cot>.row>div').attr('class', 'col-sm-4 col-xs-6')
+            aegis_swiper = new Swiper('.aegis_swiper', {
+                loop: true,
+                prevButton: '.aegis_arrl',
+                nextButton: '.aegis_arrr',
+            })
+        })
+
+        $('.aegisS_right li').eq(1).click(function () {
+            $(this).addClass('active').siblings().removeClass('active')
+            $('.aegis_cot>.row>div').attr('class', 'col-sm-3 col-xs-6')
+            aegis_swiper = new Swiper('.aegis_swiper', {
+                loop: true,
+                prevButton: '.aegis_arrl',
+                nextButton: '.aegis_arrr',
+            })
+        })
+
+        $('.sort_desc').click(function () {
+            $(this).toggleClass('sort_up')
+        })
+
+    })
+</script>
+
+</html>

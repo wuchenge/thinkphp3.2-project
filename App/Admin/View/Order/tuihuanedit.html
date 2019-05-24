@@ -1,0 +1,146 @@
+<include file="Public:header2"/>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 订单管理 <span class="c-gray en">&gt;</span> 退换详情 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<article class="page-container" style="margin-left: 50px;">
+		<div style="color: #ff7800;font-size:18px;margin-left: 40%;">
+		基本信息
+		</div>
+		<div class="row cl" style="margin-top: 20px;">
+			<label class="form-label col-xs-4 col-sm-2" style="width:10%;text-align:center"><span class="c-red">*</span>订单号：</label>
+			<div class="formControls col-xs-8 col-sm-9" style="font-size: 14px;width:35%">
+				<a href="{:U('Order/orderdetail?id='.$result['bid'])}" target="_blank">{$result.oid}</a>
+			</div>
+			<label class="form-label col-xs-4 col-sm-2" style="width:10%;text-align:center"><span class="c-red">*</span>订单状态：</label>
+			<div class="formControls col-xs-8 col-sm-9" style="font-size: 14px;width:35%">
+				{$result.zt}
+			</div>
+		</div>
+		<div class="row cl" style="margin-top: 10px;">
+			<label class="form-label col-xs-4 col-sm-2" style="width:10%;text-align:center"><span class="c-red">*</span>购物人：</label>
+			<div class="formControls col-xs-8 col-sm-9" style="font-size: 14px;width:35%">
+				{$result.uname}
+			</div>
+			<label class="form-label col-xs-4 col-sm-2" style="width:10%;text-align:center"><span class="c-red">*</span>申请时间：</label>
+			<div class="formControls col-xs-8 col-sm-9" style="font-size: 14px;width:35%">
+				{$result.addtime|date="Y-m-d H:i:s",###}
+			</div>
+		</div>
+		<div class="row cl" style="margin-top: 10px;">
+			<label class="form-label col-xs-4 col-sm-2" style="width:10%;text-align:center"><span class="c-red">*</span>物流单号：</label>
+			<div class="formControls col-xs-8 col-sm-9" style="font-size: 14px;width:35%">
+				<if condition="empty($result['expnum'])">暂无<else/>{$result.expnum}</if>
+			</div>
+			<label class="form-label col-xs-4 col-sm-2" style="width:10%;text-align:center"><span class="c-red">*</span>物流公司：</label>
+			<div class="formControls col-xs-8 col-sm-9" style="font-size: 14px;width:35%">
+				<if condition="empty($result['exp'])">暂无<else/>{$result.exp}</if>
+			</div>
+		</div>
+		<div class="row cl" style="margin-top: 10px;">
+			<label class="form-label col-xs-4 col-sm-2" style="width:10%;text-align:center"><span class="c-red">*</span>商品名称：</label>
+			<div class="formControls col-xs-8 col-sm-9" style="font-size: 14px;width:35%">
+				<if condition="empty($result['gname'])">暂无<else/>{$result.gname}</if>
+			</div>
+			<label class="form-label col-xs-4 col-sm-2" style="width:10%;text-align:center"><span class="c-red">*</span>退换备注：</label>
+			<div class="formControls col-xs-8 col-sm-9" style="font-size: 14px;width:35%">
+				<if condition="empty($result['reason'])">暂无<else/>{$result.reason}</if>
+			</div>
+		</div>
+		<div class="row cl" style="margin-top: 10px;">
+			<label class="form-label col-xs-4 col-sm-2" style="width:10%;text-align:center"><span class="c-red">*</span>商品单价：</label>
+			<div class="formControls col-xs-8 col-sm-9" style="font-size: 14px;width:35%">
+				<if condition="empty($result['price'])">暂无<else/>￥{$result.price}</if>
+			</div>
+			<label class="form-label col-xs-4 col-sm-2" style="width:10%;text-align:center"><span class="c-red">*</span>退换类型：</label>
+			<div class="formControls col-xs-8 col-sm-9" style="font-size: 14px;width:35%">
+				<if condition="$result['type'] == 1">退货<else/>换货</if>
+			</div>
+		</div>
+		<div style="color: #ff7800;font-size:18px;margin-left: 40%;">
+		受理信息
+		</div>
+		<form  method="post" >
+		<div class="row cl" style="margin-top: 20px;">
+			<label class="form-label col-xs-4 col-sm-2" style="width:10%;text-align:center"><span class="c-red">*</span>同意</label>
+			<div class="formControls col-xs-8 col-sm-9" style="width:73.5%">
+				<select name="confirm">
+					<option value="1">同意</option>
+					<option value="-1">拒绝</option>
+				</select>
+			</div>
+		</div>
+		<div class="row cl" style="margin-top: 20px;">
+			<label class="form-label col-xs-4 col-sm-2" style="width:10%;text-align:center"><span class="c-red">*</span>差价调整</label>
+			<div class="formControls col-xs-8 col-sm-9" style="width:73.5%">
+				<input type="text" class="input-text" value="" placeholder="正数增加总价，负数减少总价" id="" name="cjnum">
+				<input type="hidden" name="bid" value="{$result.bid}">
+				<input type="hidden" name="gid" value="{$result.gid}">
+				<input type="hidden" name="id" value="{$result.id}">
+				<input type="hidden" name="uid" value="{$result.uid}">
+			</div>
+		</div>
+		<div class="row cl" style="margin-top: 20px;margin-left: 9px;">
+			<label class="form-label col-xs-4 col-sm-2" style="width: 8.5%;"><span class="c-red">*</span>备注：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<textarea name="thbeizhu"  cols="" rows="" class="textarea"  placeholder="说点什么"></textarea>
+			</div>
+		</div>
+		<div class="row cl" style="margin-top: 20px;">
+			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+			<button onClick="return check();" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 提交</button>
+			</div>
+		</div>
+		</form>
+</article>
+
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="__ROOT__/Public/lib/jquery/1.9.1/jquery.min.js"></script>
+<script>
+function qxdd(){
+	if(confirm('确定取消该订单？')){
+		var id=$("input[name='orderid']").val();
+		$.post("__APP__/Order/del",{id:id},function(data){
+			if(data.status==1){
+				alert(data.msg);
+				window.location.reload();
+			}else{
+				alert(data.msg);
+			}
+		})
+	}
+}
+
+function shouhuo(){
+	if(confirm('确定设为收货？')){
+		var id=$("input[name='orderid']").val();
+		$.post("__APP__/Order/takeover",{id:id},function(data){
+			if(data.status==1){
+				alert(data.msg);
+				window.location.reload();
+			}else{
+				alert(data.msg);
+			}
+		})
+	}
+}
+function check(){
+	if(confirm("确认提交？")){
+		var num=$("input[name='cjnum']").val();
+		var thbeizhu=$("textarea[name='thbeizhu']").val();
+		if(num =='' && thbeizhu == ''){
+			alert('差价与备注不能同时为空！');
+			return false;
+		}
+		if(num !=''){
+			if(!(/^[-+]?[0-9]+(\.[0-9]+)?$/.test(num))){  
+			alert("差价请输入正负数!"); 
+			return false;	
+			}
+		}
+	}else{
+		return false;
+	}
+	
+}
+</script>
+</body>
+</html>

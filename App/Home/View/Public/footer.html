@@ -1,0 +1,71 @@
+    <div class="footer">
+        <div class="container">
+            <div class="footer_top">
+                <div class="footer_menu">
+                    <ul>
+                        <li>
+                            <h3>办公空间推荐</h3>
+                            <volist name="kongjian" id="vo">
+                                <p><a href="{:U('space/info',array('id'=>$vo['id']))}" target="_blank">{$vo.title}</a></p>
+                            </volist>
+                        </li>
+                        <li>
+                            <h3>办公环境维护</h3>
+                            <volist name="weihu" id="vo">
+                                <p><a href="{:U('ambient/index',array('tcate'=>$vo['id']))}">{$vo.title}</a></p>
+                            </volist>
+                        </li>
+                        <li>
+                            <h3>精选商城</h3>
+                            <volist name="jingxuan" id="vo">
+                                <p><a href="{:U('mall/index',array('tcate'=>$vo['id']))}">{$vo.title}</a></p>
+                            </volist>
+                        </li>
+                        <li>
+                            <h3>了解我们</h3>
+                            <p><a href="{:U('about/index')}">关于我们</a></p>
+                            <p><a href="{:U('contact/index')}">联系我们</a></p>
+                            <p><a href="{:U('news/index')}">新闻中心</a></p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer_contact">
+                    <div class="foot_btn">
+                        <!-- <a href="http://wpa.qq.com/msgrd?v=3&uin={$config.qq}&site=qq&menu=yes" > -->
+                        <a href="http://wpa.qq.com/msgrd?v=3&uin={$config.qq}&site=qq&menu=yes" title="QQ客服：{$config.qq}">
+                            <img src="/Public/home/images/kf.svg" alt="">
+                            <span>在线客服</span>
+                        </a>
+                    </div>
+                    <div class="foot_wz">
+                        <h3>{$config.tel}</h3>
+                        <p>24小时全国热线</p>
+                        <p style="margin-top: 10px;font-size: 14px;">公司地址： {$config.address}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_bott">
+                <div class="copy">{$config.copy} DESIGN BY : <a hre="http://www.zjteam.com/"
+                     target="_blank">WEETOP</a></div>
+                <div class="follow">
+                    <ul>
+                        <li>关注我们：</li>
+                        <li><a href="javascript:;"><i class="fa fa-qq"></i></a></li>
+                        <li><a href="javascript:;"><i class="fa fa-weixin"></i></a></li>
+                        <li><a href="javascript:;"><i class="fa fa-weibo"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <if condition="CONTROLLER_NAME neq 'Index'">
+    <div class="fixed_right">
+        <ul>
+            <li><a><i class="fa fa-angle-up"></i></a></li>
+            <li><a href="/"><i class="fa fa-home"></i></a></li>
+            <li><a href="{:U('user/cart')}"><i class="fa fa-shopping-cart"></i></a></li>
+            <li><a href="{:U('order/index')}"><i class="fa fa-user"></i></a></li>
+            <li><a href="{:U('collect/space')}"><i class="fa fa-heart"></i></a></li>
+        </ul>
+    </div>
+</if>

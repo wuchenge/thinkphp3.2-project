@@ -1,0 +1,105 @@
+<include file="Public:header"/>
+
+    <div class="wrapper wrapper_marg">
+        <div class="login_box" style="background-image: url(/Public/home/images/login_bg.jpg)">
+            <div class="login_cot">
+                <div class="login_back">
+                    <a href="javascript:history.go(-1)"><i class="fa fa-angle-left"></i></a>
+                </div>
+                <div class="login_tit">
+                    <h3>欢迎加入青域律禾</h3>
+                </div>
+           <form name="form" method="post" onsubmit="return false;">
+                <div class="login_wz">
+                    <div class="login_li">
+                        <div class="login_lis">
+                            <input type="text" name="tel" placeholder="请输入手机号">
+                        </div>
+                        <div class="login_lis login_lis1">
+                            <input type="text" name="phone_code"  placeholder="请输入验证码">
+                            <a style="cursor: pointer;" id="yzm2" data-id="1" value="获取验证码">获取验证码</a>
+                           <!--  <a style="cursor: pointer;" href="javascript:;">获取验证码</a> -->
+                        </div>
+                        <div class="login_lis">
+                            <input type="password" name="password" placeholder="请输入密码（6-12位数字和字母组合）">
+                        </div>
+                        <div class="login_lis">
+                             <input type="password" name="cfmpwd" placeholder="确认密码">
+                        </div>
+                        <div class="login_lis">
+                            <input type="button" id="cxgl" data-id="1" onclick="return zhuce();" value="注册">
+                        </div>
+                        <div class="login_xy">
+                            <h5>注册代表你已同意<a href="javascript">《青域律禾用户协议》</a></h5>
+                        </div>
+                    </div>
+                </div>
+
+ </form>    
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    $(function () {
+        $('.login_box').height($(window).height() - $('.header').height())
+
+        $(window).resize(function () {
+            $('.login_box').height($(window).height() - $('.header').height())
+        })
+    })
+    $(function(){
+        $("#yzm2").click(function(){
+            if($(this).attr('data-id') == 0){
+                return false;
+            }
+            $("#yzm2").val('发送中...');
+            var url = "{:U('Login/codesend')}";
+            var tel = $("input[name='tel']").val();
+            var reg = /^1[3|4|5|7|8|9][0-9]\d{7,}$/;
+            if(!reg.test(tel)){
+                $("#yzm2").val('获取验证码');
+                alert("请输入正确的手机号码");
+                return false;
+            }
+            $.post(url,{"tel":tel},function(data){
+                if(data.status == 1){
+                    curCount = count;
+                    //设置button效果，开始计时
+                    $("#yzm2").attr("data-id",'0');
+                    $("#yzm2").val(curCount+"秒");
+                    InterValObj = window.setInterval(SetRemainTime, 1000); //启动计时器，1秒执行一次
+                    alert(data.msg);
+                }else{
+                    $("#yzm2").val('获取验证码');
+                    alert(data.msg);
+                    return false;
+                }
+            })
+        });
+
+    })
+    function zhuce(){
+        if($("#cxgl").attr('data-id') != 1){
+            return false;
+        }
+        var url = "{:U('Login/doregist')}";
+        $("#cxgl").val('注册中...');
+        $("#regist").attr('data-id',0);
+        $.post(url,$("form").serialize(),function(data){
+            if(data.status == 1){
+                $("#cxgl").val('跳转中...');
+//                alert('注册成功,正在跳转...');
+                window.location="{:U('order/index')}";
+            }else{
+                $("#regist").attr('data-id',1);
+                $("#cxgl").val('注册');
+                alert(data.msg);
+                return false;
+            }
+        })
+    }
+</script>
+
+</html>

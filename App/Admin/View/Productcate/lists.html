@@ -1,0 +1,142 @@
+﻿<include file="Public:header2"/>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 商品分类管理 <span class="c-gray en">&gt;</span> 商品分类列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="page-container">
+	<div class="text-c">
+		<form method="get">
+		<span class="select-box inline">
+			<select id="one" onchange="cate()" class="select">
+				{$cate}
+			</select>
+		</span>
+		<span class="select-box inline">
+			<select id="two"  onchange="cate2()" class="select">
+				{$cate2}
+			</select>
+		</span>
+			<input type="hidden" name="pid" value="0">
+			<input type="hidden" name="is_two" value="0">
+			日期范围：
+			<input type="text" onfocus="WdatePicker()" id="txtBeginDate" name="start" value="{$search.start}" class="input-text Wdate" style="width:120px;">
+			-
+			<input type="text" onfocus="WdatePicker()" id="txtEndDate" name="end" value="{$search.end}" class="input-text Wdate" style="width:120px;">
+			<input type="text" name="title" id="title" value="{$search.title}" placeholder=" 商品分类标题" style="width:250px" class="input-text">
+			<button name="subgl" id="subgl" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜商品分类
+			</button>
+		</form>
+	</div>
+	<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l">
+		<!--<a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a>-->
+		<a class="btn btn-primary radius" data-title="添加商品分类"  onclick="add()" ><i class="Hui-iconfont">&#xe600;</i> 添加商品分类</a></span> <span class="r">共有数据：<strong>{$count}</strong> 条</span> </div>
+	<div class="mt-20">
+		<table class="table table-border table-bordered table-bg table-hover table-sort">
+			<thead>
+				<tr class="text-c">
+					<!--<th width="25"><input type="checkbox" name="" value=""></th>-->
+					<th width="80">ID</th>
+					<th width="105">商品分类</th>
+					<th width="75">父级分类</th>
+					<th width="120">添加时间</th>
+					<th width="60">排序值</th>
+					<th width="120">操作</th>
+				</tr>
+			</thead>
+			<tbody>
+			<volist name="list" id="vo">
+				<tr class="text-c">
+					<!--<td><input type="checkbox" value="" name=""></td>-->
+					<td>{$vo.id}</td>
+					<td >{$vo.title}</td>
+					<td >{$vo.fid}</td>
+					<td >{$vo.addtime|date='Y-m-d H:i',###}</td>
+					<td>{$vo.ordernum}</td>
+					<td class="f-14 td-manage">
+
+						<a style="text-decoration:none" class="ml-5"
+												  href="{:U('Productcate/edit?id='.$vo['id'])}" title="编辑"><i
+							class="Hui-iconfont">&#xe6df;</i></a>
+						<a style="text-decoration:none" class="ml-5"
+																	 onClick="article_del(this,'{$vo.id}')"
+																	 href="javascript:;" title="删除"><i
+							class="Hui-iconfont">&#xe6e2;</i></a>
+					</td>
+				</tr>
+			</volist>
+			</tbody>
+		</table>
+		<if condition="empty($list)">
+			<div align="center">
+				<span style="text-align: center; padding-top: 20px;display: block; font-size:16px; color: #ff7800;">没有你要查询的数据！</span>
+			</div>
+		</if>
+		<div class="pages" style="text-align: center;">{$page}
+			<div class="clear"></div>
+		</div>
+		<style type="text/css">
+			.pages a, .pages li {
+			    display: inline-block;
+			    list-style: none;
+			    text-decoration: none;
+			    color: #58A0D3;
+			}
+		</style>
+	</div>
+</div>
+
+<include file="Public:footer"/>
+<script type="text/javascript">
+	//打开页面没有层级头
+	function add(){
+		location.href="{:U('Productcate/add')}";
+	}
+
+/*资讯-删除*/
+function article_del(obj,id){
+	layer.confirm('确认要删除吗？',function(index){
+		var url = "{:U('productcate/del')}";
+		$.post(url, {id: id}, function (data) {
+			if (data.code == 1) {
+				$(obj).parents("tr").remove();
+				layer.msg(data.msg,{icon:1,time:1000});
+			} else {
+				layer.msg(data.msg,{icon:5,time:1000});
+			}
+		},'json')
+//		$(obj).parents("tr").remove();
+		layer.msg('已删除!',1);
+	});
+}
+
+	//顶级分类联动处理
+	function cate(){
+		$("input[name='is_two']").val(0);
+		var one= $("#one").val();
+		if(one ==1 || one ==0){
+			$("input[name='pid']").val(one);
+			//如果查询全部或者顶级不用进行异步操作
+			return false;
+		}
+		var url = "{:U('Productcate/cate1')}";
+		$.post(url, {id: one}, function (data) {
+			if (data.code == 1) {
+				$("input[name='pid']").val(one);
+				$("#two").html(data.msg);
+			} else {
+				$("input[name='pid']").val(one);
+				$("#two").html(null);
+				$("#three").html(null);
+				alert(data.msg);
+			}
+		},'json')
+	};
+
+	//二级分类联动处理
+	function cate2(){
+		var two= $("#two").val();
+		$("input[name='pid']").val(two);
+		$("input[name='is_two']").val(1);
+	};
+
+</script>
+</body>
+</html>

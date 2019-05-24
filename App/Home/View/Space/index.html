@@ -1,0 +1,183 @@
+<include file="Public:header"/>
+
+  <div class="wrapper wrapper_marg">
+    <div class="main_ban">
+      <div class="swiper-contianer mainB_swiper">
+        <div class="swiper-wrapper">
+                    <volist name="banner" id="vo" key="k">
+                         <div class="swiper-slide">
+                            <div class="mainB_img">
+                                <img src="{$vo.img}" alt="">
+                            </div>
+                        </div>
+                    </volist>
+        </div>
+        <div class="swiper-pagination banner_page"></div>
+      </div>
+    </div>
+
+    <div class="aegis_box" style="background-image: url(/Public/home/images/plot_bg.jpg)">
+      <div class="aegis_nav">
+        <div class="container">
+          <div class="aegisN_lcot">
+            <div class="aegisN_left">
+              <div class="aegisN_select">
+                <h3><span>类目种类</span><i class="fa fa-angle-down"></i></h3>
+              </div>
+              <div class="aegisN_down">
+                <div class="container">
+                  <div class="aegisND_close"><img src="/Public/home/images/close.svg" alt=""></div>
+                  <div class="aegisND_nav">
+                    <ul>
+                      <volist name="cate" id="vo" key="k">
+                            <li <if condition="$k eq 1">class="active"</if>><a href="javascript:;">{$vo.title}</a></li>
+                     </volist>
+                    </ul>
+                  </div>
+                  <div class="aegisND_cot">
+                    <volist name="cate" id="vo" key="k">
+                    <div class="aegisND_lis">
+                      <div class="aegisNDL_cot">
+                        <ul>
+                        <volist name="vo.sumsx" id="v2">
+                          <li>
+                            <if condition="$k eq 1">
+                                  <a href="{:U('space/index',array('c1id'=>$v2['id']))}">
+                              <elseif condition="$k eq 2"/>
+                                   <a href="{:U('space/index',array('c2id'=>$v2['id']))}">
+                              <else/>
+                                  <a href="{:U('space/index',array('c3id'=>$v2['id']))}">
+                              </if>
+                              <label>
+                                <input  name="lz">
+                                <i></i>
+                                <span>{$v2.title}</span>
+                              </label>
+                            </a>
+                          </li>
+                        </volist>
+                          
+                        </ul>
+                      </div>
+                    </div>
+                  </volist>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="aegisN_right">
+               <form method="get">
+                <div class="aegisN_search">
+                  <i class="fa fa-search"></i><input type="text" name="title" placeholder="搜索产品">
+                </div>
+             </form>
+              <div class="aegisN_jx">
+                <i class="sort_desc"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="aegis_show">
+        <div class="container">
+          <div class="aegisS_cot">
+            <div class="aegisS_left">
+              <p>当前产品数 <span>1-12</span> 总计{$count}件</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="aegis_cot">
+        <div class="row">
+        <volist name="list" id="vo">
+          <div class="col-sm-4">
+            <a href="{:U('space/info',array('id'=>$vo['id']))}">
+              <div class="space_lis">
+                <div class="space_img" style="background: url({$vo.imgurl})  center /cover;">
+                  <img src="/Public/home/spacebg.png" alt="">
+                </div>
+                <div class="space_wz">
+                  <h3><span>{$vo.title}</span><i>{$vo.price}元/月</i></h3>
+                  <p>{$vo.keywords}</p>
+                  <h5><span style="background: #f4f7f9;color: #849aae">{$vo.c1name}</span><span style="background: #ffece8; color: #ff8062;">{$vo.c2name}</span><span
+                     style="background: #e1f5ed; color: #33be85;">{$vo.c3name}</span></h5>
+                </div>
+              </div>
+            </a>
+          </div>
+        </volist>
+
+        </div>
+        <div class="aegis_page">
+           <ul> {$page}</ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<include file="Public:footer"/>
+
+<div class="body_bg"></div>
+</body>
+<script>
+  $(function () {
+
+    var bannerSwiper = new Swiper('.mainB_swiper', {
+      loop: true,
+      autoplay: 5000,
+      pagination: '.banner_page',
+      paginationClickable: true,
+    })
+
+    var aegis_swiper = new Swiper('.aegis_swiper', {
+      loop: true,
+      prevButton: '.aegis_arrl',
+      nextButton: '.aegis_arrr',
+    })
+
+    $('.aegisND_nav li').click(function () {
+      $(this).addClass('active').siblings().removeClass('active')
+      $('.aegisND_lis').hide()
+      $('.aegisND_lis').eq($(this).index()).fadeIn()
+    })
+
+    $('.aegisN_select').click(function () {
+      $('.body_bg').toggleClass('into')
+      $('.aegisN_down').stop().fadeToggle()
+    })
+
+    $('.aegisND_close').click(function () {
+      $('.body_bg').removeClass('into')
+      $('.aegisN_down').stop().fadeOut()
+    })
+
+    $('.aegisS_right li').eq(0).click(function () {
+      $(this).addClass('active').siblings().removeClass('active')
+      $('.aegis_cot>.row>div').attr('class', 'col-sm-4')
+      aegis_swiper = new Swiper('.aegis_swiper', {
+        loop: true,
+        prevButton: '.aegis_arrl',
+        nextButton: '.aegis_arrr',
+      })
+    })
+
+    $('.aegisS_right li').eq(1).click(function () {
+      $(this).addClass('active').siblings().removeClass('active')
+      $('.aegis_cot>.row>div').attr('class', 'col-sm-3')
+      aegis_swiper = new Swiper('.aegis_swiper', {
+        loop: true,
+        prevButton: '.aegis_arrl',
+        nextButton: '.aegis_arrr',
+      })
+    })
+
+    $('.sort_desc').click(function () {
+      $(this).toggleClass('sort_up')
+    })
+
+  })
+</script>
+
+</html>

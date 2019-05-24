@@ -1,0 +1,207 @@
+<include file="Public:header"/>
+
+    <div class="wrapper wrapper_marg">
+        <div class="user_box" style="background-image: url(/Public/home/images/user_bg.jpg)">
+            <div class="container1">
+                <div class="user_cot">
+
+               <include file="Public:uleft"/>
+
+                    <div class="user_right">
+                        <div class="user_nav">
+                            <ul>
+                                <li class="active"><a href="{:U('address/index')}">所有地址</a></li>
+                            </ul>
+                        </div>
+                        <div class="address_tit">
+                            <label>
+                                <input type="checkbox">
+                                <i></i>
+                                <span>全选</span>
+                            </label>
+                            <a href="javascript:;"><img src="/Public/home/images/delect.png" alt="">删除</a>
+                        </div>
+                        <div class="address_cot">
+                            <ul>
+                                <volist name="address" id="vo" key="k">
+                                    <li>
+                                        <div <if condition="$k eq 1">class="address_lis active"<else/>class="address_lis"</if>>
+                                            <h3><span>{$vo.name}</span><i>{$vo.biaoqian}</i></h3>
+                                            <p>{$vo.tel}</p>
+                                            <p>{$vo.sheng} {$vo.shi} {$vo.xian}<br>{$vo.address}</p>
+                                            <div class="addr_btn">
+                                                <a href="javascript:;" onclick="return xiu(this,{$vo.id});"  class="addr_edit tijiao">编辑</a>
+                                                <a href="javascript:;" onclick="return del(this,{$vo.id});" class="addr_delet">删除</a>
+                                            </div>
+
+                                        </div>
+                                    </li>
+                              </volist>
+                                <li>
+                                    <a href="javascript:;">
+                                        <div class="address_add">
+                                            <img src="/Public/home/images/add.svg" alt="">
+                                            <p>添加新地址</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<include file="Public:footer"/>
+    <div class="body_bg"></div>
+    <div class="addr_fixed">
+        <div class="addrF_tit">
+            <h3><span>添加收货地址</span> <a href="javascript:;"><img src="/Public/home/images/close.svg" alt=""></a></h3>
+        </div>
+        <form class="form-inline">
+        <div class="addrF_cot">
+            <ul>
+                <li><input type="text" id="name" name="name" placeholder="姓名"></li>
+                <li><input type="text" id="tel"  name="tel" placeholder="手机号" ></li>
+                <li>
+                        <div data-toggle="distpicker">
+                            <div class="form-group">
+                                <label class="sr-only" for="province3">Province</label>
+                                <select class="form-control" name="sheng" id="province3" data-province="浙江省"></select>
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="city3">City</label>
+                                <select class="form-control" name="shi" id="city3" data-city="杭州市"></select>
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for ="district3">District</label>
+                                <select class="form-control" name="xian" id="district3" data-district="西湖区"></select>
+                            </div>
+                            <!-- 地址id -->
+                           <!--  <input hidden id="did" name="id" value="{$addr.id}"> -->
+                        </div>
+                    </form>
+                </li>
+                <li style="width: 100%;"><textarea id="dizhi" name="address" placeholder="详细地址"></textarea></li>
+                <li><input type="text" name="youbian" id="youbian"  placeholder="邮政编码"></li>
+                <li><input type="text" name="biaoqian" id="biaoqian"  placeholder="地址标签"></li>
+            </ul>
+        </div>
+        <div class="addrF_bott">
+            <a href="javascript:;" onclick="baocun();" id="addr" data-id="1" type="button" value="确认保存" class="save">保存</a>
+            <a href="javascript:;">取消</a>
+        </div>
+    </div>
+<include file="Public:qian"/>
+</body>
+<script src="/Public/home/js/distpicker.data.js"></script>
+<script src="/Public/home/js/distpicker.js"></script>
+<script src="/Public/home/js/main.js"></script>
+<script type="text/javascript">
+//修改地址
+function xiu(o,id){
+    var url ="{:U('address/xiu')}";
+    $.post(url,{"id":id},function(data){
+        $("#did").attr("value",data['addr']['id']);
+       $("#name").attr("value",data['addr']['name']);
+       $("#tel").attr("value",data['addr']['tel']);
+       $('#province3 option:selected') .text(data['addr']['sheng']);//选中的值
+       $('#city3 option:selected') .text(data['addr']['shi']);//选中的值
+       $('#district3 option:selected') .text(data['addr']['xian']);//选中的值
+       document.getElementById("dizhi").innerHTML =data['addr']['address'];
+       //$("#address").attr("value",data['addr']['address']);
+       $("#youbian").attr("value",data['addr']['youbian']);
+       $("#biaoqian").attr("value",data['addr']['biaoqian']);
+    });
+}
+function baocun(){
+  if($('#addr').attr('data-id') != 1){
+    return false;
+  }
+  var url = "{:U('address/doaddr')}";
+  $("#addr").val('保存中...');
+  $('#addr').attr('data-id',0);
+  $.post(url,$("form").serialize(),function(data){
+    $('#addr').attr('data-id',1);
+    if(data.status == 1){
+        location.reload();
+      //$("#addr").val('确认保存');
+    }else{
+      //$("#addr").val('确认保存');
+       alert(data.msg);
+      location.reload();
+    }
+  })
+}
+
+function del(o,id){
+  if(confirm("确定删除该数据？")){
+    var url = "{:U('address/addrdel')}";
+    $.post(url,{"id":id},function(data){
+      if(data.status == 1){
+            //alert(data.msg);
+            location.reload();
+            //window.location="{:U('address/index')}";
+      }else{
+        location.reload();
+           //alert(data.msg);
+      }
+    })
+  }else{
+    return false;
+  }
+}
+</script>
+<script>
+    $(function () {
+        $('.userL_qd a').click(function () {
+            $('html,body').css('overflow-y', 'hidden')
+            $('.qd_fixed,.body_bg').addClass('into')
+        })
+
+        $('.body_bg').click(function () {
+            $('.body_bg,.qd_fixed').removeClass('into')
+            $('html,body').css('overflow-y', 'auto')
+        })
+
+        $('.address_lis').click(function () {
+            $(this).addClass('active').parents('li').siblings().find('.address_lis').removeClass('active')
+        })
+
+        $('.addr_btn a:nth-child(2)').click(function () {
+            $(this).parents('li').remove()
+        })
+        $('.addr_btn a:nth-child(1)').click(function () {
+            $('html,body').css('overflow-y', 'hidden')
+            $('.body_bg,.addr_fixed').addClass('into')
+            $('.addrF_tit h3 span').html('修改收货地址')
+        })
+
+        $('.address_add').click(function () {
+            $('html,body').css('overflow-y', 'hidden')
+            $('.body_bg,.addr_fixed').addClass('into')
+            $('.addrF_tit h3 span').html('添加收货地址')
+        })
+
+        $('.body_bg').click(function () {
+            $('.body_bg,.addr_fixed').removeClass('into')
+            $('html,body').css('overflow-y', 'auto')
+        })
+
+        $('.addrF_tit img,.addrF_bott a').click(function () {
+            $('.body_bg,.addr_fixed').removeClass('into')
+            $('html,body').css('overflow-y', 'auto')
+        })
+
+        $('.address_tit a').click(function () {
+            if ($('.address_tit label input').prop('checked') == true) {
+                $('.address_lis').parents('li').remove()
+                $('.address_tit label input').prop('checked', false)
+            }
+        })
+
+    })
+</script>
+
+</html>

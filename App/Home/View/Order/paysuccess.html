@@ -1,0 +1,29 @@
+<include file="Public:hcart"/>
+<link href="__PUBLIC__/home/css/pay.css" rel="stylesheet" type="text/css">
+<div class="prompt"><!--购物车上面-->
+  <div class="prompt_le float_l"><h1>支付状态</h1></div>
+  <div class="prompt_ri float_r"><a href="{:U('User/index')}" class="daodao">个人中心</a><a href="{:U('Order/index')}">我的订单</a></div>
+  <div class="clear"></div>
+</div><!--购物车上面结束-->
+<div class="shopcar"><!--购物车内容-->
+  <div class="succti"><!--提示-->
+    <span><img src="__PUBLIC__/home/images/dui.png" width="71" height="71"></span>
+    <div class="prompt_d">
+      <h3>订单支付成功</h3>
+      <h4>总额：<i>{$order.totalprice}元</i></h4>
+      <h4>支付金额：<i>{$order.online}元</i></h4>
+      <div class="p_le">
+        <p>订单编号：{$order.orderid}</p>
+        <p>收货信息：{$order.addressman}  {$order.addressmobile}   {$order.address}</p>
+        <!--<p>商品信息：实木单床</p>-->
+      </div>
+    </div>
+  </div><!--提示结束-->
+  <div class="fan">
+    <div class="fana"><!--<a href="{:U('center/choujiang')}" target="_blank">我要抽奖</a>--><a href="{:U('Order/index')}">返回订单</a><a href="/">返回首页</a></div>
+  </div>
+  
+</div><!--购物车内容结束-->
+<include file="Public:mallfooter"/>
+</body>
+</html>

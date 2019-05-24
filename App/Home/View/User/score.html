@@ -1,0 +1,61 @@
+<include file="Public:header"/>
+
+  <div class="wrapper wrapper_marg">
+    <div class="user_box" style="background-image: url(/Public/home/images/user_bg.jpg)">
+      <div class="container1">
+        <div class="user_cot">
+
+        <include file="Public:uleft"/>
+
+          <div class="user_right">
+            <div class="user_nav">
+              <ul>
+                <li><a href="{:U('userinfo/index')}">个人信息</a></li>
+                <li class="active"><a href="{:U('user/score')}">积分明细</a></li>
+              </ul>
+            </div>
+            <div class="message_cot">
+              <volist name="mx" id="vo" key="k">
+              <div class="message_lis">
+                <p>{$vo.xiangmu}</p><span>{$vo.addtime|date='Y年m月d日 H:i:s',###}</span>
+              </div>
+            </volist>
+              <div class="aegis_page">
+                <ul>
+                  {$page}
+                  <!-- <li class="active"><a href="#">1</a></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li> —— </li>
+                  <li><a href="#">7</a></li> -->
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<include file="Public:footer"/>
+<include file="Public:qian"/>
+</body>
+<script>
+  $(function () {
+
+    $('.userL_qd a').click(function () {
+      $('html,body').css('overflow-y', 'hidden')
+      $('.qd_fixed,.body_bg').addClass('into')
+    })
+
+    $('.body_bg').click(function () {
+      $('.body_bg,.qd_fixed').removeClass('into')
+      $('html,body').css('overflow-y', 'auto')
+    })
+
+
+  })
+</script>
+
+</html>

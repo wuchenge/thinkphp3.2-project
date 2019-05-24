@@ -1,0 +1,964 @@
+[ 2019-05-23T13:36:50+08:00 ] 127.0.0.1 /admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000092s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003233s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000107s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000188s ]
+SQL: SHOW COLUMNS FROM `xmb_admin` [ RunTime:0.0050s ]
+NOTIC: [8] Undefined index: adminid /Users/ligui/work/nao_jia/default/App/Admin/Controller/IndexController.class.php 第 14 行.
+SQL: SELECT * FROM `xmb_admin` LIMIT 1   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `xmb_role` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `xmb_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000074s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000150s ]
+NOTIC: [8] Undefined index: name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 51 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017224s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017307s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000093s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000135s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000075s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000130s ]
+
+[ 2019-05-23T13:36:50+08:00 ] 127.0.0.1 /admin.php/login/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000107s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000176s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000337s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000058s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000145s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013611s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013692s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000062s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000116s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000052s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000104s ]
+
+[ 2019-05-23T13:36:50+08:00 ] 127.0.0.1 /admin.php/login/verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000679s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000063s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000129s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000074s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000274s ]
+
+[ 2019-05-23T13:37:29+08:00 ] 127.0.0.1 /admin.php/login/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000076s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000036s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000074s ]
+SQL: SHOW COLUMNS FROM `xmb_admin` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xmb_admin` WHERE ( username = 'admin' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xmb_admin` WHERE ( username='admin' and password='1e04e94a2d8f25753b079f3a8f23ec5f' ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000029s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000073s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008024s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008105s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000097s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000161s ]
+
+[ 2019-05-23T13:37:31+08:00 ] 127.0.0.1 /admin.php/Login/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000071s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000042s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000082s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000035s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000077s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001177s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001221s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000035s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000071s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000038s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000076s ]
+
+[ 2019-05-23T13:37:31+08:00 ] 127.0.0.1 /admin.php/login/verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000122s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000074s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001603s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000102s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000189s ]
+
+[ 2019-05-23T13:37:39+08:00 ] 127.0.0.1 /admin.php/Login/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000077s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000037s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000078s ]
+SQL: SHOW COLUMNS FROM `xmb_admin` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xmb_admin` WHERE ( username = 'admin' ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xmb_admin` WHERE ( username='admin' and password='dc00afa5f31b6408d1c28d7b77be1b21' ) LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000031s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000072s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001525s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001582s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000044s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000082s ]
+
+[ 2019-05-23T13:37:41+08:00 ] 127.0.0.1 /admin.php/Login/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000085s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000066s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000118s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000042s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000099s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001514s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001568s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000045s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000083s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000041s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000076s ]
+
+[ 2019-05-23T13:37:41+08:00 ] 127.0.0.1 /admin.php/login/verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000121s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001814s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001910s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000071s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000157s ]
+
+[ 2019-05-23T13:37:57+08:00 ] 127.0.0.1 /admin.php/Login/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000078s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000036s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000078s ]
+SQL: SHOW COLUMNS FROM `xmb_admin` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xmb_admin` WHERE ( username = 'admin' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_admin` WHERE ( username='admin' and password='9b25ebb70102cc51d43b5683607ea127' ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000030s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000082s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001805s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001865s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000050s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000087s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000048s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000083s ]
+
+[ 2019-05-23T13:37:59+08:00 ] 127.0.0.1 /admin.php/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000071s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000034s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000073s ]
+SQL: SHOW COLUMNS FROM `xmb_admin` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xmb_admin` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xmb_role` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xmb_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000062s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000115s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004403s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004493s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000058s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000114s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000068s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000122s ]
+
+[ 2019-05-23T13:37:59+08:00 ] 127.0.0.1 /admin.php/Index/welcome1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000055s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001231s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000072s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000139s ]
+SQL: SHOW COLUMNS FROM `xmb_admin` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xmb_admin` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `xmb_role` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xmb_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000144s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000353s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004297s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004407s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000054s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000097s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000068s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000122s ]
+
+[ 2019-05-23T13:38:04+08:00 ] 127.0.0.1 /admin.php/Caifa/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000086s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000043s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000087s ]
+SQL: SHOW COLUMNS FROM `xmb_admin` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xmb_admin` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xmb_role` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xmb_caifa` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xmb_caifa` WHERE `addtime` < 1558589884 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xmb_caifa` WHERE `addtime` < 1558589884 ORDER BY addtime desc LIMIT 0,10   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000042s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000095s ]
+NOTIC: [8] Undefined variable: title /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/6151ea341ca2db8464add55baa957421.php 第 29 行.
+NOTIC: [8] Undefined variable: cate /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/6151ea341ca2db8464add55baa957421.php 第 38 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/6151ea341ca2db8464add55baa957421.php 第 76 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/6151ea341ca2db8464add55baa957421.php 第 76 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/6151ea341ca2db8464add55baa957421.php 第 76 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/6151ea341ca2db8464add55baa957421.php 第 76 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010745s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010816s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000089s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000151s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000067s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000137s ]
+
+[ 2019-05-23T13:38:09+08:00 ] 127.0.0.1 /admin.php/caifa/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000093s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000047s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000095s ]
+SQL: SHOW COLUMNS FROM `xmb_admin` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xmb_admin` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xmb_role` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: newsxiugl /Users/ligui/work/nao_jia/default/App/Admin/Controller/CaifaController.class.php 第 54 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000091s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000204s ]
+NOTIC: [8] Undefined variable: title /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/8a739dd03039c9b411aee15c40e72d22.php 第 29 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009302s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009369s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000074s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000136s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000070s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000141s ]
+
+[ 2019-05-23T13:38:52+08:00 ] 127.0.0.1 /admin.php/Product/productList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000093s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000051s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000098s ]
+SQL: SHOW COLUMNS FROM `xmb_admin` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xmb_admin` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xmb_role` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xmb_goods` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xmb_goods` WHERE `addtime` < 1558589932 AND `is_del` <> 1 AND `type` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_goods` WHERE `addtime` < 1558589932 AND `is_del` <> 1 AND `type` = 1 ORDER BY sort desc,addtime desc LIMIT 0,10   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `xmb_productcate` [ RunTime:0.0004s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =59 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =66 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =114 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =58 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =62 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =83 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =58 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =62 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =140 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =58 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =62 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =140 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =58 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =62 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =140 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =58 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =62 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =140 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =58 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =62 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =140 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =58 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =62 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =140 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =58 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =62 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =140 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =59 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =66 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =113 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid =0 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid =58 )  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid =62 )  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000052s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000100s ]
+NOTIC: [8] Undefined variable: title /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/3dfaf2d6e18b2eb4e2aec5acbc0a4970.php 第 29 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007328s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007373s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000050s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000086s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000050s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000094s ]
+
+[ 2019-05-23T13:38:57+08:00 ] 127.0.0.1 /admin.php/Product/productAdd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000093s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000049s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000094s ]
+SQL: SHOW COLUMNS FROM `xmb_admin` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `xmb_admin` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xmb_role` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xmb_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xmb_productcate` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid =0 )  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid =58 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid =62 )  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000080s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000134s ]
+NOTIC: [8] Undefined variable: title /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/575a04f470cc631bffee16998a0ee4d0.php 第 29 行.
+NOTIC: [8] Undefined variable: newsxiugl /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/575a04f470cc631bffee16998a0ee4d0.php 第 71 行.
+NOTIC: [8] Undefined variable: newsxiugl /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/575a04f470cc631bffee16998a0ee4d0.php 第 77 行.
+NOTIC: [8] Undefined variable: newsxiugl /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/575a04f470cc631bffee16998a0ee4d0.php 第 81 行.
+NOTIC: [8] Undefined variable: newsxiugl /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/575a04f470cc631bffee16998a0ee4d0.php 第 87 行.
+NOTIC: [8] Undefined variable: newsxiugl /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/575a04f470cc631bffee16998a0ee4d0.php 第 93 行.
+NOTIC: [8] Undefined variable: newsxiugl /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/575a04f470cc631bffee16998a0ee4d0.php 第 100 行.
+NOTIC: [8] Undefined variable: newsxiugl /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/575a04f470cc631bffee16998a0ee4d0.php 第 107 行.
+NOTIC: [8] Undefined variable: newsxiugl /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/575a04f470cc631bffee16998a0ee4d0.php 第 114 行.
+NOTIC: [8] Undefined variable: newsxiugl /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/575a04f470cc631bffee16998a0ee4d0.php 第 120 行.
+NOTIC: [8] Undefined variable: newsxiugl /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/575a04f470cc631bffee16998a0ee4d0.php 第 126 行.
+NOTIC: [8] Undefined variable: newsxiugl /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/575a04f470cc631bffee16998a0ee4d0.php 第 142 行.
+NOTIC: [8] Undefined variable: newsxiugl /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/575a04f470cc631bffee16998a0ee4d0.php 第 189 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016195s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016242s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000059s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000096s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000083s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000131s ]
+
+[ 2019-05-23T13:39:43+08:00 ] 127.0.0.1 /admin.php/Brand/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000095s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000064s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000125s ]
+SQL: SHOW COLUMNS FROM `xmb_admin` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xmb_admin` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xmb_role` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xmb_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xmb_brand` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xmb_brand` WHERE `addtime` < 1558589983 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_brand` WHERE `addtime` < 1558589983 ORDER BY addtime desc LIMIT 0,10   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000043s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000096s ]
+NOTIC: [8] Undefined variable: title /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/d4bbc2c42a5eb5377376bdb868690936.php 第 29 行.
+NOTIC: [8] Undefined variable: cate /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/d4bbc2c42a5eb5377376bdb868690936.php 第 38 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/d4bbc2c42a5eb5377376bdb868690936.php 第 76 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003741s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003787s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000047s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000086s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000040s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000079s ]
+
+[ 2019-05-23T13:39:45+08:00 ] 127.0.0.1 /admin.php/brand/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000095s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000098s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000168s ]
+SQL: SHOW COLUMNS FROM `xmb_admin` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xmb_admin` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xmb_role` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: newsxiugl /Users/ligui/work/nao_jia/default/App/Admin/Controller/BrandController.class.php 第 54 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000060s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000119s ]
+NOTIC: [8] Undefined variable: title /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/0339691b9862dce0987849959f1f76a1.php 第 29 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005580s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005629s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000044s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000085s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000077s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000129s ]
+
+[ 2019-05-23T13:39:50+08:00 ] 127.0.0.1 /admin.php/Caifa/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000137s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000049s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000097s ]
+SQL: SHOW COLUMNS FROM `xmb_admin` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `xmb_admin` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `xmb_role` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xmb_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xmb_caifa` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xmb_caifa` WHERE `addtime` < 1558589990 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_caifa` WHERE `addtime` < 1558589990 ORDER BY addtime desc LIMIT 0,10   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000042s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000089s ]
+NOTIC: [8] Undefined variable: title /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/6151ea341ca2db8464add55baa957421.php 第 29 行.
+NOTIC: [8] Undefined variable: cate /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/6151ea341ca2db8464add55baa957421.php 第 38 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/6151ea341ca2db8464add55baa957421.php 第 76 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/6151ea341ca2db8464add55baa957421.php 第 76 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/6151ea341ca2db8464add55baa957421.php 第 76 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/6151ea341ca2db8464add55baa957421.php 第 76 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003595s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003641s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000048s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000087s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000048s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000089s ]
+
+[ 2019-05-23T13:40:20+08:00 ] 127.0.0.1 /admin.php/Productcate/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000096s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000059s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000113s ]
+SQL: SHOW COLUMNS FROM `xmb_admin` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xmb_admin` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xmb_role` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xmb_productcate` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xmb_productcate` WHERE `addtime` < 1558590020 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE `addtime` < 1558590020 ORDER BY id LIMIT 0,10   [ RunTime:0.0002s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =58 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =58 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =59 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =132 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =134 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =62 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =133 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid = 0 )  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: cate2 /Users/ligui/work/nao_jia/default/App/Admin/Controller/ProductcateController.class.php 第 101 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000043s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000087s ]
+NOTIC: [8] Undefined variable: title /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/4d1a577c0ed47d1fde923dcabbc47b25.php 第 29 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004374s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004422s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000047s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000085s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000080s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000120s ]
+
+[ 2019-05-23T13:40:44+08:00 ] 127.0.0.1 /admin.php/Jifen/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000120s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000102s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000167s ]
+SQL: SHOW COLUMNS FROM `xmb_admin` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `xmb_admin` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `xmb_role` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xmb_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xmb_goods` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xmb_goods` WHERE `addtime` < 1558590044 AND `is_del` <> 1 AND `type` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xmb_goods` WHERE `addtime` < 1558590044 AND `is_del` <> 1 AND `type` = 2 ORDER BY sort desc,sales desc,score desc,collect desc,addtime desc LIMIT 0,10   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000046s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000092s ]
+NOTIC: [8] Undefined variable: title /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/fb1790aa8d0cc2323455d416235e8952.php 第 29 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004310s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004358s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000046s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000084s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000045s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000115s ]
+
+[ 2019-05-23T13:41:34+08:00 ] 127.0.0.1 /admin.php/Space/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000097s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000059s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000112s ]
+SQL: SHOW COLUMNS FROM `xmb_admin` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xmb_admin` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xmb_role` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xmb_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xmb_space` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xmb_space` WHERE `addtime` < 1558590094 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_space` WHERE `addtime` < 1558590094 ORDER BY addtime desc LIMIT 0,10   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000044s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000094s ]
+NOTIC: [8] Undefined variable: title /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 29 行.
+NOTIC: [8] Undefined variable: cate /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 38 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 76 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 76 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 76 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 76 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 76 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 76 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 76 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 76 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 76 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 76 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004661s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004709s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000048s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000090s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000103s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000161s ]
+
+[ 2019-05-23T13:41:38+08:00 ] 127.0.0.1 /admin.php/Spacecate/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000103s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000051s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000098s ]
+SQL: SHOW COLUMNS FROM `xmb_admin` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_admin` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xmb_role` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xmb_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xmb_spacecate` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xmb_spacecate` WHERE `addtime` < 1558590098 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_spacecate` WHERE `addtime` < 1558590098 ORDER BY id LIMIT 0,20   [ RunTime:0.0002s ]
+SQL: SELECT `title` FROM `xmb_spacecate` WHERE ( id =58 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_spacecate` WHERE ( id =58 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `title` FROM `xmb_spacecate` WHERE ( id =58 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `title` FROM `xmb_spacecate` WHERE ( id =58 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_spacecate` WHERE ( id =59 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_spacecate` WHERE ( id =59 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_spacecate` WHERE ( id =59 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_spacecate` WHERE ( id =60 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_spacecate` WHERE ( id =60 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_spacecate` WHERE ( id =60 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_spacecate` WHERE ( id =59 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_spacecate` WHERE ( pid = 0 )  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: cate2 /Users/ligui/work/nao_jia/default/App/Admin/Controller/SpacecateController.class.php 第 101 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000085s ]
+NOTIC: [8] Undefined variable: title /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/c08889821230aee2e6809701b55cef7b.php 第 29 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004880s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004925s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000051s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000089s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000053s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000092s ]
+
+[ 2019-05-23T13:55:44+08:00 ] 127.0.0.1 /admin.php/Product/productList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000095s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000051s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000100s ]
+SQL: SHOW COLUMNS FROM `xmb_admin` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xmb_admin` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xmb_role` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xmb_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xmb_goods` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xmb_goods` WHERE `addtime` < 1558590944 AND `is_del` <> 1 AND `type` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xmb_goods` WHERE `addtime` < 1558590944 AND `is_del` <> 1 AND `type` = 1 ORDER BY sort desc,addtime desc LIMIT 0,10   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `xmb_productcate` [ RunTime:0.0003s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =59 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =66 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =114 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =58 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =62 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =83 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =58 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =62 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =140 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =58 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =62 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =140 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =58 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =62 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =140 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =58 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =62 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =140 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =58 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =62 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =140 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =58 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =62 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =140 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =58 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =62 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =140 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =59 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =66 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =113 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid =0 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid =58 )  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid =62 )  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000056s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000099s ]
+NOTIC: [8] Undefined variable: title /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/3dfaf2d6e18b2eb4e2aec5acbc0a4970.php 第 29 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006242s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006286s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000053s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000089s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000055s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000129s ]
+
+[ 2019-05-23T13:55:45+08:00 ] 127.0.0.1 /admin.php/Product/productAdd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000071s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000038s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000082s ]
+SQL: SHOW COLUMNS FROM `xmb_admin` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xmb_admin` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xmb_role` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xmb_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xmb_productcate` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid =0 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid =58 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid =62 )  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000080s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000128s ]
+NOTIC: [8] Undefined variable: title /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/575a04f470cc631bffee16998a0ee4d0.php 第 29 行.
+NOTIC: [8] Undefined variable: newsxiugl /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/575a04f470cc631bffee16998a0ee4d0.php 第 71 行.
+NOTIC: [8] Undefined variable: newsxiugl /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/575a04f470cc631bffee16998a0ee4d0.php 第 77 行.
+NOTIC: [8] Undefined variable: newsxiugl /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/575a04f470cc631bffee16998a0ee4d0.php 第 81 行.
+NOTIC: [8] Undefined variable: newsxiugl /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/575a04f470cc631bffee16998a0ee4d0.php 第 87 行.
+NOTIC: [8] Undefined variable: newsxiugl /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/575a04f470cc631bffee16998a0ee4d0.php 第 93 行.
+NOTIC: [8] Undefined variable: newsxiugl /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/575a04f470cc631bffee16998a0ee4d0.php 第 100 行.
+NOTIC: [8] Undefined variable: newsxiugl /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/575a04f470cc631bffee16998a0ee4d0.php 第 107 行.
+NOTIC: [8] Undefined variable: newsxiugl /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/575a04f470cc631bffee16998a0ee4d0.php 第 114 行.
+NOTIC: [8] Undefined variable: newsxiugl /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/575a04f470cc631bffee16998a0ee4d0.php 第 120 行.
+NOTIC: [8] Undefined variable: newsxiugl /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/575a04f470cc631bffee16998a0ee4d0.php 第 126 行.
+NOTIC: [8] Undefined variable: newsxiugl /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/575a04f470cc631bffee16998a0ee4d0.php 第 142 行.
+NOTIC: [8] Undefined variable: newsxiugl /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/575a04f470cc631bffee16998a0ee4d0.php 第 189 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007014s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007063s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000040s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000081s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000042s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000085s ]
+
+[ 2019-05-23T13:55:50+08:00 ] 127.0.0.1 /admin.php/Product/third
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000119s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000060s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000108s ]
+SQL: SHOW COLUMNS FROM `xmb_admin` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `xmb_admin` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `xmb_role` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xmb_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xmb_productcate` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid=63 )  [ RunTime:0.0002s ]
+
+[ 2019-05-23T13:55:55+08:00 ] 127.0.0.1 /admin.php/Product/second
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000095s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000045s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000089s ]
+SQL: SHOW COLUMNS FROM `xmb_admin` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xmb_admin` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xmb_role` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xmb_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xmb_productcate` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid=59 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid=66 )  [ RunTime:0.0002s ]
+
+[ 2019-05-23T13:55:59+08:00 ] 127.0.0.1 /admin.php/Product/third
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000092s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000042s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000081s ]
+SQL: SHOW COLUMNS FROM `xmb_admin` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xmb_admin` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xmb_role` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xmb_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xmb_productcate` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid=132 )  [ RunTime:0.0002s ]
+
+[ 2019-05-23T13:56:15+08:00 ] 127.0.0.1 /admin.php/Productcate/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000086s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000046s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000091s ]
+SQL: SHOW COLUMNS FROM `xmb_admin` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xmb_admin` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xmb_role` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xmb_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xmb_productcate` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xmb_productcate` WHERE `addtime` < 1558590975 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE `addtime` < 1558590975 ORDER BY id LIMIT 0,10   [ RunTime:0.0002s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =58 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =58 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =59 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =132 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =134 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =62 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `title` FROM `xmb_productcate` WHERE ( id =133 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_productcate` WHERE ( pid = 0 )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: cate2 /Users/ligui/work/nao_jia/default/App/Admin/Controller/ProductcateController.class.php 第 101 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000081s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000154s ]
+NOTIC: [8] Undefined variable: title /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/4d1a577c0ed47d1fde923dcabbc47b25.php 第 29 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004504s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004550s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000048s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000089s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000082s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000169s ]
+
+[ 2019-05-23T13:56:31+08:00 ] 127.0.0.1 /admin.php/Space/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000085s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000043s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000087s ]
+SQL: SHOW COLUMNS FROM `xmb_admin` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_admin` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xmb_role` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xmb_space` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xmb_space` WHERE `addtime` < 1558590991 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xmb_space` WHERE `addtime` < 1558590991 ORDER BY addtime desc LIMIT 0,10   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000089s ]
+NOTIC: [8] Undefined variable: title /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 29 行.
+NOTIC: [8] Undefined variable: cate /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 38 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 76 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 76 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 76 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 76 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 76 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 76 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 76 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 76 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 76 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 76 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004195s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004240s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000048s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000086s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000042s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000082s ]
+
+[ 2019-05-23T13:56:32+08:00 ] 127.0.0.1 /admin.php/Spacecate/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000080s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000053s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000099s ]
+SQL: SHOW COLUMNS FROM `xmb_admin` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xmb_admin` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xmb_role` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xmb_spacecate` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xmb_spacecate` WHERE `addtime` < 1558590992 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_spacecate` WHERE `addtime` < 1558590992 ORDER BY id LIMIT 0,20   [ RunTime:0.0003s ]
+SQL: SELECT `title` FROM `xmb_spacecate` WHERE ( id =58 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_spacecate` WHERE ( id =58 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_spacecate` WHERE ( id =58 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_spacecate` WHERE ( id =58 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_spacecate` WHERE ( id =59 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_spacecate` WHERE ( id =59 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_spacecate` WHERE ( id =59 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_spacecate` WHERE ( id =60 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_spacecate` WHERE ( id =60 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `title` FROM `xmb_spacecate` WHERE ( id =60 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `title` FROM `xmb_spacecate` WHERE ( id =59 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xmb_spacecate` WHERE ( pid = 0 )  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: cate2 /Users/ligui/work/nao_jia/default/App/Admin/Controller/SpacecateController.class.php 第 101 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000085s ]
+NOTIC: [8] Undefined variable: title /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/c08889821230aee2e6809701b55cef7b.php 第 29 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003899s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004029s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000040s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000077s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000094s ]
+
+[ 2019-05-23T13:56:42+08:00 ] 127.0.0.1 /admin.php/Space/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000094s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000049s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000098s ]
+SQL: SHOW COLUMNS FROM `xmb_admin` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xmb_admin` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xmb_role` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xmb_space` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xmb_space` WHERE `addtime` < 1558591002 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_space` WHERE `addtime` < 1558591002 ORDER BY addtime desc LIMIT 0,10   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000042s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000088s ]
+NOTIC: [8] Undefined variable: title /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 29 行.
+NOTIC: [8] Undefined variable: cate /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 38 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 76 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 76 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 76 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 76 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 76 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 76 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 76 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 76 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 76 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 76 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004040s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004095s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000048s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000089s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000050s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000117s ]
+
+[ 2019-05-23T13:56:46+08:00 ] 127.0.0.1 /admin.php/Space/lists/p/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000088s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000046s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000092s ]
+SQL: SHOW COLUMNS FROM `xmb_admin` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xmb_admin` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xmb_role` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xmb_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xmb_space` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xmb_space` WHERE `addtime` < 1558591006 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xmb_space` WHERE `addtime` < 1558591006 ORDER BY addtime desc LIMIT 10,10   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000040s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000084s ]
+NOTIC: [8] Undefined variable: title /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 29 行.
+NOTIC: [8] Undefined variable: cate /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 38 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 76 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 76 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 76 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 76 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 76 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 76 行.
+NOTIC: [8] Undefined index: cate_name /Users/ligui/work/nao_jia/default/App/Runtime/Cache/Admin/9f19110a6bd6ff6c15f3a21bc7c6abe0.php 第 76 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006713s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006763s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000063s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000103s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000102s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000160s ]
+

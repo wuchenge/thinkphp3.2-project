@@ -1,0 +1,208 @@
+<include file="Public:header"/>
+
+    <div class="wrapper wrapper_marg">
+        <div class="main_ban">
+            <div class="swiper-contianer mainB_swiper">
+                <div class="swiper-wrapper">
+                    <volist name="banner" id="vo" key="k">
+                         <div class="swiper-slide">
+                            <div class="mainB_img">
+                                <img src="{$vo.img}" alt="">
+                            </div>
+                        </div>
+                    </volist>
+                </div>
+                <div class="swiper-pagination banner_page"></div>
+            </div>
+        </div>
+
+        <div class="aegis_box">
+            <div class="aegis_nav">
+                <div class="container">
+                    <div class="aegisN_lcot">
+                        <div class="aegisN_left">
+                            <div class="aegisN_select">
+                                <h3><span>类目种类</span><i class="fa fa-angle-down"></i></h3>
+                            </div>
+                            <div class="aegisN_down">
+                                <div class="container">
+                                    <div class="aegisND_close"><img src="/Public/home/images/close.svg" alt=""></div>
+                                    <div class="aegisND_nav">
+                                        <ul>
+                                            <volist name="cate" id="vo" key="k">
+                                                <li <if condition="$k eq 1">class="active"</if>><a href="javascript:;">{$vo.title}</a></li>
+                                            </volist>
+                                        </ul>
+                                    </div>
+                                    <div class="aegisND_cot">
+                                        <volist name="cate" id="vo" key="k">
+                                        <div class="aegisND_lis">
+                                            <div class="aegisNDL_cot">
+                                                <ul>
+                                                     <volist name="vo.sxjihe" id="v2">
+                                                        <li>
+                                                            <a href="{:U('mall/index',array('tcate'=>$v2['id']))}">
+                                                                <label>
+                                                                    <input  name="lz">
+                                                                    <i></i>
+                                                                    <span>{$v2.title}</span>
+                                                                </label>
+                                                            </a>
+                                                        </li>
+                                                    </volist>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </volist>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="aegisN_right">
+                            <div class="aegisN_search">
+                                <form id="topic_search" method="get" action="{:U('mall/index')}" onkeydown="if(event.keyCode==13)return topicsearch()">
+                                <i class="fa fa-search"></i><input value="{$_GET['title']}" name="title"  type="text" placeholder="搜索产品">
+                            </form>
+                            </div>
+                            <div class="aegisN_jx">
+                                <i class="sort_desc"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="aegis_show">
+                <div class="container">
+                    <div class="aegisS_cot">
+                        <div class="aegisS_left">
+                            <p>当前产品数 <span>1-12</span> 总计{$count}件</p>
+                        </div>
+                        <div class="aegisS_right">
+                            <ul>
+                                <h5>展示方式</h5>
+                                <li><a href="javascript:;"><img src="/Public/home/images/show3_1.png" alt=""><img src="/Public/home/images/show3_2.png" alt=""></a></li>
+                                <li class="active"><a href="javascript:;"><img src="/Public/home/images/show4_1.png" alt=""><img src="/Public/home/images/show4_2.png"
+                                         alt=""></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="aegis_cot">
+                <div class="row">
+                    <volist name="list" id="vo">
+                    <div class="col-sm-3 col-xs-6">
+                        <a href="{:U('aegis/info',array('id'=>$vo['id']))}">
+                            <div class="aegis_lis">
+                                <div class="aegis_img" style="background: url({$vo.imgurl})  center /cover;">
+                                    <img src="/Public/home/xianbg.png" alt="">
+                                    <div class="swiper-container aegis_swiper">
+                                        <span class="aegis_arrl"><i class="fa fa-angle-left"></i></span>
+                                        <span class="aegis_arrr"><i class="fa fa-angle-right"></i></span>
+                                        <div class="swiper-wrapper">
+                                            <volist name="vo.imgs" id="v2">
+                                                <div class="swiper-slide">
+                                                    <img src="{$v2}" alt="">
+                                                </div>
+                                            </volist>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="aegis_wz">
+                                    <div class="aegis_visib">
+                                        <h3>{$vo.gname}</h3>
+                                        <p>￥{$vo.price}</p>
+                                    </div>
+                                    <div class="aegis_hide">
+                                        <h3>产品规格</h3>
+                                        <p>25cm 35cm 45cm 55cm 65cm 1m</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </volist>
+
+  
+                </div>
+                <div class="aegis_page">
+                    <ul>
+                         {$page}
+                        <!-- <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li> —— </li>
+                        <li><a href="#">7</a></li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<include file="Public:footer"/>
+
+    <div class="body_bg"></div>
+</body>
+<script>
+    $(function () {
+
+        var bannerSwiper = new Swiper('.mainB_swiper', {
+            loop: true,
+            autoplay: 5000,
+            pagination: '.banner_page',
+            paginationClickable: true,
+        })
+
+        var aegis_swiper = new Swiper('.aegis_swiper', {
+            loop: true,
+            prevButton: '.aegis_arrl',
+            nextButton: '.aegis_arrr',
+        })
+
+        $('.aegisND_nav li').click(function () {
+            $(this).addClass('active').siblings().removeClass('active')
+            $('.aegisND_lis').hide()
+            $('.aegisND_lis').eq($(this).index()).fadeIn()
+        })
+
+        $('.aegisN_select').click(function () {
+            $('.body_bg').toggleClass('into')
+            $('.aegisN_down').stop().fadeToggle()
+        })
+
+        $('.aegisND_close').click(function () {
+            $('.body_bg').removeClass('into')
+            $('.aegisN_down').stop().fadeOut()
+        })
+
+        $('.aegisS_right li').eq(0).click(function () {
+            $(this).addClass('active').siblings().removeClass('active')
+            $('.aegis_cot>.row>div').attr('class', 'col-sm-4 col-xs-6')
+            aegis_swiper = new Swiper('.aegis_swiper', {
+                loop: true,
+                prevButton: '.aegis_arrl',
+                nextButton: '.aegis_arrr',
+            })
+        })
+
+        $('.aegisS_right li').eq(1).click(function () {
+            $(this).addClass('active').siblings().removeClass('active')
+            $('.aegis_cot>.row>div').attr('class', 'col-sm-3 col-xs-6')
+            aegis_swiper = new Swiper('.aegis_swiper', {
+                loop: true,
+                prevButton: '.aegis_arrl',
+                nextButton: '.aegis_arrr',
+            })
+        })
+
+        $('.sort_desc').click(function () {
+            $(this).toggleClass('sort_up')
+        })
+
+    })
+</script>
+
+</html>

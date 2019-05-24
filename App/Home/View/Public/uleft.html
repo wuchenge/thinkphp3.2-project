@@ -1,0 +1,115 @@
+<div class="user_left">
+    <div class="userL_top">
+        <div class="userL_setting">
+            <a href="{:U('userinfo/index')}"><img src="/Public/home/images/setting.png" alt=""></a>
+        </div>
+        <div class="userL_qd">
+            <a href="javscript:;">签到</a>
+        </div>
+        <div class="userL_info">
+            <a href="{:U('userinfo/index')}">
+                  <div class="{:U('userinfo/index')}">
+                    <img src="{$user.pic}" alt="" style="width: 78px;height: auto;">
+                    <div class="user_ico">
+                      <img src="/Public/home/images/level1.png" alt="">
+                    </div>
+                  </div>
+                  <h3>{$user.uname} <img src="/Public/home/images/girl.png" alt=""></h3>
+                </a>
+        </div>
+        <div class="userT_wz">
+            <p>上次登录： {$user.lastlogin|date="Y-m-d H:i",###}</p>
+            <p>会员积分：<span>{$user.integral}</span></p>
+        </div>
+        <div class="userT_bott">
+            <ul>
+                <if condition="empty($user['card'])">
+                    <li style="width: 44.33%;">
+                        <a href="{:U('userinfo/index')}">
+                      <img src="/Public/home/images/user_card.svg" alt="">
+                      <p>未认证</p>
+                    </a>
+                    </li>
+                    <else />
+                    <li class="active" style="width: 44.33%;">
+                        <a href="javascript:;">
+                      <img src="/Public/home/images/user_card1.svg" alt="">
+                      <p>已认证</p>
+                    </a>
+                    </li>
+                </if>
+                <!--                   <li>
+                    <a href="#">
+                      <img src="/Public/home/images/user_phone.svg" alt="">
+                      <p>未认证</p>
+                    </a>
+                  </li> -->
+                <li class="active" style="width: 44.33%;">
+                    <a href="javascript:;">
+                      <img src="/Public/home/images/user_phone1.svg" alt="">
+                      <p>已认证</p>
+                    </a>
+                </li>
+                <!--                   <li>
+                    <a href="#">
+                      <img src="/Public/home/images/user_email.svg" alt="">
+                      <p>未认证</p>
+                    </a>
+                  </li> -->
+                <!-- <li class="active">
+                    <a href="javascript:;">
+                      <img src="/Public/home/images/user_email1.svg" alt="">
+                      <p>已认证</p>
+                    </a>
+                  </li> -->
+            </ul>
+        </div>
+    </div>
+    <div class="userL_cot">
+        <div class="userL_tit">
+            <h3><img src="/Public/home/images/login.svg" alt=""> 个人中心</h3>
+            <a href="{:U('order/mglist')}"><img src="/Public/home/images/uesr_mail.png" alt=""><span>3</span></a>
+            <div class="user_phone"><span><i></i></span>
+            </div>
+        </div>
+        <div class="userLC_cot">
+            <div class="userLC_lis">
+                <h3>订单中心</h3>
+                <ul>
+                    <li><a href="{:U('order/index')}">我的订单</a></li>
+                </ul>
+            </div>
+            <div class="userLC_lis">
+                <h3>购物车</h3>
+                <ul>
+                    <li><a href="{:U('user/cart')}">我的购物车</a></li>
+                </ul>
+            </div>
+            <div class="userLC_lis">
+                <h3>收货地址</h3>
+                <ul>
+                    <li><a href="{:U('address/index')}">常用地址</a></li>
+                </ul>
+            </div>
+            <!--                 <div class="userLC_lis">
+                  <h3>优惠券</h3>
+                  <ul>
+                    <li><a href="{:U('coupon/index')}">我的优惠券</a></li>
+                  </ul>
+                </div> -->
+            <div class="userLC_lis">
+                <h3>收藏产品</h3>
+                <ul>
+                    <li><a href="{:U('collect/space')}">办公空间收藏</a></li>
+                    <li><a href="{:U('collect/product')}">商品收藏</a></li>
+                </ul>
+            </div>
+            <div class="userLC_lis">
+                <h3>评价中心</h3>
+                <ul>
+                    <li><a href="{:U('order/evaluate')}">我的评价</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

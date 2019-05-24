@@ -1,0 +1,201 @@
+<include file="Public:header"/>
+
+	<div class="wrapper wrapper_marg">
+		<div class="user_box" style="background-image: url(/Public/home/images/user_bg.jpg)">
+			<div class="container1">
+				<div class="user_cot">
+
+            <include file="Public:uleft"/>
+
+					<div class="user_right">
+						<div class="user_nav">
+							<ul>
+								<li class="active"><a href="javscript:;">评价</a></li>
+							</ul>
+						</div>
+				<form class="form-inline"  method="post" onsubmit="return false;" >
+						<div class="eval_cot">
+							<volist name="res" id="vo">
+							<div class="eval_lis">
+								<div class="eval_img">
+									<div class="eval_pic">
+										<img src="{$vo.gurl}" alt="">
+									</div>
+									<h5>{$vo.gname}</h5>
+								</div>
+								<div class="eval_wz">
+									<textarea name="content[]" placeholder="亲，好不好都可以告诉我呦"></textarea>
+								</div>
+								<div class="eval_xx">
+									<div class="eval_li xing1">
+										<span>服务</span>
+										<div class="eval_star xing1">
+											<i class="fa fa-star-o"></i>
+											<i class="fa fa-star-o"></i>
+											<i class="fa fa-star-o"></i>
+											<i class="fa fa-star-o"></i>
+											<i class="fa fa-star-o"></i>
+										</div>
+										<input type="hidden" name="score[]" value="" />
+									</div>
+									<div class="eval_li xing2">
+										<span>描述</span>
+										<div class="eval_star">
+											<i class="fa fa-star-o"></i>
+											<i class="fa fa-star-o"></i>
+											<i class="fa fa-star-o"></i>
+											<i class="fa fa-star-o"></i>
+											<i class="fa fa-star-o"></i>
+										</div>
+										<input type="hidden" name="score2[]" value="" />
+									</div>
+									<div class="eval_bott" >
+										<ul>
+											<li>
+                                                <input name="image[]" type="hidden" multiple />
+												<div class="eval_add" onclick="gx_img(this)">
+                                                    <img src="/Public/home/images/more.svg" alt="">
+                                                    <span>添加图片</span>
+                                                </div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<input hidden name="gid[]" value="{$vo.gid}">
+						</volist>
+						<input hidden name="oid" value="{$result.id}">
+							<div class="eval_btn">
+								<a onclick="$('#sou').click();" href="javascript:;"  id="addr" data-id="1">提交</a>
+								<input type="button" id="sou" hidden  onclick="return baocun();" value="确定">
+							</div>
+						</div>
+				</form>
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+<include file="Public:footer"/>
+<include file="Public:qian"/>
+
+<form action="{:U('user/pjimg')}" method="post" enctype="multipart/form-data" id="imgform">
+    <input type="file" name="file" id="fileg" style="display:none">
+</form>
+
+
+
+
+<script src="/Public/home/js/jquery-1.8.3.min.js"></script>
+<script src="/Public/home/js/jquery.SuperSlide.2.1.1.js"></script>
+<script src="/Public/lib/layer/2.1/layer.js"></script>
+
+<script  src="/Public/js/jquery.form.js"></script>
+</body>
+<script>
+	o='';
+    function gx_img(obj){
+    	o=obj;
+        $('#fileg').click();
+    }
+    $('#fileg').change(function(){
+        layer.load(1,{shade:[0.1,'#fff']});
+        $('#imgform').ajaxSubmit(function(data){
+            layer.closeAll();
+            $(o).prev().val(data.info);
+            $(o).find('img').attr('src',data.info);
+        });
+    })
+
+	function baocun(){
+	  if($('#addr').attr('data-id') != 1){
+	    return false;
+	  }
+	  var url = "{:U('order/dojudge')}";
+	  $("#addr").val('保存中...');
+	  $('#addr').attr('data-id',0);
+	  $.post(url,$("form").serialize(),function(data){
+	  	//console.log(data);
+	    if(data.status == 1){
+	    	alert(data.msg);
+            $("#cxgl").val('跳转中...');
+	    	//location.href="/Order/index";
+	    	window.location="{:U('Order/index')}";
+	    }else{
+	    	alert(data.msg);
+	        return false;
+	    }
+	  })
+}
+	$(function () {
+		$('.userL_qd a').click(function () {
+			$('html,body').css('overflow-y', 'hidden')
+			$('.qd_fixed,.body_bg').addClass('into')
+		})
+
+		$('.body_bg').click(function () {
+			$('.body_bg,.qd_fixed').removeClass('into')
+			$('html,body').css('overflow-y', 'auto')
+		})
+
+		$('.user_tit label input').click(function () {
+			if ($(this).prop('checked') == false) {
+				$('.user_input input,.user_bott label input').prop('checked', false)
+			} else {
+				$('.user_input input,.user_bott label input').prop('checked', true)
+			}
+		})
+
+
+		$('.user_bott label input').click(function () {
+			if ($(this).prop('checked') == false) {
+				$('.user_input input,.user_tit label input').prop('checked', false)
+			} else {
+				$('.user_input input,.user_tit label input').prop('checked', true)
+			}
+		})
+
+		$('.order_delet').click(function () {
+			$(this).parents('.user_lis').remove()
+		})
+
+		$('.xing1 i').click(function () {
+			$(this).parent().find('i').attr('class', 'fa fa-star-o');
+			for (var i = 0; i <= $(this).index(); i++) {
+				$(this).parent().parent().find('i').eq(i).attr('class', 'fa fa-star');
+			}
+			//服务的星星
+			var fwx = $(this).index();
+            $(this).parent().next().attr("value",parseInt(fwx)+1);
+		})
+		$('.xing2 i').click(function () {
+			$(this).parent().find('i').attr('class', 'fa fa-star-o');
+			for (var i = 0; i <= $(this).index(); i++) {
+				$(this).parent().find('i').eq(i).attr('class', 'fa fa-star');
+			}
+			//描述的星星
+			var msx = $(this).index();
+			$(this).parent().next().attr("value",parseInt(msx)+1);
+
+		})
+
+		$('.user_bott a').click(function () {
+			for (var i = $('.user_input input').length - 1; i >= 0; i--) {
+				if ($('.user_input input').eq(i).prop('checked') == true) {
+					$('.user_input input').eq(i).parents('.user_lis').remove()
+				}
+			}
+			$('.user_bott input,.user_tit label input').prop('checked', false)
+		})
+
+
+	})
+</script>
+
+</html>

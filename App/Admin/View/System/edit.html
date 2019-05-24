@@ -1,0 +1,175 @@
+﻿<include file="Public:header2"/>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 系统管理 <span class="c-gray en">&gt;</span> 基本设置 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="page-container">
+	<form class="form form-horizontal" id="form-article-add" method="post" enctype="multipart/form-data">
+		<div id="tab-system" class="HuiTab">
+			<div class="tabBar cl"><span>基本设置</span>
+				<!--<span>接口参数设置</span>-->
+			</div>
+			<div class="tabCon">
+				<div class="row cl">
+					<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>网站名称：</label>
+					<div class="formControls col-xs-8 col-sm-9">
+						<input type="text" id="website-title" name="title" placeholder="控制在25个字、50个字节以内" value="{$sitegl.title}" class="input-text">
+					</div>
+				</div>
+				<div class="row cl">
+					<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>关键词：</label>
+					<div class="formControls col-xs-8 col-sm-9">
+						<input type="text" id="website-Keywords" name="keywords" placeholder="5个左右,8汉字以内,用英文,隔开" value="{$sitegl.keywords}" class="input-text">
+					</div>
+				</div>
+				<div class="row cl">
+					<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>网站描述：</label>
+					<div class="formControls col-xs-8 col-sm-9">
+						<textarea name="description"  cols="" rows="" class="textarea"  placeholder="说点什么...最少输入10个字符" datatype="*10-100" dragonfly="true" nullmsg="备注不能为空！" onKeyUp="textarealength(this,200)">{$sitegl.description}</textarea>
+						<p class="textarea-numberbar"><em class="textarea-length">0</em>/200</p>
+					</div>
+				</div>
+<!-- 				<div class="row cl">
+					<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>运费开启：</label>
+					<div class="formControls col-xs-8 col-sm-9">
+						<input type="radio" name="is_freight" value="1" class="input-radio" {$sitegl['is_freight']==1?'checked':''}>开启
+						<input type="radio" name="is_freight" value="0" class="input-radio" {$sitegl['is_freight']==0?'checked':''}>关闭
+					</div>
+				</div> -->
+<!-- 				<div class="row cl">
+					<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>商品运费：</label>
+					<div class="formControls col-xs-8 col-sm-9">
+						<input type="text" name="yunfei" placeholder="请输入运费" value="{$sitegl.yunfei}" class="input-text">
+					</div>
+				</div> -->
+				<div class="row cl">
+					<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>热线电话：</label>
+					<div class="formControls col-xs-8 col-sm-9">
+						<input type="text" id="website-tel" name="tel" placeholder="&copy; 2016 H-ui.net" value="{$sitegl.tel}" class="input-text">
+					</div>
+				</div>
+<!-- 				<div class="row cl">
+					<label class="form-label col-xs-4 col-sm-2">邮箱：</label>
+					<div class="formControls col-xs-8 col-sm-9">
+						<input type="text" id="website-email" name="email" placeholder="请输入正确的邮箱" value="{$sitegl.email}" class="input-text">
+					</div>
+				</div> -->
+				<div class="row cl">
+					<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>底部版权信息：</label>
+					<div class="formControls col-xs-8 col-sm-9">
+						<input type="text" id="website-copyright" name="copy" placeholder="&copy; 2016 H-ui.net" value="{$sitegl.copy}" class="input-text">
+					</div>
+				</div>
+<!-- 				<div class="row cl">
+					<label class="form-label col-xs-4 col-sm-2">备案号：</label>
+					<div class="formControls col-xs-8 col-sm-9">
+						<input type="text" id="website-icp1" name="icp" placeholder="京ICP备00000000号" value="{$sitegl.icp}" class="input-text">
+					</div>
+				</div> -->
+				<div class="row cl">
+					<label class="form-label col-xs-4 col-sm-2">公司地址：</label>
+					<div class="formControls col-xs-8 col-sm-9">
+						<input type="text" id="website-icp2" name="address" placeholder="请输入地址信息" value="{$sitegl.address}" class="input-text">
+					</div>
+				</div>
+				<div class="row cl">
+					<label class="form-label col-xs-4 col-sm-2">客服QQ：</label>
+					<div class="formControls col-xs-8 col-sm-9">
+						<input type="text" id="website-icp2" name="qq" placeholder="请输入客服QQ" value="{$sitegl.qq}" class="input-text">
+					</div>
+				</div>
+				<div class="row cl">
+					<label class="form-label col-xs-4 col-sm-2">顾问名称：</label>
+					<div class="formControls col-xs-8 col-sm-9">
+						<input type="text" id="website-tel" name="gwname" placeholder="&copy; 2016 H-ui.net" value="{$sitegl.gwname}" class="input-text">
+					</div>
+				</div>
+				<div class="row cl">
+					<label class="form-label col-xs-4 col-sm-2">英文名称：</label>
+					<div class="formControls col-xs-8 col-sm-9">
+						<input type="text" id="website-tel" name="ygwname" placeholder="&copy; 2016 H-ui.net" value="{$sitegl.ygwname}" class="input-text">
+					</div>
+				</div>
+				<div class="row cl">
+					<label class="form-label col-xs-4 col-sm-2">顾问电话：</label>
+					<div class="formControls col-xs-8 col-sm-9">
+						<input type="text" id="website-tel" name="gwtel" placeholder="&copy; 2016 H-ui.net" value="{$sitegl.gwtel}" class="input-text">
+					</div>
+				</div>
+				<div class="row cl">
+					<label class="form-label col-xs-4 col-sm-2">顾问头像：</label>
+					<div class="formControls col-xs-8 col-sm-9">
+						<img src="{$sitegl.gwimgurl}" height="130px">
+					</div>
+				</div>
+				<div class="row cl">
+					<label class="form-label col-xs-4 col-sm-2">顾问头像图片：</label>
+					<div class="formControls col-xs-8 col-sm-9">
+						<input type="file" name="gwimgurl" style="width:200px" class="input-text">
+						<span class="c-red">最佳尺寸：90*90</span>
+					</div>
+				</div>
+				<div class="row cl">
+					<label class="form-label col-xs-4 col-sm-2">微信二维码：</label>
+					<div class="formControls col-xs-8 col-sm-9">
+						<img src="{$sitegl.wximgurl}" height="130px">
+					</div>
+				</div>
+				<div class="row cl">
+					<label class="form-label col-xs-4 col-sm-2">微信二维码图片：</label>
+					<div class="formControls col-xs-8 col-sm-9">
+						<input type="file" name="wximgurl" style="width:200px" class="input-text">
+						<span class="c-red">最佳尺寸：154*154</span>
+					</div>
+				</div>
+				<!--<div class="row cl">-->
+					<!--<label class="form-label col-xs-4 col-sm-2">在线预约人数：</label>-->
+					<!--<div class="formControls col-xs-8 col-sm-9">-->
+						<!--<input type="text"  name="yynum" placeholder="在线抢购人数" value="{$sitegl.yynum}" class="input-text">-->
+					<!--</div>-->
+				<!--</div>-->
+			</div>
+<!-- 				<div class="row cl">
+					<label class="form-label col-xs-4 col-sm-2">站长统计代码：</label>
+					<div class="formControls col-xs-8 col-sm-9">
+						<textarea name="zhanzhang" cols="" rows="" class="textarea" placeholder="站长统计代码"
+								  datatype="*10-100" dragonfly="true" nullmsg="备注不能为空！"
+								  onKeyUp="textarealength(this,200)">{$sitegl.zhanzhang}</textarea>
+						<p class="textarea-numberbar"><em class="textarea-length">0</em>/200</p>
+					</div>
+				</div> -->
+			</div>
+		</div>
+		<div class="row cl">
+			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+				<button onClick="article_save_submit();" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存</button>
+				<!--<button onClick="layer_close();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>-->
+			</div>
+		</div>
+	</form>
+</div>
+
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="__ROOT__/Public/lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="__ROOT__/Public/lib/layer/2.1/layer.js"></script> 
+<script type="text/javascript" src="__ROOT__/Public/lib/icheck/jquery.icheck.min.js"></script> 
+<script type="text/javascript" src="__ROOT__/Public/lib/jquery.validation/1.14.0/jquery.validate.min.js"></script> 
+<script type="text/javascript" src="__ROOT__/Public/lib/jquery.validation/1.14.0/validate-methods.js"></script> 
+<script type="text/javascript" src="__ROOT__/Public/lib/jquery.validation/1.14.0/messages_zh.min.js"></script> 
+<script type="text/javascript" src="__ROOT__/Public/static/h-ui/js/H-ui.js"></script> 
+<script type="text/javascript" src="__ROOT__/Public/static/h-ui.admin/js/H-ui.admin.js"></script>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/admin/My97DatePicker/WdatePicker.js"></script>
+<!--/_footer /作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript">
+$(function(){
+	$('.skin-minimal input').iCheck({
+		checkboxClass: 'icheckbox-blue',
+		radioClass: 'iradio-blue',
+		increaseArea: '20%'
+	});
+	$.Huitab("#tab-system .tabBar span","#tab-system .tabCon","current","click","0");
+});
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>

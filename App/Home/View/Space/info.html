@@ -1,0 +1,493 @@
+<include file="Public:header"/>
+
+    <div class="wrapper wrapper_marg">
+
+        <div class="aegisD_box">
+            <div class="col-sm-8">
+                <div class="aegisD_left">
+                    <div class="aegisD_img">
+                        <volist name="imgjihe" id="vo">
+                            <div class="aegisD_lis active">
+                                <img src="{$vo}" alt="">
+                            </div>
+                        </volist>
+                    </div>
+                    <a href="javascript:;" class="aegisD_arrr"><i class="fa fa-angle-right"></i></a>
+                    <a href="javascript:;" class="aegisD_arrl"><i class="fa fa-angle-left"></i></a>
+                    <div class="aegisD_small">
+                        <ul>
+                            <volist name="imgjihe" id="vo" key="k">
+                                <li <if condition="$k eq 1">class="active"</if>><a href="javascript:;"><img src="{$vo}" alt=""></a></li>
+                            </volist>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="aegisD_right">
+                    <h3>{$danye.title}</h3>
+                    <h4 style="color:#c5a77c;font-size: 14px">{$danye.keywords}</h4>
+                    <hr>
+                    <div class="spaceD_wz">
+                        <ul class="spaceD_t">
+                            <li>
+                                <div class="spaceD_li">
+                                    <h3>{$danye.price}</h3>
+                                    <p>租金（元/月）</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="spaceD_li">
+                                    <h3>{$danye.c1name}</h3>
+                                    <p>装修</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="spaceD_li">
+                                    <h3>{$danye.c2name}</h3>
+                                    <p>面积（平米）</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="spaceD_li">
+                                    <h3>{$danye.c3name}个</h3>
+                                    <p>工位</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="spaceD_b">
+                             {$danye.description}
+                            <!-- <li>小区：青域律禾</li>
+                            <li>楼层：中楼层/18层</li>
+                            <li>朝向：南北</li>
+                            <li>装修：精装</li>
+                            <li>楼型：其他</li>
+                            <li>年代：2009年</li>
+                            <li>出租方式：整租</li>
+                            <li>看房时间：随时看房</li>
+                            <li>商圈：九堡</li> -->
+                        </ul>
+                    </div>
+                    <hr>
+                    <div class="spaced_lx">
+                        <div class="spaced_wz">
+                            <div class="spaced_user">
+                                <div class="spaced_img">
+                                    <img src="{$config.gwimgurl}" alt="">
+                                </div>
+                                <div class="spaced_txt">
+                                    <h3>{$config.gwname} <span>{$config.ygwname}</span></h3>
+                                    <!-- <p>欧美金融城专属顾问</p> -->
+                                </div>
+                            </div>
+                            <a href="javsacript:;">免费咨询 {$config.gwtel}</a>
+                        </div>
+                        <div class="spaced_ewm">
+                            <img src="{$config.wximgurl}" alt="">
+                            <!-- <p>微信扫码一键拨号</p> -->
+                        </div>
+                    </div>
+                    <div class="aegisD_txt">
+                        <p><img src="/Public/home/images/zs.png">商家详情页（含主图）以图片或文字形式标注的一口价、促销价、优惠价等价格。</p>
+                        <p><img src="/Public/home/images/zs.png">商家详情页（含主图）以图片或文字形式标注的一口价、促销价、优惠价等价格。</p>
+                        <p><img src="/Public/home/images/zs.png">商家详情页（含主图）以图片或文字形式标注的一口价、促销价、优惠价等价格。</p>
+                    </div>
+                    <div class="aegisD_follow">
+                        <ul>
+                           <li><div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more" style="margin: 0"><img src="/Public/home/images/share.svg">分享链接</a></div>
+                        <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                        </script>
+                                <!-- <a href="#"><img src="/Public/home/images/share.svg" alt="">分享</a> -->
+                            </li>
+                            <li>
+                                <if condition="$danye['is_coll'] eq 1">
+                                    <img style="cursor:pointer;"  data-id=1 onclick="bucoll(this,{$danye.id})" src="/Public/home/images/collect.svg" alt="">
+                                <else/>
+                                    <img style="cursor:pointer;"  data-id=1 onclick="docoll(this,{$danye.id})" src="/Public/home/images/collect.svg">
+                                </if>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="aegisD_box1" style="background-image: url(/Public/home/images/aegisDot_bg.jpg)">
+            <div class="container">
+                <div class="aegisD1_cot">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h3>产品参数：</h3>
+                            <div class="spaced1_cot">
+                                <ul>
+                                    {$danye.description2}
+<!--                                     <li><span>可注册</span>否</li>
+                                    <li><span>带窗</span>否</li>
+                                    <li><span>免租时间</span>面议</li>
+                                    <li><span>面积信息</span>面积30㎡</li>
+                                    <li><span>价格优势</span>位于大厦地区（共31层）</li>
+                                    <li><span>可注册</span>否</li>
+                                    <li><span>带窗</span>否</li>
+                                    <li><span>免租时间</span>面议</li>
+                                    <li><span>面积信息</span>面积30㎡</li>
+                                    <li><span>价格优势</span>位于大厦地区（共31层）</li>
+                                    <li><span>可注册</span>否</li>
+                                    <li><span>带窗</span>否</li>
+                                    <li><span>免租时间</span>面议</li>
+                                    <li><span>面积信息</span>面积30㎡</li>
+                                    <li><span>价格优势</span>位于大厦地区（共31层）</li>
+                                    <li><span>可注册</span>否</li>
+                                    <li><span>带窗</span>否</li>
+                                    <li><span>免租时间</span>面议</li>
+                                    <li><span>面积信息</span>面积30㎡</li>
+                                    <li><span>价格优势</span>位于大厦地区（共31层）</li> -->
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <h3>产品参数：</h3>
+                            <div class="spaced1_lis">
+                                <h5>基础服务：</h5>
+                                <ul>
+                                     {$danye.description3}
+                                    <!-- <li>
+                                        <div class="spaced1_li">
+                                            <img src="/Public/home/images/login.svg" alt="">前台接见
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="spaced1_li">
+                                            <img src="/Public/home/images/login.svg" alt="">前台接见
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="spaced1_li">
+                                            <img src="/Public/home/images/login.svg" alt="">前台接见
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="spaced1_li">
+                                            <img src="/Public/home/images/login.svg" alt="">前台接见
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="spaced1_li">
+                                            <img src="/Public/home/images/login.svg" alt="">前台接见
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="spaced1_li">
+                                            <img src="/Public/home/images/login.svg" alt="">前台接见
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="spaced1_li">
+                                            <img src="/Public/home/images/login.svg" alt="">前台接见
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="spaced1_li">
+                                            <img src="/Public/home/images/login.svg" alt="">前台接见
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="spaced1_li">
+                                            <img src="/Public/home/images/login.svg" alt="">前台接见
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="spaced1_li">
+                                            <img src="/Public/home/images/login.svg" alt="">前台接见
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="spaced1_li">
+                                            <img src="/Public/home/images/login.svg" alt="">前台接见
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="spaced1_li">
+                                            <img src="/Public/home/images/login.svg" alt="">前台接见
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="spaced1_li">
+                                            <img src="/Public/home/images/login.svg" alt="">前台接见
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="spaced1_li">
+                                            <img src="/Public/home/images/login.svg" alt="">前台接见
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="spaced1_li">
+                                            <img src="/Public/home/images/login.svg" alt="">前台接见
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="spaced1_li">
+                                            <img src="/Public/home/images/login.svg" alt="">前台接见
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="spaced1_li">
+                                            <img src="/Public/home/images/login.svg" alt="">前台接见
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="spaced1_li">
+                                            <img src="/Public/home/images/login.svg" alt="">前台接见
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="spaced1_li">
+                                            <img src="/Public/home/images/login.svg" alt="">前台接见
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="spaced1_li">
+                                            <img src="/Public/home/images/login.svg" alt="">前台接见
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="spaced1_li">
+                                            <img src="/Public/home/images/login.svg" alt="">前台接见
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="spaced1_li">
+                                            <img src="/Public/home/images/login.svg" alt="">前台接见
+                                        </div>
+                                    </li> -->
+                                </ul>
+                            </div>
+        <!--                     <div class="spaced1_lis">
+                                <h5>基础服务：</h5>
+                                <ul>
+                                     {$danye.description3}
+                                    <li>
+                                        <div class="spaced1_li">
+                                            <img src="/Public/home/images/login.svg" alt="">前台接见
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="spaced1_li">
+                                            <img src="/Public/home/images/login.svg" alt="">前台接见
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="spaced1_li">
+                                            <img src="/Public/home/images/login.svg" alt="">前台接见
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="spaced1_li">
+                                            <img src="/Public/home/images/login.svg" alt="">前台接见
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="spaced1_li">
+                                            <img src="/Public/home/images/login.svg" alt="">前台接见
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="spaced1_li">
+                                            <img src="/Public/home/images/login.svg" alt="">前台接见
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="spaced1_li">
+                                            <img src="/Public/home/images/login.svg" alt="">前台接见
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="aegisD_box2" style="background-image: url(/Public/home/images/aegisDot2_bg.jpg)">
+            <div class="container1">
+                <div class="aegisD2_cot">
+                    <ul>
+                        <li class="active" style="width: 100%;"><a href="javascript:;">产品详情</a></li>
+                    </ul>
+                    <div class="aegisD2_wz">
+                        {$danye.text|htmlspecialchars_decode}
+                        <!-- <img src="/Public/home/images/aegis_xq.jpg" alt=""> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+<include file="Public:footer"/>
+
+</body>
+<script type="text/javascript">
+//收藏
+function docoll(o,gid){
+    var url = "{:U('Collect/docoll2')}";
+    if ($(o).attr('data-id') != 1) {
+        return false;
+    }
+    $(o).attr('data-id', 0);
+    $.post(url, {gid: gid}, function (data) {
+        if (data.status == 1) {
+            alert(data.msg);
+            location.reload();
+        }else{
+            $(o).attr('data-id', 1);
+            alert(data.msg);
+        }
+    });
+}
+
+//取消收藏
+function bucoll(o,gid) {
+    if (confirm("确定取消收藏？")) {
+        var url = "{:U('Collect/bucoll2')}";
+        if ($(o).attr('data-id') != 1) {
+            return false;
+        }
+        $(o).attr('data-id', 0);
+        $.post(url, {gid: gid}, function (data) {
+            if (data.status == 1) {
+                alert(data.msg);
+                location.reload();
+            } else {
+                $(o).attr('data-id', 1);
+                alert(data.msg);
+            }
+        });
+    } else {
+        return false;
+    }
+}
+</script>
+<script>
+    $(function () {
+
+        $('.aegisD2_cot li').click(function () {
+            if ($(this).index() == 0) {
+                $('html,body').animate({
+                    'scrollTop': $('.aegisD2_cot').offset().top - 80
+                })
+            } else {
+                $('html,body').animate({
+                    'scrollTop': $('.aegisD3_cot').offset().top - 80
+                })
+            }
+        })
+
+        if ($(window).width() > 768) {
+            $('html,body').animate({
+                'scrollTop': 0
+            }, 100)
+
+            if ($('.aegisD_right').outerHeight() < $(window).height() - $('.header').height()) {
+                $('.aegisD_left,.aegisD_right').outerHeight($(window).height() - $('.header').height())
+            } else {
+                $('.aegisD_left').outerHeight($('.aegisD_right').outerHeight())
+            }
+
+            $('.aegisD_img').click(function () {
+                if ($(this).hasClass('bigg')) {
+                    $('html').css('overflow-y', 'auto')
+                    $(this).removeClass('bigg')
+                    $('.aegisD_right').removeClass('move')
+                } else {
+                    $('html,body').animate({
+                        'scrollTop': 0
+                    }, 100)
+                    $('html').css('overflow-y', 'hidden')
+                    $(this).addClass('bigg')
+                    $('.aegisD_right').addClass('move')
+                }
+            })
+        } else {
+            $('.aegisD_left').height($(window).height() * 0.5)
+        }
+
+        function aegisd_right() {
+            aegis_ind = $('.aegisD_lis.active').index()
+            if (aegis_ind < $('.aegisD_lis').length - 1) {
+                aegis_ind++
+            } else {
+                aegis_ind = 0
+            }
+            $('.aegisD_small li').eq(aegis_ind).addClass('active').siblings().removeClass('active')
+            $('.aegisD_lis').eq(aegis_ind).addClass('active').siblings().removeClass('active')
+        }
+
+        function aegisd_left() {
+            aegis_ind = $('.aegisD_lis.active').index()
+            if (aegis_ind > 0) {
+                aegis_ind--
+            } else {
+                aegis_ind = $('.aegisD_lis').length - 1
+            }
+            $('.aegisD_small li').eq(aegis_ind).addClass('active').siblings().removeClass('active')
+            $('.aegisD_lis').eq(aegis_ind).addClass('active').siblings().removeClass('active')
+        }
+
+        $('.aegisD_arrr').click(function () {
+            aegisd_right()
+        })
+
+        $('.aegisD_arrl').click(function () {
+            aegisd_left()
+        })
+
+        $('.aegisD_small li').click(function () {
+            aegis_ind = $(this).index()
+            $('.aegisD_small li').eq(aegis_ind).addClass('active').siblings().removeClass('active')
+            $('.aegisD_lis').eq(aegis_ind).addClass('active').siblings().removeClass('active')
+        })
+
+        $(window).resize(function () {
+            if ($('.aegisD_right').outerHeight() < $(window).height() - $('.header').height()) {
+                $('.aegisD_left,.aegisD_right').outerHeight($(window).height() - $('.header').height())
+            } else {
+                $('.aegisD_left').outerHeight($('.aegisD_right').outerHeight())
+            }
+
+            if ($(window).width() > 768) {
+                $('html,body').animate({
+                    'scrollTop': 0
+                }, 100)
+
+                if ($('.aegisD_right').outerHeight() < $(window).height() - $('.header').height()) {
+                    $('.aegisD_left,.aegisD_right').outerHeight($(window).height() - $('.header').height())
+                } else {
+                    $('.aegisD_left').outerHeight($('.aegisD_right').outerHeight())
+                }
+
+                $('.aegisD_img').click(function () {
+                    if ($(this).hasClass('bigg')) {
+                        $('html').css('overflow-y', 'auto')
+                        $(this).removeClass('bigg')
+                        $('.aegisD_right').removeClass('move')
+                    } else {
+                        $('html,body').animate({
+                            'scrollTop': 0
+                        }, 100)
+                        $('html').css('overflow-y', 'hidden')
+                        $(this).addClass('bigg')
+                        $('.aegisD_right').addClass('move')
+                    }
+                })
+            } else {
+                $('.aegisD_left').height($(window).height() * 0.5)
+            }
+        })
+
+    })
+</script>
+
+</html>
